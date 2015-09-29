@@ -1,0 +1,38 @@
+package com.sdragon.system.dao;
+
+import com.sdragon.system.pojo.Role;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectProvider;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Created by xwq on 15/9/2.
+ */
+@Repository
+public interface RoleDao {
+
+    @SelectProvider(type = RoleDaoEmberSql.class, method = "listRoleInfo")
+    List<Role> list(
+            @Param(value = "rolename") String rolename
+    );
+
+    class RoleDaoEmberSql {
+        public String listRoleInfo(Map<String, Object> para) {
+
+            String where = "";
+            if (null != para.get("rolename").toString() && 0 != para.get("rolename").toString().length())
+                where += " and rolename like '%" + para.get("rolename").toString() + "%' ";
+
+
+            where += " ;";
+
+            return " SELECT id, rolename, roledesc, remark " +
+                    "  FROM work.roles " +
+                    " WHERE 1 = 1  " + where;
+        }
+    }
+}

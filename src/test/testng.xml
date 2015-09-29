@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite1">
+<test name="test1" >
+<!--
+    <groups>
+        <run>
+            <include name="unit"/>
+            <include name="integrate"/>
+        </run>
+    </groups>
+-->
+    <!--指定要测试的包-->
+<!--
+    <packages>
+        <package name="com.zuche.base.*"/>
+    </packages>
+-->
+    <classes>
+        <!--测试指定方法-->
+        <!--<class name="com.zuche.msgsend.MsgServeTest">
+            <methods>
+                <include name="testNormalMailSingleProcess"/>
+            </methods>
+        </class>-->
+        <!--测试指定的类-->
+        <!--<class name="com.zuche.autoexec.service.ServeServiceTest"/>-->
+    </classes>
+</test>
+</suite>
