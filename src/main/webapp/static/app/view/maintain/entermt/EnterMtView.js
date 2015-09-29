@@ -39,9 +39,10 @@ Ext.define('app.view.maintain.entermt.EnterMtView', {
             scale: 'large',
             iconAlign: 'top',
             handler: function () {
-                Ext.create('app.view.maintain.entermt.innerenter.InnerEnterView', {
-                    maximized: true,
-                }).show(Ext.get('innerenterview_id'));
+                var window_inner = Ext.create('app.view.maintain.entermt.innerenter.InnerEnterView', {
+                    maximized: true
+                });
+                window_inner.show(Ext.get('innerenterview_id'));
             }
         }]
     }
