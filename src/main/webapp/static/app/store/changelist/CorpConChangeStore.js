@@ -8,7 +8,7 @@ Ext.define('app.store.changelist.CorpConChangeStore', {
     proxy: {
         type: 'ajax',
         api: {
-            read: '/equity/corpconchangelist'
+            read: '/enter/corpconchangelist'
         },
         reader: {
             type: 'json',

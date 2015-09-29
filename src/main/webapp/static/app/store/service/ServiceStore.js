@@ -5,7 +5,7 @@ Ext.define('app.store.service.ServiceStore', {
     proxy: {
         type: 'ajax',
         api: {
-            read: '/equity/corplist'
+            read: '/enter/corplist'
         },
         reader: {
             type: 'json',

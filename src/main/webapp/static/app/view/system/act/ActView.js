@@ -9,6 +9,7 @@ Ext.define('app.view.system.act.ActView', {
         'app.view.system.act.ActController',
         'app.view.system.act.ActGridView',
         'app.view.system.act.ActDetailView',
+        'app.view.system.act.ActAddView',
         'app.view.system.act.ActQueryView'
     ],
 
@@ -21,6 +22,7 @@ Ext.define('app.view.system.act.ActView', {
             items: [
                 {
                     text: '添加',
+                    id: 'act_add_id',
                     iconCls: 'fa fa-plus-square-o',
                     handler: 'btnAdd'
                 },

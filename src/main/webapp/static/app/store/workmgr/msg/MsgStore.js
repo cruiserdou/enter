@@ -11,7 +11,7 @@ Ext.define('app.store.workmgr.msg.MsgStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/innerinfolist'
+            read: '/enter/innerinfolist'
         },
         reader: {
             type: 'json',
@@ -19,9 +19,3 @@ Ext.define('app.store.workmgr.msg.MsgStore', {
         }
     }
 });
-
-
-
-
-
-

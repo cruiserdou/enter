@@ -5,7 +5,7 @@ Ext.define('app.store.stat.CorpInvStatStore', {
     proxy: {
         type: 'ajax',
         api: {
-            read: '/equity/statinvlist'
+            read: '/enter/statinvlist'
         },
         reader: {
             type: 'json',
@@ -13,4 +13,3 @@ Ext.define('app.store.stat.CorpInvStatStore', {
         }
     }
 });
-

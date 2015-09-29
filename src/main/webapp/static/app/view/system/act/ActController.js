@@ -11,6 +11,11 @@ Ext.define('app.view.system.act.ActController', {
         vPanel.tpl.overwrite(vPanel.body, record_.data);
     },
 
+    btnAdd: function(){
+        Ext.create('app.view.system.act.ActAddView',{
+        }).show(Ext.get('act_add_id'));
+    },
+
     btnRefresh: function () {
         Ext.getCmp('actgridview_id').getStore().load();
     },

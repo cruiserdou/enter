@@ -30,7 +30,6 @@ Ext.define('app.view.maintain.entermt.EnterMtView', {
             iconAlign: 'top',
             handler: function () {
                 win_enterapplyview.show();
-                //win_enterapplyview.maximize();
             }
         }, {
             xtype: 'button',

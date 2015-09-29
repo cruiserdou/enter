@@ -11,7 +11,7 @@ Ext.define('app.store.workmgr.FinServiceStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/finservicelist'
+            read: '/enter/finservicelist'
         },
         reader: {
             type: 'json',

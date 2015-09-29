@@ -9,6 +9,7 @@ Ext.define('app.view.system.sec.SecView', {
         'app.view.system.sec.SecController',
         'app.view.system.sec.SecGridView',
         'app.view.system.sec.SecDetailView',
+        'app.view.system.sec.SecAddView',
         'app.view.system.sec.SecQueryView'
     ],
 
@@ -21,6 +22,7 @@ Ext.define('app.view.system.sec.SecView', {
             items: [
                 {
                     text: '添加',
+                    id: 'sec_add_id',
                     iconCls: 'fa fa-plus-square-o',
                     handler: 'btnAdd'
                 },

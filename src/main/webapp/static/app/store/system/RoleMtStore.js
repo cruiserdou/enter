@@ -11,7 +11,7 @@ Ext.define('app.store.system.RoleMtStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/rolelist'
+            read: '/enter/rolelist'
         },
         reader: {
             type: 'json',

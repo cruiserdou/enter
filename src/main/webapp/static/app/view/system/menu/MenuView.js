@@ -9,6 +9,7 @@ Ext.define('app.view.system.menu.MenuView', {
         'app.view.system.menu.MenuController',
         'app.view.system.menu.MenuGridView',
         'app.view.system.menu.MenuDetailView',
+        'app.view.system.menu.MenuAddView',
         'app.view.system.menu.MenuQueryView'
     ],
 
@@ -21,6 +22,7 @@ Ext.define('app.view.system.menu.MenuView', {
             items: [
                 {
                     text: '添加',
+                    id: 'menu_add_id',
                     iconCls: 'fa fa-plus-square-o',
                     handler: 'btnAdd'
                 },

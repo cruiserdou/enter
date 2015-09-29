@@ -8,7 +8,7 @@ Ext.define('app.store.system.QuickStartMenuStore', {
     proxy: {
 	    type: 'ajax',
 	    api: {
-	        read: '/equity/obtain_corp_all_info'
+	        read: '/enter/obtain_corp_all_info'
 	    },
 	    reader: {
 	        type: 'json',

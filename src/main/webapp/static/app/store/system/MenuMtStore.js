@@ -11,7 +11,7 @@ Ext.define('app.store.system.MenuMtStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/menulist'
+            read: '/enter/menulist'
         },
         reader: {
             type: 'json',

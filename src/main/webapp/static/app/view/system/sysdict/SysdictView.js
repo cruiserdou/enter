@@ -9,6 +9,7 @@ Ext.define('app.view.system.sysdict.SysdictView', {
         'app.view.system.sysdict.SysdictController',
         'app.view.system.sysdict.SysdictGridView',
         'app.view.system.sysdict.SysdictDetailView',
+        'app.view.system.sysdict.SysdictAddView',
         'app.view.system.sysdict.SysdictQueryView'
     ],
 
@@ -21,6 +22,7 @@ Ext.define('app.view.system.sysdict.SysdictView', {
             items: [
                 {
                     text: '添加',
+                    id: 'sysdict_add_id',
                     iconCls: 'fa fa-plus-square-o',
                     handler: 'btnAdd'
                 },

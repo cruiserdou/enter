@@ -11,6 +11,11 @@ Ext.define('app.view.system.role.RoleController', {
         vPanel.tpl.overwrite(vPanel.body, record_.data);
     },
 
+    btnAdd: function(){
+        Ext.create('app.view.system.role.RoleAddView',{
+        }).show(Ext.get('role_add_id'));
+    },
+
     btnRefresh: function () {
         Ext.getCmp('rolegridview_id').getStore().load();
     },

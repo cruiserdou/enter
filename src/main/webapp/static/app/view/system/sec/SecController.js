@@ -11,6 +11,11 @@ Ext.define('app.view.system.sec.SecController', {
         vPanel.tpl.overwrite(vPanel.body, record_.data);
     },
 
+    btnAdd: function(){
+        Ext.create('app.view.system.sec.SecAddView',{
+        }).show(Ext.get('sec_add_id'));
+    },
+
     btnRefresh: function () {
         Ext.getCmp('secgridview_id').getStore().load();
     },

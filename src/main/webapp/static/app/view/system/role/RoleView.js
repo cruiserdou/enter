@@ -9,6 +9,7 @@ Ext.define('app.view.system.role.RoleView', {
         'app.view.system.role.RoleController',
         'app.view.system.role.RoleGridView',
         'app.view.system.role.RoleDetailView',
+        'app.view.system.role.RoleAddView',
         'app.view.system.role.RoleQueryView'
     ],
 
@@ -21,6 +22,7 @@ Ext.define('app.view.system.role.RoleView', {
             items: [
                 {
                     text: '添加',
+                    id: 'role_add_id',
                     iconCls: 'fa fa-plus-square-o',
                     handler: 'btnAdd'
                 },

@@ -1,7 +1,6 @@
 /**
  * This view is an example list of people.
  */
-
 var enterapplyview_new = Ext.create('Ext.panel.Panel', {
     id: 'applyf_panel_id',
     bodyPadding: 10,
@@ -19,44 +18,19 @@ var enterapplyview_new = Ext.create('Ext.panel.Panel', {
         align: 'stretch',
         pack: 'start'
     }
-
-    //items: [
-    //    {
-    //        xtype: 'panel',
-    //        id: 'applyf_panel',
-    //        height: 400,
-    //        border: false,
-    //        autoScroll: true,
-    //        margin: '5 0 0 0',
-    //        //html:'corp_apply_con_tpl'
-    //        //html: '<div id="cust_top_div">' +
-    //        //
-    //        //    //'<a href="#" onclick="cust_new()" class="xwq_btn">新建</a>' +
-    //        //'<a href="#" onclick="cust_save()" class="xwq_btn">保存</a>' +
-    //        //    //'<a href="#" id="cust_permis_id" onclick="cust_permis()" class="xwq_btn">权限分配</a>' +
-    //        //    //'<a href="#" id="cust_hy_id" onclick="cust_hy()" class="xwq_btn">关联会员</a>' +
-    //        //'<a href="#credit_an" id="cust_credit_id_a" onclick="hide_job()" data_x="show" class="xwq_btn"><i class="fa fa-pencil"></i>&nbsp;资信</a>' +
-    //        //'<a href="#job_an" id="cust_job_id_a" onclick="hide_job()" data_x="show" class="xwq_btn"><i class="fa fa-pencil"></i>&nbsp;工作</a>' +
-    //        //'<a href="#enter_an" id="cust_enter_id_a" onclick="hide_enter()" data_x="show" class="xwq_btn"><i class="fa fa-university"></i>&nbsp;企业</a>' +
-    //        //'<a href="#vehicle_an" class="xwq_btn"><i class="fa fa-car"></i>&nbsp;车产</a>' +
-    //        //'<a href="#house_an" class="xwq_btn"><i class="fa fa-building"></i>&nbsp;房产</a>' +
-    //        //'</div>'
-    //    }
-    //]
-})
-//tp1.overwrite(applyf_panel_id.body, {});
-
+});
 
 Ext.define('app.view.enter.EnterApplyView', {
     requires: [
         'app.xtemplate.corp_apply'
     ]
 });
+
 var win_enterapplyview = new Ext.Window({
-    id:'cust_add_id',
+    id: 'cust_add_id',
     modal: true,
     title: '新增企业',
-    closeAction:'hide',
+    closeAction: 'hide',
     border: false,
     maximizable: true,
     maximized: true,
@@ -68,7 +42,7 @@ var win_enterapplyview = new Ext.Window({
 
 function win_close() {
     Ext.getCmp('cust_add_id').close();
-}
+};
 
 function save_cust_add() {
     if (document.getElementById("buslicno").value == "") {
@@ -100,19 +74,18 @@ function save_cust_add() {
         return;
     }
     var corp_id;
-    if(document.getElementById('apply_form')['buslicno'].value==null && document.getElementById('apply_form')['buslicno'].value==""){
+    if (document.getElementById('apply_form')['buslicno'].value == null && document.getElementById('apply_form')['buslicno'].value == "") {
         Ext.Msg.alert("提示", "请填写营业执照号码！");
         return;
-    }else{
+    } else {
         Ext.Ajax.request({
             method: "POST",
             url: 'checked_corp_id_info',
-            success: function (response,opts) {
-                var obj=Ext.decode(response.responseText);
+            success: function (response, opts) {
+                var obj = Ext.decode(response.responseText);
 
-                if(obj.success)
-                {
-                    corp_id=parseInt(obj.name);
+                if (obj.success) {
+                    corp_id = parseInt(obj.name);
                 }
                 obt_corp_add(corp_id);
                 obt_corp_contact_add(corp_id);
@@ -126,34 +99,31 @@ function save_cust_add() {
                 obt_corp_rehr_add(corp_id);
                 obt_corp_retrain_add(corp_id);
             },
-            failure: function(form, action){
+            failure: function (form, action) {
                 Ext.Msg.alert("失败", "企业ID检验失败!");
             }
         });
     }
-}
+};
 
-function NumberCheck(num)
-{
+function NumberCheck(num) {
     var no_regexp = /\d{6}[123]\d{7}[1-9]/;
     return no_regexp.exec(num) != null;
-}
+};
 
 function card_check_apply() {
     if (document.getElementById("buslicno").value == "") {
         Ext.Msg.alert("提示", "<span style='color: red;'>营业执照号码不能为空！</span>")
         return;
     }
-    if(document.getElementById('buslicno').value.length!=15)
-    {
+    if (document.getElementById('buslicno').value.length != 15) {
         Ext.Msg.alert("提示", "<span style='color: red;'>营业执照号码格式不对！请重新输入！</span>");
-        document.getElementById('apply_form')['buslicno'].value="";
+        document.getElementById('apply_form')['buslicno'].value = "";
         return;
     }
-    if (!NumberCheck(document.getElementById('buslicno').value))
-    {
+    if (!NumberCheck(document.getElementById('buslicno').value)) {
         Ext.Msg.alert("提示", "<span style='color: red;'>营业执照号码格式不对！请重新输入！</span>")
-        document.getElementById('apply_form')['buslicno'].value="";
+        document.getElementById('apply_form')['buslicno'].value = "";
         return;
     }
 
@@ -163,24 +133,22 @@ function card_check_apply() {
         method: "POST",
         params: {
             buslicno: form_obt_apply['buslicno'].value,
-            id : 0
+            id: 0
         },
         url: 'check_buslicno_info',
-        success: function (response,opts) {
-            var obj=Ext.decode(response.responseText);
+        success: function (response, opts) {
+            var obj = Ext.decode(response.responseText);
 
-            if(!obj.success)
-            {
+            if (!obj.success) {
                 Ext.Msg.alert("提示", "该营业执照号码已用！");
-                document.getElementById('apply_form')['buslicno'].value="";
+                document.getElementById('apply_form')['buslicno'].value = "";
             }
         },
-        failure: function (response,opts) {
+        failure: function (response, opts) {
             Ext.Msg.alert("提示", "错");
         }
     });
-}
-
+};
 
 function corp_img_upload(id) {
 
@@ -293,7 +261,7 @@ function corp_img_upload(id) {
                 xtype: 'corp_img_gridf',
                 region: 'center',
                 listeners: {
-                    afterrender: function(){
+                    afterrender: function () {
                         Ext.getCmp('grid_corp_img').getStore().load();
                         var store = Ext.getCmp('grid_corp_img').getStore();
                         store.load({
@@ -307,7 +275,3 @@ function corp_img_upload(id) {
         ]
     }).show(Ext.get('corp_find_window'));
 };
-
-
-
-

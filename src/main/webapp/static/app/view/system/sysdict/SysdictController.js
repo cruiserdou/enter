@@ -11,6 +11,11 @@ Ext.define('app.view.system.sysdict.SysdictController', {
         vPanel.tpl.overwrite(vPanel.body, record_.data);
     },
 
+    btnAdd: function(){
+        Ext.create('app.view.system.sysdict.SysdictAddView',{
+        }).show(Ext.get('sysdict_add_id'));
+    },
+
     btnRefresh: function () {
         Ext.getCmp('sysdictgridview_id').getStore().load();
     },

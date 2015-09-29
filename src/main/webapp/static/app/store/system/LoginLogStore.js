@@ -11,7 +11,7 @@ Ext.define('app.store.system.LoginLogStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/loginloglist'
+            read: '/enter/loginloglist'
         },
         reader: {
             type: 'json',

@@ -11,7 +11,7 @@ Ext.define('app.store.workmgr.InnerInfoStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/innerinfolist'
+            read: '/enter/innerinfolist'
         },
         reader: {
             type: 'json',

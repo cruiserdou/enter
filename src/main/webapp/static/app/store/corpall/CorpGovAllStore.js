@@ -5,7 +5,7 @@ Ext.define('app.store.corpall.CorpGovAllStore', {
     proxy: {
         type: 'ajax',
         api: {
-            read: '/equity/corpgovlist'
+            read: '/enter/corpgovlist'
         },
         reader: {
             type: 'json',

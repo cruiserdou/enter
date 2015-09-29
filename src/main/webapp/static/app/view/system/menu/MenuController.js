@@ -11,6 +11,11 @@ Ext.define('app.view.system.menu.MenuController', {
         vPanel.tpl.overwrite(vPanel.body, record_.data);
     },
 
+    btnAdd: function(){
+        Ext.create('app.view.system.menu.MenuAddView',{
+        }).show(Ext.get('menu_add_id'));
+    },
+
     btnRefresh: function () {
         Ext.getCmp('menugridview_id').getStore().load();
     },

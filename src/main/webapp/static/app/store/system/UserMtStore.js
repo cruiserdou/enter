@@ -11,7 +11,7 @@ Ext.define('app.store.system.UserMtStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/userslist'
+            read: '/enter/userslist'
         },
         reader: {
             type: 'json',

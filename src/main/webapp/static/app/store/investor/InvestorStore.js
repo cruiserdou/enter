@@ -8,7 +8,7 @@ Ext.define('app.store.investor.InvestorStore', {
     proxy: {
         type: 'ajax',
         api: {
-            read: '/equity/corplist'
+            read: '/enter/corplist'
         },
         reader: {
             type: 'json',

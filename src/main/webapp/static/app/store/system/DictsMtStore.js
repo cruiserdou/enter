@@ -11,7 +11,7 @@ Ext.define('app.store.system.DictsMtStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/dictslist'
+            read: '/enter/dictslist'
         },
         reader: {
             type: 'json',

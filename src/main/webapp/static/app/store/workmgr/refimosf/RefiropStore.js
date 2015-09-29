@@ -11,7 +11,7 @@ Ext.define('app.store.workmgr.refimosf.RefiropStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/obtain_refi_rop_info'
+            read: '/enter/obtain_refi_rop_info'
         },
         reader: {
             type: 'json',
@@ -19,8 +19,3 @@ Ext.define('app.store.workmgr.refimosf.RefiropStore', {
         }
     }
 });
-
-
-
-
-

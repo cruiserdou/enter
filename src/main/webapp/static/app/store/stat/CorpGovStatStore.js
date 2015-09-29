@@ -5,7 +5,7 @@ Ext.define('app.store.stat.CorpGovStatStore', {
     proxy: {
         type: 'ajax',
         api: {
-            read: '/equity/statgovlist'
+            read: '/enter/statgovlist'
         },
         reader: {
             type: 'json',

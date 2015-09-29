@@ -11,7 +11,7 @@ Ext.define('app.store.system.ActStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/actlist'
+            read: '/enter/actlist'
         },
         reader: {
             type: 'json',

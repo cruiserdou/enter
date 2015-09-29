@@ -11,7 +11,7 @@ Ext.define('app.store.workmgr.maintainplan.MaintainplanStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/maintainplanlist'
+            read: '/enter/maintainplanlist'
         },
         reader: {
             type: 'json',
@@ -19,8 +19,3 @@ Ext.define('app.store.workmgr.maintainplan.MaintainplanStore', {
         }
     }
 });
-
-
-
-
-

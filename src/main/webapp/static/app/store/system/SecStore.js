@@ -11,7 +11,7 @@ Ext.define('app.store.system.SecStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/seclist'
+            read: '/enter/seclist'
         },
         reader: {
             type: 'json',

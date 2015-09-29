@@ -11,7 +11,7 @@ Ext.define('app.store.workmgr.refimosf.RefimosStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/refimosflist'
+            read: '/enter/refimosflist'
         },
         reader: {
             type: 'json',
@@ -19,6 +19,3 @@ Ext.define('app.store.workmgr.refimosf.RefimosStore', {
         }
     }
 });
-
-
-

@@ -11,7 +11,7 @@ Ext.define('app.store.workmgr.maintaininfo.MaintaininfoStore', {
             read: 'GET'
         },
         api: {
-            read: '/equity/maintaininfolist'
+            read: '/enter/maintaininfolist'
         },
         reader: {
             type: 'json',
@@ -19,8 +19,3 @@ Ext.define('app.store.workmgr.maintaininfo.MaintaininfoStore', {
         }
     }
 });
-
-
-
-
-
