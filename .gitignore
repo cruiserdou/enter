@@ -1,0 +1,14 @@
+*.iml
+.idea
+.classpath
+.project
+.settings
+.idea_modules
+.DS_Store
+target/*
+core/target/*
+client/target/*
+util/target/*
+project/**/project/*
+project/target/*
+project/**/target/*
