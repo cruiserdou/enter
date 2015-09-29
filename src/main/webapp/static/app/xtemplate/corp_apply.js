@@ -1,7 +1,5 @@
-Ext.define('app.xtemplate.corp_apply', {
-
-});
-var  corp_apply_con_tpl = new Ext.XTemplate(
+Ext.define('app.xtemplate.corp_apply', {});
+var corp_apply_con_tpl = new Ext.XTemplate(
     '<div class="wrap_center">',
     '<h2>企业信息</h2>',
     '<form id="apply_form">',
@@ -27,8 +25,8 @@ var  corp_apply_con_tpl = new Ext.XTemplate(
     '<td>',
     '<select style="width: 70px" class="select" name="province"  id="province">',
     '<option >{province}</option>',
-    ' </select>',
-    ' <select style="width: 70px"  class="select" name="city" id="city">',
+    '</select>',
+    '<select style="width: 70px"  class="select" name="city" id="city">',
     '<option>{city}</option>',
     '</select>',
     '<select style="width: 70px"  class="select" name="county" id="county">',
@@ -56,53 +54,53 @@ var  corp_apply_con_tpl = new Ext.XTemplate(
     '<th>营业期限至</th>',
     '<td><input id="bustremtdt" name="bustremtdt"  type="date" value="{bustremtdt}"/></td>',
     '</tr>',
-    '<tr>'+
-    '<th>挂牌区域</th>'+
-    '<td><input id="list_area" name="list_area"  type="text" value="{list_area}"/></td>'+
-    '<th>挂牌日期</th>'+
-    '<td><input id="listdt" name="listdt"  type="date" value="{listdt}"/></td>'+
-    '</tr>'+
+    '<tr>' +
+    '<th>挂牌区域</th>' +
+    '<td><input id="list_area" name="list_area"  type="text" value="{list_area}"/></td>' +
+    '<th>挂牌日期</th>' +
+    '<td><input id="listdt" name="listdt"  type="date" value="{listdt}"/></td>' +
+    '</tr>' +
     '<tr>',
-    '<th>挂牌代码</th>'+
-    '<td><input id="listcode" name="listcode"  type="text" value="{listcode}"/></td>'+
-    '<th>挂牌价格<br>元/元出资(股)</th>'+
-    '<td><input id="listprice" name="listprice"  type="text" value="{listprice}"/></td>'+
-    '</tr>'+
+    '<th>挂牌代码</th>' +
+    '<td><input id="listcode" name="listcode"  type="text" value="{listcode}"/></td>' +
+    '<th>挂牌价格<br>元/元出资(股)</th>' +
+    '<td><input id="listprice" name="listprice"  type="text" value="{listprice}"/></td>' +
+    '</tr>' +
 
-    '<tr>'+
+    '<tr>' +
     '<th>企业微信号</th>',
-    '<td><input id="webchat" name="webchat"  type="text" value="{webchat}"/></td>'+
-    '<th>推荐单位</th>'+
-    '<td><input id="channels" name="channels"  type="text" value="{channels}"/></td>'+
-    '</tr>'+
-    '<tr>'+
-    '<th>登记机关</th>'+
-    '<td><input id="regist_organ" name="regist_organ"  type="text" value="{regist_organ}"/></td>'+
+    '<td><input id="webchat" name="webchat"  type="text" value="{webchat}"/></td>' +
+    '<th>推荐单位</th>' +
+    '<td><input id="channels" name="channels"  type="text" value="{channels}"/></td>' +
+    '</tr>' +
+    '<tr>' +
+    '<th>登记机关</th>' +
+    '<td><input id="regist_organ" name="regist_organ"  type="text" value="{regist_organ}"/></td>' +
 
-    '<th>员工人数</th>'+
-    '<td><input id="staffnum" name="staffnum"  type="text" value="{staffnum}"/></td>'+
-    '</tr>'+
-    '<tr>'+
-    '<th>注册地址</th>'+
-    '<td colspan="3"><input id="regaddr" name="regaddr"  type="text" value="{regaddr}"/></td>'+
-    '</tr>'+
-    '<tr>'+
-    '<th>办公地址</th>'+
-    '<td colspan="3"><input id="offaddr" name="offaddr"  type="text" value="{offaddr}"/></td>'+
-    '</tr>'+
+    '<th>员工人数</th>' +
+    '<td><input id="staffnum" name="staffnum"  type="text" value="{staffnum}"/></td>' +
+    '</tr>' +
+    '<tr>' +
+    '<th>注册地址</th>' +
+    '<td colspan="3"><input id="regaddr" name="regaddr"  type="text" value="{regaddr}"/></td>' +
+    '</tr>' +
+    '<tr>' +
+    '<th>办公地址</th>' +
+    '<td colspan="3"><input id="offaddr" name="offaddr"  type="text" value="{offaddr}"/></td>' +
+    '</tr>' +
 
     '<tr>',
-    '<th>经营范围</th>'+
-    '<td colspan="3"><textarea style="background-color: white" id="scope" name="scope"  type="text" value="{scope}">{scope}</textarea></td>'+
-    '</tr>'+
-    '<tr>'+
-    '<th>主营业务</th>'+
-    '<td colspan="3"><textarea style="background-color: white"  id="mbus" name="mbus"  type="text" value="{mbus}">{mbus}</textarea></td>'+
-    '</tr>'+
-    '<tr>'+
-    '<th>企业简介</th>'+
-    '<td colspan="3"><textarea style="background-color: white"  id="eprofile" name="eprofile"  type="text" value="{eprofile}">{eprofile}</textarea></td>'+
-    '</tr>'+
+    '<th>经营范围</th>' +
+    '<td colspan="3"><textarea style="background-color: white" id="scope" name="scope"  type="text" value="{scope}">{scope}</textarea></td>' +
+    '</tr>' +
+    '<tr>' +
+    '<th>主营业务</th>' +
+    '<td colspan="3"><textarea style="background-color: white"  id="mbus" name="mbus"  type="text" value="{mbus}">{mbus}</textarea></td>' +
+    '</tr>' +
+    '<tr>' +
+    '<th>企业简介</th>' +
+    '<td colspan="3"><textarea style="background-color: white"  id="eprofile" name="eprofile"  type="text" value="{eprofile}">{eprofile}</textarea></td>' +
+    '</tr>' +
     '<tr>',
     '<th>备注</th>',
     '<td colspan="3"><textarea style="background-color: white"  id="remark" name="remark"  type="text" value="{remark}"></textarea></td>',
@@ -143,7 +141,6 @@ var  corp_apply_con_tpl = new Ext.XTemplate(
     '</div>',
 
 
-
     '<table class="enter_table" id="table_apply_link">',
     '<tr>',
     '<th class="table_header" colspan="4">法定代表人基本信息</th>',
@@ -172,19 +169,17 @@ var  corp_apply_con_tpl = new Ext.XTemplate(
     '<th>QQ</th>',
     '<td><input id="cont_eqq" name="cont_eqq"  type="text" value="{cont_eqq}"/></td>',
     '</tr>',
-    '<tr>'+
-    '<th>微信号</th>'+
-    '<td><input id="cont_webchat" name="cont_webchat"  type="text" value="{cont_webchat}"/></td>'+
+    '<tr>' +
+    '<th>微信号</th>' +
+    '<td><input id="cont_webchat" name="cont_webchat"  type="text" value="{cont_webchat}"/></td>' +
     '<th>固话</th>',
-    '<td><input id="cont_tel" name="cont_tel"  type="text" value="{cont_tel}"/></td>'+
-    '</tr>'+
-    '<tr>'+
-    '<th>备注</th>'+
-    '<td colspan="3"><textarea  style="background-color: white"  id="cont_bz" name="cont_bz"  type="text" value="{cont_bz}"></textarea></td>'+
-    '</tr>'+
-    '</table>'+
-
-
+    '<td><input id="cont_tel" name="cont_tel"  type="text" value="{cont_tel}"/></td>' +
+    '</tr>' +
+    '<tr>' +
+    '<th>备注</th>' +
+    '<td colspan="3"><textarea  style="background-color: white"  id="cont_bz" name="cont_bz"  type="text" value="{cont_bz}"></textarea></td>' +
+    '</tr>' +
+    '</table>' +
 
 
     '<table class="enter_table" id="table_apply_acount">',
@@ -301,7 +296,7 @@ var  corp_apply_con_tpl = new Ext.XTemplate(
     '</tr>',
     '<tr>',
     '<th>备注</th>',
-    '<td colspan="3"><textarea  style="background-color: white"  id="mai_bz" name="mai_bz"  type="text" value="{mai_bz}"></textarea></td>'+
+    '<td colspan="3"><textarea  style="background-color: white"  id="mai_bz" name="mai_bz"  type="text" value="{mai_bz}"></textarea></td>' +
     '</tr>',
     '</table>',
 
@@ -650,11 +645,11 @@ var  corp_apply_con_tpl = new Ext.XTemplate(
     '</tr>',
     '<tr>',
     '<th>简介</th>',
-    '<td colspan="3"><textarea  style="background-color: white"  id="srv_descs" name="srv_descs"  type="text" value="{srv_descs}"></textarea></td>'+
+    '<td colspan="3"><textarea  style="background-color: white"  id="srv_descs" name="srv_descs"  type="text" value="{srv_descs}"></textarea></td>' +
     '</tr>',
     '<tr>',
     '<th>备注</th>',
-    '<td colspan="3"><textarea  style="background-color: white"  id="srv_remark" name="srv_remark"  type="text" value="{srv_remark}"></textarea></td>'+
+    '<td colspan="3"><textarea  style="background-color: white"  id="srv_remark" name="srv_remark"  type="text" value="{srv_remark}"></textarea></td>' +
     '</tr>',
     '</table>',
 
@@ -736,18 +731,17 @@ var  corp_apply_con_tpl = new Ext.XTemplate(
     '<th>QQ</th>',
     '<td><input id="inv_qq" name="inv_qq"  type="text" value="{inv_qq}"/></td>',
     '</tr>',
-    '<tr>'+
-    '<th>微信号</th>'+
-    '<td><input id="inv_webchat" name="inv_webchat"  type="text" value="{inv_webchat}"/></td>'+
+    '<tr>' +
+    '<th>微信号</th>' +
+    '<td><input id="inv_webchat" name="inv_webchat"  type="text" value="{inv_webchat}"/></td>' +
     '<th>固话</th>',
-    '<td><input id="inv_tel" name="inv_tel"  type="text" value="{inv_tel}"/></td>'+
-    '</tr>'+
-    '<tr>'+
-    '<th>备注</th>'+
-    '<td colspan="3"><textarea  style="background-color: white"  id="inv_remark" name="inv_remark"  type="text" value="{inv_remark}"></textarea></td>'+
-    '</tr>'+
+    '<td><input id="inv_tel" name="inv_tel"  type="text" value="{inv_tel}"/></td>' +
+    '</tr>' +
+    '<tr>' +
+    '<th>备注</th>' +
+    '<td colspan="3"><textarea  style="background-color: white"  id="inv_remark" name="inv_remark"  type="text" value="{inv_remark}"></textarea></td>' +
+    '</tr>' +
     '</table>',
-
 
 
     '<table class="enter_table" id="table_apply_govermt">',
@@ -791,16 +785,16 @@ var  corp_apply_con_tpl = new Ext.XTemplate(
     '<th>QQ</th>',
     '<td><input id="gov_qq" name="gov_qq"  type="text" value="{gov_qq}"/></td>',
     '</tr>',
-    '<tr>'+
-    '<th>微信号</th>'+
-    '<td><input id="gov_webchat" name="gov_webchat"  type="text" value="{gov_webchat}"/></td>'+
+    '<tr>' +
+    '<th>微信号</th>' +
+    '<td><input id="gov_webchat" name="gov_webchat"  type="text" value="{gov_webchat}"/></td>' +
     '<th>固话</th>',
-    '<td><input id="gov_tel" name="gov_tel"  type="text" value="{gov_tel}"/></td>'+
-    '</tr>'+
-    '<tr>'+
-    '<th>备注</th>'+
-    '<td colspan="3"><textarea  style="background-color: white"  id="gov_remark" name="gov_remark"  type="text" value="{gov_remark}"></textarea></td>'+
-    '</tr>'+
+    '<td><input id="gov_tel" name="gov_tel"  type="text" value="{gov_tel}"/></td>' +
+    '</tr>' +
+    '<tr>' +
+    '<th>备注</th>' +
+    '<td colspan="3"><textarea  style="background-color: white"  id="gov_remark" name="gov_remark"  type="text" value="{gov_remark}"></textarea></td>' +
+    '</tr>' +
     '</table>',
 
     '<table class="enter_table" id="table_apply_demand_rz">',
@@ -828,10 +822,10 @@ var  corp_apply_con_tpl = new Ext.XTemplate(
     '<th>融资期限</th>',
     '<td><input id="refi_deadline" name="refi_deadline"  type="text" value="{refi_deadline}"/></td>',
     '</tr>',
-    '<tr>'+
-    '<th>融资用途详细说明</th>'+
-    '<td colspan="3"><textarea  style="background-color: white"  id="refi_desc" name="refi_desc"  type="text" value="{refi_desc}"></textarea></td>'+
-    '</tr>'+
+    '<tr>' +
+    '<th>融资用途详细说明</th>' +
+    '<td colspan="3"><textarea  style="background-color: white"  id="refi_desc" name="refi_desc"  type="text" value="{refi_desc}"></textarea></td>' +
+    '</tr>' +
     '</table>',
 
 
@@ -854,12 +848,12 @@ var  corp_apply_con_tpl = new Ext.XTemplate(
     '</tr>',
     '<tr>',
     '<th>培训内容</th>',
-    '<td colspan="3"><textarea  style="background-color: white"  id="retra_content" name="retra_content"  type="text" value="{retra_content}"></textarea></td>'+
+    '<td colspan="3"><textarea  style="background-color: white"  id="retra_content" name="retra_content"  type="text" value="{retra_content}"></textarea></td>' +
     '</tr>',
-    '<tr>'+
-    '<th>详细要求</th>'+
-    '<td colspan="3"><textarea  style="background-color: white"  id="retra_requests" name="retra_requests"  type="text" value="{retra_requests}"></textarea></td>'+
-    '</tr>'+
+    '<tr>' +
+    '<th>详细要求</th>' +
+    '<td colspan="3"><textarea  style="background-color: white"  id="retra_requests" name="retra_requests"  type="text" value="{retra_requests}"></textarea></td>' +
+    '</tr>' +
     '</table>',
 
     '<table class="enter_table" id="table_apply_demand_rl">',
@@ -881,15 +875,15 @@ var  corp_apply_con_tpl = new Ext.XTemplate(
     '<th>性别要求</th>',
     '<td><input id="rehr_sex_req" name="rehr_sex_req"  type="text" value="{rehr_sex_req}"/></td>',
     '</tr>',
-    '<tr>'+
+    '<tr>' +
     '<th>年龄要求</th>',
     '<td><input id="rehr_age_req" name="rehr_age_req"  type="text" value="{rehr_age_req}"/></td>',
     '<th>经验要求</th>',
     '<td><input id="rehr_requests" name="rehr_requests"  type="text" value="{rehr_requests}"/></td>',
-    '</tr>'+
+    '</tr>' +
     '</table>',
 
-    '<a href="#"  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_cust_add()">保存</a>'+
+    '<a href="#"  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_cust_add()">保存</a>' +
     '</div>',
     '<div id="enter_menu_list" style="position: fixed; top: 7em; right: 6em;">',
     '<ul>',

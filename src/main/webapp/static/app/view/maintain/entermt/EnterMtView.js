@@ -29,14 +29,20 @@ Ext.define('app.view.maintain.entermt.EnterMtView', {
             margin: '0 60 0 0',
             iconAlign: 'top',
             handler: function () {
-                win_enterapplyview.show();
+                win_enterapplyview.show(Ext.get('add_enter_btn_id'));
             }
         }, {
             xtype: 'button',
             iconCls: 'fa fa-download',
+            id: 'innerenterview_id',
             text: '已入库企业',
             scale: 'large',
-            iconAlign: 'top'
+            iconAlign: 'top',
+            handler: function () {
+                Ext.create('app.view.maintain.entermt.innerenter.InnerEnterView', {
+                    maximized: true,
+                }).show(Ext.get('innerenterview_id'));
+            }
         }]
     }
 
