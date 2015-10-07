@@ -26,6 +26,10 @@ Ext.define('app.view.enter.EnterApplyView', {
     ]
 });
 
+function areaCh(){
+    alert("Hello");
+}
+
 var win_enterapplyview = new Ext.Window({
     id: 'cust_add_id',
     modal: true,

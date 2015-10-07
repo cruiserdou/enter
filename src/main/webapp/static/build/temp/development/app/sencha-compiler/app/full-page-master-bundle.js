@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /home/dou/IdeaProjects/enter/src/main/webapp/static/app.js
+// @require /Users/xwq/IdeaProjects/enter/src/main/webapp/static/app.js

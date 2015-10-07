@@ -7,6 +7,9 @@ Ext.define('app.store.gov.GovStore', {
     alias: 'store.govstore',
     proxy: {
         type: 'ajax',
+        actionMethods: {
+            read: 'POST'
+        },
         api: {
             read: '/enter/corplist'
         },

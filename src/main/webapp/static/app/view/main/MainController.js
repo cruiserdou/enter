@@ -10,7 +10,7 @@ Ext.define('app.view.main.MainController', {
     alias: 'controller.main',
 
     onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('确定', '确定修改?', 'onConfirm', this);
+        Ext.Msg.confirm('确定', '确定修改吗?', 'onConfirm', this);
     },
 
     onConfirm: function (choice) {
