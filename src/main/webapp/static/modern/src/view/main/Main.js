@@ -15,13 +15,15 @@ Ext.define('app.view.main.Main', {
     requires: [
         'Ext.Menu',
         'Ext.MessageBox',
+        'Ext.carousel.Carousel',
         'app.view.main.MainController',
         'app.view.main.MainModel',
         'app.view.main.List',
         'app.view.main.ListEnter',
         'app.view.main.LoginForm'
-
     ],
+
+    controller: 'main',
     fullscreen: true,
     layout: 'vbox',
     config: {
@@ -29,62 +31,7 @@ Ext.define('app.view.main.Main', {
         items: [{
             xtype: 'toolbar',
             id: 'top_toolbar_id',
-            docked: 'top',
-            scrollable: {
-                y: false,
-                indicators: false
-            },
-            items: [{
-                text: '菜 单',
-                iconCls: 'x-fa fa-list',
-                ui: 'back',
-                hidden: (Ext.theme.name == "Blackberry") ? true : false,
-                handler: function () {
-                    Ext.Viewport.toggleMenu('left');
-                }
-            //}, {
-            //    xtype: 'searchfield',
-            //    id: 'searchfield_id',
-            //    placeHolder: '查找',
-            //    name: 'searchfield'
-            },{
-                text: 'Test',
-                handler: function(){
-                    if (!this.overlay) {
-                        this.overlay = Ext.Viewport.add({
-                            xtype: 'panel',
-                            modal: true,
-                            hideOnMaskTap: true,
-                            showAnimation: {
-                                type: 'popIn',
-                                duration: 250,
-                                easing: 'ease-out'
-                            },
-                            hideAnimation: {
-                                type: 'popOut',
-                                duration: 250,
-                                easing: 'ease-out'
-                            },
-                            centered: true,
-                            width: Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 400,
-                            height: Ext.filterPlatform('ie10') ? '30%' : Ext.os.deviceType == 'Phone' ? 220 : 400,
-                            styleHtmlContent: true,
-                            html: '<p>This is a modal, centered and floating panel. hideOnMaskTap is true by default so ' +
-                            'we can tap anywhere outside the overlay to hide it.</p>',
-                            items: [
-                                {
-                                    docked: 'top',
-                                    xtype: 'toolbar',
-                                    title: 'Overlay Title'
-                                }
-                            ],
-                            scrollable: true
-                        });
-                    }
-
-                    this.overlay.show();
-                }
-            }]
+            docked: 'top'
         }, {
             xtype: 'loginform',
             id: 'loginform_id',
@@ -160,6 +107,7 @@ Ext.define('app.view.main.Main', {
                 handler: function () {
                     if (Ext.getCmp('loginform_id') == null) {
                         Ext.getCmp('mobile_id').remove(Ext.getCmp(c_compnent_id));
+                        Ext.getCmp('top_toolbar_id').remove(Ext.getCmp('menu_menu_id'));
                         Ext.getCmp('mobile_id').add({
                             xtype: 'loginform',
                             id: 'loginform_id',

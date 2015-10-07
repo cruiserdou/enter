@@ -32,17 +32,16 @@ Ext.define('app.view.main.LoginForm', {
         items: [
             {
                 xtype: 'textfield',
-                name: 'usernm',
                 label: '用户名',
-                autoCapitalize: true,
                 required: true,
-                clearIcon: true
+                id: 'user_id'
             },
             {
                 xtype: 'passwordfield',
-                name: 'pass',
+                required: true,
                 label: '密码',
-                clearIcon: !Ext.theme.is.Blackberry
+                value: '',
+                id: 'password'
             }]
     }, {
         xtype: 'container',
@@ -61,19 +60,36 @@ Ext.define('app.view.main.LoginForm', {
                 scope: this,
                 hasDisabled: false,
                 handler: function (btn) {
-                    var fieldset1 = Ext.getCmp('fieldset1'),
-                        fieldset2 = Ext.getCmp('fieldset2');
+                    if (Ext.getCmp('user_id').getValue() != 'admin') {
+                        Ext.Msg.alert("错误", "用户名或密码错误！");
+                        return;
+                    }
+                    if (Ext.getCmp('password').getValue() != '1') {
+                        Ext.Msg.alert("错误", "用户名或密码错误！");
+                        return;
+                    }
+                    if (Ext.getCmp('menu_menu_id') == null) {
+                        Ext.getCmp('top_toolbar_id').add(
+                            {
+                                text: '菜 单',
+                                iconCls: 'x-fa fa-list',
+                                id: 'menu_menu_id',
+                                ui: 'back',
+                                hidden: (Ext.theme.name == "Blackberry") ? true : false,
+                                handler: function () {
+                                    Ext.Viewport.toggleMenu('left');
+                                }
+                            }
+                        );
+                    }
 
-                    if (btn.hasDisabled) {
-                        fieldset1.enable();
-                        fieldset2.enable();
-                        btn.hasDisabled = false;
-                        btn.setText('Disable fields');
-                    } else {
-                        fieldset1.disable();
-                        fieldset2.disable();
-                        btn.hasDisabled = true;
-                        btn.setText('Enable fields');
+                    if (Ext.getCmp('grid_t') == null) {
+                        Ext.getCmp('mobile_id').remove(Ext.getCmp(c_compnent_id));
+                        Ext.getCmp('mobile_id').add({
+                            xtype: 'mainlist',
+                            id: 'grid_t',
+                            flex: 1
+                        });
                     }
                 }
             },
@@ -81,10 +97,9 @@ Ext.define('app.view.main.LoginForm', {
                 text: '重 置',
                 ui: 'action',
                 handler: function () {
-                    Ext.getCmp('basicform').reset();
+                    Ext.getCmp('loginform_id').reset();
                 }
             }
         ]
     }]
-
 });
