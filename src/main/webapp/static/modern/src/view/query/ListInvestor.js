@@ -1,16 +1,16 @@
 /**
  * This view is an example list of people.
  */
-Ext.define('app.view.main.ListEnter', {
+Ext.define('app.view.query.ListInvestor', {
     extend: 'Ext.grid.Grid',
-    xtype: 'listenter',
+    xtype: 'listinvestor',
 
     columnLines: true,
     requires: [
         'app.store.gov.GovStore'
     ],
 
-    title: '企业信息',
+    title: '投资人信息',
 
     store: {
         type: 'govstore'
@@ -50,8 +50,8 @@ Ext.define('app.view.main.ListEnter', {
 
     listeners: {
         painted: function () {
-            c_compnent_id = "listenter_id";
-            Ext.getCmp('listenter_id').getStore().load();
+            c_compnent_id = "listinvestor_id";
+            Ext.getCmp('listinvestor_id').getStore().load();
         }
     }
 });

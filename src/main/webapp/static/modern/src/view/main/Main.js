@@ -20,6 +20,9 @@ Ext.define('app.view.main.Main', {
         'app.view.main.MainModel',
         'app.view.main.List',
         'app.view.main.ListEnter',
+        'app.view.query.ListGov',
+        'app.view.query.ListInvestor',
+        'app.view.query.ListService',
         'app.view.main.LoginForm'
     ],
 
@@ -91,6 +94,51 @@ Ext.define('app.view.main.Main', {
                         Ext.getCmp('mobile_id').add({
                             xtype: 'listenter',
                             id: 'listenter_id',
+                            flex: 1
+                        });
+                        Ext.Viewport.hideMenu(side);
+                    }
+                }
+            }, {
+                text: '服务机构',
+                iconCls: 'x-fa fa-search',
+                scope: this,
+                handler: function () {
+                    if (Ext.getCmp('listservice_id') == null) {
+                        Ext.getCmp('mobile_id').remove(Ext.getCmp(c_compnent_id));
+                        Ext.getCmp('mobile_id').add({
+                            xtype: 'listservice',
+                            id: 'listservice_id',
+                            flex: 1
+                        });
+                        Ext.Viewport.hideMenu(side);
+                    }
+                }
+            }, {
+                text: '投资人',
+                iconCls: 'x-fa fa-search',
+                scope: this,
+                handler: function () {
+                    if (Ext.getCmp('listinvestor_id') == null) {
+                        Ext.getCmp('mobile_id').remove(Ext.getCmp(c_compnent_id));
+                        Ext.getCmp('mobile_id').add({
+                            xtype: 'listinvestor',
+                            id: 'listinvestor_id',
+                            flex: 1
+                        });
+                        Ext.Viewport.hideMenu(side);
+                    }
+                }
+            }, {
+                text: '政府部门',
+                iconCls: 'x-fa fa-search',
+                scope: this,
+                handler: function () {
+                    if (Ext.getCmp('listgov_id') == null) {
+                        Ext.getCmp('mobile_id').remove(Ext.getCmp(c_compnent_id));
+                        Ext.getCmp('mobile_id').add({
+                            xtype: 'listgov',
+                            id: 'listgov_id',
                             flex: 1
                         });
                         Ext.Viewport.hideMenu(side);
