@@ -68,6 +68,11 @@ Ext.define('app.view.main.LoginForm', {
                         Ext.Msg.alert("错误", "用户名或密码错误！");
                         return;
                     }
+                    Ext.getCmp('mobile_id').add({
+                        xtype: 'toolbar',
+                        id: 'top_toolbar_id',
+                        docked: 'top'
+                    });
                     if (Ext.getCmp('menu_menu_id') == null) {
                         Ext.getCmp('top_toolbar_id').add(
                             {

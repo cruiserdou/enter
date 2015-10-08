@@ -28,11 +28,8 @@ Ext.define('app.view.main.Main', {
     layout: 'vbox',
     config: {
         scrollable: true,
-        items: [{
-            xtype: 'toolbar',
-            id: 'top_toolbar_id',
-            docked: 'top'
-        }, {
+        items: [
+            {
             xtype: 'loginform',
             id: 'loginform_id',
             flex: 1
@@ -107,7 +104,7 @@ Ext.define('app.view.main.Main', {
                 handler: function () {
                     if (Ext.getCmp('loginform_id') == null) {
                         Ext.getCmp('mobile_id').remove(Ext.getCmp(c_compnent_id));
-                        Ext.getCmp('top_toolbar_id').remove(Ext.getCmp('menu_menu_id'));
+                        Ext.getCmp('mobile_id').remove(Ext.getCmp('top_toolbar_id'));
                         Ext.getCmp('mobile_id').add({
                             xtype: 'loginform',
                             id: 'loginform_id',

@@ -25294,3 +25294,7 @@ td textarea {
 #enter_menu_list ul a:hover {
     background-color: #069;
 }
+/* http://localhost:1841/classic/sass/src/view/main/Main.scss:319 */
+.mobile_head {
+    color: red;
+}

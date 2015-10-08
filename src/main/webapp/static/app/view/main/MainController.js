@@ -30,10 +30,9 @@ Ext.define('app.view.main.MainController', {
                 width: '90%',
                 height: '80%',
                 layout: 'card',
-                items: [
-                    {
-                        html: "First Item"
-                    },
+                items: [{
+                    html: "First Item"
+                },
                     {
                         html: "Second Item"
                     },
@@ -42,11 +41,14 @@ Ext.define('app.view.main.MainController', {
                     },
                     {
                         html: "Fourth Item"
-                    }
-                ]
+                    }]
             });
 
             panel.setActiveItem(1);
+
+            var panel_c = Ext.create('Ext.Panel', {
+
+            });
 
             this.overlay = Ext.Viewport.add(panel);
         }
