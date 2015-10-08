@@ -1,7 +1,7 @@
 /**
  * Created by xwq on 6/20/15.
  */
-
+Ext.define('app.xtemplate.corp_view', {});
 var corp_tpl = new Ext.XTemplate(
     '<div class="wrap_center">',
      '<h2>企业信息查看</h2>',
@@ -930,8 +930,8 @@ var corp_rehr_tpl = new Ext.XTemplate(
 
 
 
-    $(document).ready(function(){
-        $(".btn1").click(function(){
-            $("table").toggle(true);
-        });
-    });
+    //$(document).ready(function(){
+    //    $(".btn1").click(function(){
+    //        $("table").toggle(true);
+    //    });
+    //});

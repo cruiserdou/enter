@@ -18,7 +18,8 @@ Ext.define('app.view.maintain.entermt.innerenter.InnerEnterGridView', {
     ],
     controller: 'enterinfocontroller',
     listeners: {
-        itemclick: 'itemclick'
+        itemclick: 'itemclick',
+        itemdblclick:'itemdblclick'
     },
 
     selModel: {

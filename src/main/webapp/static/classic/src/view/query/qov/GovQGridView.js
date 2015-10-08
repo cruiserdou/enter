@@ -16,7 +16,8 @@ Ext.define('app.view.maintain.govmt.GovMtGridView', {
         type: 'corpgovallstore'
     },
     listeners: {
-        itemclick: 'itemclick'
+        itemclick: 'itemclick',
+        itemdblclick:'itemdblclick'
     },
 
     selModel: {

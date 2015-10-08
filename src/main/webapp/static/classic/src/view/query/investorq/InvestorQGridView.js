@@ -16,7 +16,8 @@ Ext.define('app.view.query.investorq.InvestorQGridView', {
         type: 'corpinvallstore'
     },
     listeners: {
-        itemclick: 'itemclick'
+        itemclick: 'itemclick',
+        itemdblclick:'itemdblclick'
     },
 
     selModel: {

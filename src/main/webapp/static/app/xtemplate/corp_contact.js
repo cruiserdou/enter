@@ -1,3 +1,4 @@
+Ext.define('app.xtemplate.corp_contact', {});
 var  corp_service_con_tpl = new Ext.XTemplate(
     '<div class="wrap_center">',
     '<form id="apply_service_edit">' +

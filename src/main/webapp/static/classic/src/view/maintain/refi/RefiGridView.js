@@ -16,7 +16,8 @@ Ext.define('app.view.maintain.refi.RefiGridView', {
         type: 'corprefiallstore'
     },
     listeners: {
-        itemclick: 'itemclick'
+        itemclick: 'itemclick',
+        itemdblclick:'itemdblclick'
     },
 
     selModel: {

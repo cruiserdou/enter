@@ -1,3 +1,4 @@
+Ext.define('app.xtemplate.corp_edit', {});
 var  corp_edit_con_tpl = new Ext.XTemplate(
     '<div class="wrap_center">',
     '<form id="apply_corp_form_edit">',

@@ -16,7 +16,8 @@ Ext.define('app.view.query.govq.GovQGridView', {
         type: 'govstore'
     },
     listeners: {
-        itemclick: 'itemclick'
+        itemclick: 'itemclick',
+        itemdblclick:'itemdblclick'
     },
 
     selModel: {

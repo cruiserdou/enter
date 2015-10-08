@@ -18,7 +18,8 @@ Ext.define('app.view.enter.EnterInfoGridView', {
     ],
     controller: 'enterinfocontroller',
     listeners: {
-        itemclick: 'itemclick'
+        itemclick: 'itemclick',
+        itemdblclick:'itemdblclick'
     },
 
     selModel: {

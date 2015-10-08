@@ -16,7 +16,8 @@ Ext.define('app.view.maintain.retr.RetrGridView', {
         type: 'corpretrallstore'
     },
     listeners: {
-        itemclick: 'itemclick'
+        itemclick: 'itemclick',
+        itemdblclick:'itemdblclick'
     },
 
     selModel: {

@@ -16,7 +16,8 @@ Ext.define('app.view.maintain.servicemt.ServiceMtGridView', {
         type: 'corpserviceallstore'
     },
     listeners: {
-        itemclick: 'itemclick'
+        itemclick: 'itemclick',
+        itemdblclick:'itemdblclick'
     },
 
     selModel: {

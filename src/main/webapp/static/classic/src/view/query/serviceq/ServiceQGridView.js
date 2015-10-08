@@ -16,7 +16,8 @@ Ext.define('app.view.query.serviceq.ServiceQGridView', {
         type: 'corpserviceallstore'
     },
     listeners: {
-        itemclick: 'itemclick'
+        itemclick: 'itemclick',
+        itemdblclick:'itemdblclick'
     },
 
     selModel: {
