@@ -4,7 +4,6 @@
 Ext.define('app.view.statis.DemandStatis', {
     extend: 'Ext.grid.Panel',
     xtype: 'demandstatis',
-    iconCls: 'fa fa-bar-chart',
     columnLines: true,
     closable: true,
     requires: [

@@ -4,7 +4,6 @@
 Ext.define('app.view.maintain.entermt.innerenter.InnerEnterView', {
     extend: 'Ext.window.Window',
     xtype: 'innerenterview',
-    iconCls: 'fa fa-plus-square-o',
     requires: [
         'app.view.maintain.entermt.innerenter.InnerEnterController',
         'app.view.maintain.entermt.innerenter.InnerEnterGridView',

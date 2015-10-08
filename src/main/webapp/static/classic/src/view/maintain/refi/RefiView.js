@@ -21,16 +21,13 @@ Ext.define('app.view.maintain.refi.RefiView', {
             items: [
                 {
                     text: '删除',
-                    iconCls: 'fa fa-trash',
                     handler: 'delete'
                 },
                 {
                     text: '刷新',
-                    iconCls: 'fa fa-refresh',
                     handler: 'refresh' },
                 {
                     text: '查询',
-                    iconCls: 'fa fa-search',
                     handler: 'btnSearch'
                 }
             ]

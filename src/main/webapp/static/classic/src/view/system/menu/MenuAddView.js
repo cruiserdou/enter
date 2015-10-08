@@ -4,7 +4,6 @@
 Ext.define('app.view.system.menu.MenuAddView', {
     extend: 'Ext.window.Window',
     xtype: 'menuaddview',
-    iconCls: 'fa fa-plus-square-o',
     width: 360,
     title: '添加菜单',
     constrain: true,
@@ -15,6 +14,8 @@ Ext.define('app.view.system.menu.MenuAddView', {
         xtype: 'form',
         bodyPadding: 10,
         layout: 'form',
+
+
 
         items: [{
             xtype: 'textfield',
@@ -54,14 +55,12 @@ Ext.define('app.view.system.menu.MenuAddView', {
         buttons: [
             {
                 text: '重置',
-                iconCls: 'fa fa-refresh',
                 handler: function () {
                     this.up('form').getForm().reset();
                 }
             },
             {
                 text: '保存',
-                iconCls: 'fa fa-save',
                 handler: function () {
                     if (Ext.getCmp('rem_id').getValue() == true) {
                         if (window.localStorage) {
@@ -78,8 +77,25 @@ Ext.define('app.view.system.menu.MenuAddView', {
                         return;
                     }
 
-                    Ext.getCmp('enter_grid_id').getStore().load();
-                    loginWindow.close();
+
+
+                    var form = this.up('form').getForm();
+                    if (form.isValid()){
+                        form.submit({
+                            url: 'add_menu_info',
+                            waitMsg: '正在保存数据...',
+                            success: function(form, action){
+                                Ext.Msg.alert("成功", "数据保存成功!");
+                                //重新载入渠道信息
+                                Ext.getCmp('menugridview_id').getStore().reload();
+                                //Ext.getCmp('enter_grid_id').getStore().load();
+                                loginWindow.close();
+                            },
+                            failure: function(form, action){
+                                Ext.Msg.alert("失败", "数据保存失败!");
+                            }
+                        });
+                    }
 
                     //var form = this.up('form').getForm();
                     //if (form.isValid()) {

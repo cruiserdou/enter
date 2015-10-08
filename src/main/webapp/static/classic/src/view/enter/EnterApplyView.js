@@ -227,7 +227,6 @@ function corp_img_upload(id) {
                                             buttons: [
                                                 {
                                                     text: '保存',
-                                                    iconCls: 'icon_save',
                                                     handler: function () {
                                                         var form = this.up('form').getForm();
                                                         if (form.isValid()) {

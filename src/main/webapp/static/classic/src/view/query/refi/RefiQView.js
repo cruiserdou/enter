@@ -22,17 +22,14 @@ Ext.define('app.view.query.refi.RefiQView', {
             items: [
                 {
                     text: '刷新',
-                    iconCls: 'fa fa-refresh',
                     handler: 'refresh'
                 },
                 {
                     text: '查询',
-                    iconCls: 'fa fa-search',
                     handler: 'btnSearch'
                 },
                 {
                     text: '变更记录',
-                    iconCls: 'fa fa-book',
                     handler: 'btnLog'
                 }
             ]

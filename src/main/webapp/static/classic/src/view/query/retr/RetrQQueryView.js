@@ -42,7 +42,6 @@ Ext.define('app.view.query.retr.RetrQQueryView', {
         },
         {
             xtype: 'button',
-            iconCls: 'fa fa-search',
             text: '查找',
             handler: 'btnFind'
         },
@@ -62,7 +61,6 @@ Ext.define('app.view.query.retr.RetrQQueryView', {
         },
         {
             xtype: 'button',
-            iconCls: 'fa fa-refresh',
             text: '重置',
             handler: 'btnReset'
         }

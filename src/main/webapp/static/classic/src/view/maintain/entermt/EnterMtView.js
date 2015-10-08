@@ -22,7 +22,6 @@ Ext.define('app.view.maintain.entermt.EnterMtView', {
 
         items: [{
             xtype: 'button',
-            iconCls: 'fa fa-plus',
             id: 'add_enter_btn_id',
             text: '新增企业',
             scale: 'large',
@@ -33,7 +32,6 @@ Ext.define('app.view.maintain.entermt.EnterMtView', {
             }
         }, {
             xtype: 'button',
-            iconCls: 'fa fa-download',
             id: 'innerenterview_id',
             text: '已入库企业',
             scale: 'large',

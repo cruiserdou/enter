@@ -23,26 +23,21 @@ Ext.define('app.view.system.sysdict.SysdictView', {
                 {
                     text: '添加',
                     id: 'sysdict_add_id',
-                    iconCls: 'fa fa-plus-square-o',
                     handler: 'btnAdd'
                 },
                 {
                     text: '编辑',
-                    iconCls: 'fa fa-edit',
                     handler: 'btnEdit'
                 },
                 {
                     text: '删除',
-                    iconCls: 'fa fa-trash',
                     handler: 'btnDelete'
                 },
                 {
                     text: '刷新',
-                    iconCls: 'fa fa-refresh',
                     handler: 'btnRefresh'  },
                 {
                     text: '查询',
-                    iconCls: 'fa fa-search',
                     handler: 'btnSearch'
                 }
             ]

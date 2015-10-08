@@ -36,7 +36,6 @@ Ext.define('app.view.workmgr.msg.MsgQueryView', {
         },
         {
             xtype: 'button',
-            iconCls: 'fa fa-search',
             text: '查找',
             handler: 'btnFind'
         },
@@ -49,7 +48,6 @@ Ext.define('app.view.workmgr.msg.MsgQueryView', {
         },
         {
             xtype: 'button',
-            iconCls: 'fa fa-refresh',
             text: '重置',
             handler: 'btnReset'
         }

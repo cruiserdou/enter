@@ -70,7 +70,7 @@ Ext.define('app.view.main.Main', {
     title: '甘肃中小企业信息管理系统',
     controller: 'tree-list',
 
-    iconCls: 'fa fa-desktop',
+    //iconCls: 'fa fa-desktop',
     layout: 'border',
     viewModel: {
         type: 'tree-list'

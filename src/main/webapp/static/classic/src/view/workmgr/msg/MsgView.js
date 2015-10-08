@@ -23,21 +23,17 @@ Ext.define('app.view.workmgr.msg.MsgView', {
                 {
                     text: '添加',
                     id: 'msg_add_id',
-                    iconCls: 'fa fa-plus-square-o',
                     handler: 'btnAdd'
                 },
                 {
                     text: '删除',
-                    iconCls: 'fa fa-trash',
                     handler: 'delete'
                 },
                 {
                     text: '刷新',
-                    iconCls: 'fa fa-refresh',
                     handler: 'refresh'  },
                 {
-                    text: '查询',
-                    iconCls: 'fa fa-search',
+                    text: '查询', 
                     handler: 'btnSearch'
                 }
             ]

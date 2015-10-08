@@ -23,21 +23,17 @@ Ext.define('app.view.system.sec.SecView', {
                 {
                     text: '添加',
                     id: 'sec_add_id',
-                    iconCls: 'fa fa-plus-square-o',
                     handler: 'btnAdd'
                 },
                 {
                     text: '删除',
-                    iconCls: 'fa fa-trash',
                     handler: 'btnDelete'
                 },
                 {
                     text: '刷新',
-                    iconCls: 'fa fa-refresh',
                     handler: 'btnRefresh'  },
                 {
                     text: '查询',
-                    iconCls: 'fa fa-search',
                     handler: 'btnSearch'
                 }
             ]

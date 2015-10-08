@@ -4,7 +4,6 @@
 Ext.define('app.view.workmgr.maintaininfo.MaintaininfoAddView', {
     extend: 'Ext.window.Window',
     xtype: 'maintaininfoaddview',
-    iconCls: 'fa fa-plus-square-o',
     width: 400,
     title: '添加维护信息',
     constrain: true,
@@ -86,14 +85,12 @@ Ext.define('app.view.workmgr.maintaininfo.MaintaininfoAddView', {
         buttons: [
             {
                 text: '重置',
-                iconCls: 'fa fa-refresh',
                 handler: function () {
                     this.up('form').getForm().reset();
                 }
             },
             {
                 text: '保存',
-                iconCls: 'fa fa-save',
                 handler: function () {
                     if (Ext.getCmp('rem_id').getValue() == true) {
                         if (window.localStorage) {

@@ -36,13 +36,11 @@ Ext.define('app.view.system.role.RoleQueryView', {
         },
         {
             xtype: 'button',
-            iconCls: 'fa fa-search',
             text: '查找',
             handler: 'btnFind'
         },
         {
             xtype: 'button',
-            iconCls: 'fa fa-refresh',
             text: '重置',
             handler: 'btnReset'
         }

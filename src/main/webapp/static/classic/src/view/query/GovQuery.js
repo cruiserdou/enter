@@ -4,7 +4,6 @@
 Ext.define('app.view.query.GovQuery', {
     extend: 'Ext.grid.Panel',
     xtype: 'govquery',
-    iconCls: 'fa fa-search',
     columnLines: true,
     closable: true,
     requires: [
@@ -24,7 +23,6 @@ Ext.define('app.view.query.GovQuery', {
             items: [
                 {
                     text: '刷新',
-                    iconCls: 'fa fa-refresh',
                     listeners: {
                         click: function(){
                             alert("Hello")

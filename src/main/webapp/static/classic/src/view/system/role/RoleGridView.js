@@ -1,4 +1,5 @@
 /**
+/**
  * This view is an example list of people.
  */
 Ext.define('app.view.system.role.RoleGridView', {

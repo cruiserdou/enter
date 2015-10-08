@@ -37,7 +37,6 @@ Ext.define('app.view.system.sec.SecQueryView', {
 
         {
             xtype: 'button',
-            iconCls: 'fa fa-search',
             text: '查找',
             handler: 'btnFind'
         },
@@ -50,7 +49,6 @@ Ext.define('app.view.system.sec.SecQueryView', {
         },
         {
             xtype: 'button',
-            iconCls: 'fa fa-refresh',
             text: '重置',
             handler: 'btnReset'
         }
