@@ -128,8 +128,7 @@ Ext.define('app.view.query.investorq.InvestorQController', {
                     xtype: 'panel',
                     border: false,
                     id: 'investors_query_panel',
-                    html: '<div id="investors_query_div">' +
-                    '<div style="position: fixed; top: 7em; right: 6em">'+
+                    html:  '<div id="enter_menu_list" style="position: fixed; top: 7em; right: 6em;">'+
                     '<a href="#"   style="font-size:18px;display: block;  margin-top: 26px;  width: 120px;  font-size: 14px;  border: 1px solid #ffffff;  border-radius: 8px;  padding: 4px 25px;  cursor: hand;  color: #fff;  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 1px 0px;  background-image: linear-gradient(#f27809, #e14100);  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);" onclick="investors_query_close()">关闭</a>'+
 
                     '<ul>'+

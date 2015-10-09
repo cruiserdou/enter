@@ -905,6 +905,7 @@ var corp_apply_con_tpl = new Ext.XTemplate(
     '<li><a href="#table_apply_demand_px"  style="font-size:18px;">培训需求</a></li>',
     '<li><a href="#table_apply_demand_rl"  style="font-size:18px;">人力资源需求</a></li>',
     '</ul>',
+    '</div>',
     '</form>',
     '</div>'
 );

@@ -121,8 +121,8 @@ Ext.define('app.view.maintain.govmt.GovMtController', {
                     xtype: 'panel',
                     border: false,
                     id: 'government_manage_corp_panel',
-                    html: '<div id="government_manage_corp_div">' +
-                    '<div style="position: fixed; top: 7em; right: 6em">'+
+                    html:
+                    '<div id="enter_menu_list" style="position: fixed; top: 7em; right: 6em;">'+
                     '<a href="#"   style="font-size:18px;display: block;  margin-top: 26px;  width: 120px;  font-size: 14px;  border: 1px solid #ffffff;  border-radius: 8px;  padding: 4px 25px;  cursor: hand;  color: #fff;  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 1px 0px;  background-image: linear-gradient(#f27809, #e14100);  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);" onclick="government_close_edit()">关闭</a>'+
                     //
                     //'<a  href="print_enterprise?id={id}" target="_blank" style="font-size:18px;display: block;  margin-top: 26px;  width: 120px;  font-size: 14px;  border: 1px solid #ffffff;  border-radius: 8px;  padding: 4px 25px;  cursor: hand;  color: #fff;  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 1px 0px;  background-image: linear-gradient(#1d13f2, #1e7fe1);  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);">打印</a>'+
@@ -137,7 +137,6 @@ Ext.define('app.view.maintain.govmt.GovMtController', {
                     '<li><a href="#table_assets_finance"  style="font-size:18px;">企业财务信息</a></li>' +
                     '<li><a href="#table_govermt"  style="font-size:18px;">政府部门</a></li>' +
                     '</ul>' +
-                    '</div>'+
                     '</div>'
                 }
             ]

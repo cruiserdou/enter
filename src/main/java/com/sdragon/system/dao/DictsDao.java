@@ -1,9 +1,8 @@
 package com.sdragon.system.dao;
 
 import com.sdragon.system.pojo.Dicts;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.jdbc.SQL;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -35,4 +34,7 @@ public interface DictsDao {
                     " WHERE 1 = 1  " + where;
         }
     }
+
+    @Insert("INSERT INTO work.dicts VALUES(#{id},#{qorder},#{qname},#{qcontent},#{updateTime})")
+    public void save(Dicts dicts);
 }

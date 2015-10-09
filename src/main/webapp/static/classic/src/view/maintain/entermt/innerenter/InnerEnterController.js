@@ -57,11 +57,9 @@ Ext.define('app.view.maintain.entermt.innerenter.InnerEnterController', {
                     border: false,
                     id: 'corp_edit_corp_panel',
                     html:
-                    //'<div id="corp_edit_corp_div">' +
-                    //'<div style="position: fixed; top: 7em; right: 6em">'+
                     '<div id="enter_menu_list" style="position: fixed; top: 7em; right: 6em;">'+
 
-                        '<a href="#"   style="font-size:18px;display: block;  margin-top: 26px;  width: 120px;  font-size: 14px;  border: 1px solid #ffffff;  border-radius: 8px;  padding: 4px 25px;  cursor: hand;  color: #fff;  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 1px 0px;  background-image: linear-gradient(#f27809, #e14100);  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);" onclick="win_close_edit()">关闭</a>'+
+                    '<a href="#"   style="font-size:18px;display: block;  margin-top: 26px;  width: 120px;  font-size: 14px;  border: 1px solid #ffffff;  border-radius: 8px;  padding: 4px 25px;  cursor: hand;  color: #fff;  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 1px 0px;  background-image: linear-gradient(#f27809, #e14100);  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);" onclick="win_close_edit()">关闭</a>'+
 
 
                     '<ul>'+
