@@ -4,7 +4,7 @@
 Ext.define('app.xtemplate.corp_view', {});
 var corp_tpl = new Ext.XTemplate(
     '<div class="wrap_center">',
-     '<h2>企业信息查看</h2>',
+     '<h2>信息查看</h2>',
      '<table class="enter_table" id="table_base">',
      '<tr>',
      '<th class="table_header" colspan="4">基本信息</th>',

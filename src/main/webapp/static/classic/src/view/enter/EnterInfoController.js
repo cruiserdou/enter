@@ -169,10 +169,7 @@ Ext.define('app.view.enter.EnterInfoController', {
                     xtype: 'panel',
                     border: false,
                     id: 'corp_top_panel',
-                    html:
-                     '<div id="enter_menu_list" style="position: fixed; top: 7em; right: 6em;">'+
-                    '<a href="#"   style="font-size:18px;display: block;  margin-top: 26px;  width: 120px;  font-size: 14px;  border: 1px solid #ffffff;  border-radius: 8px;  padding: 4px 25px;  cursor: hand;  color: #fff;  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 1px 0px;  background-image: linear-gradient(#f27809, #e14100);  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);" onclick="win_close_ch()">关闭</a>' +
-
+                    html: '<div id="enter_menu_list" style="position: fixed; top: 7em; right: 6em;">' +
                     '<ul>' +
                     '<li><a href="#table_base" style="font-size:18px;">基本信息</a></li>' +
                     '<li><a href="#table_sh"  style="font-size:18px;">股东名册</a></li>' +
@@ -187,6 +184,7 @@ Ext.define('app.view.enter.EnterInfoController', {
                     '<li><a href="#table_demand_rz"  style="font-size:18px;">融资需求</a></li>' +
                     '<li><a href="#table_demand_px"  style="font-size:18px;">培训需求</a></li>' +
                     '<li><a href="#table_demand_rl"  style="font-size:18px;">人力资源需求</a></li>' +
+                    '<li><a href="#" style=" text-align: center; font-size:18px;display: block;  margin-top: 16px;  width: 100%;  font-size: 14px;  border: 1px solid #ffffff;  border-radius: 3px;  padding: 0.6em;  cursor: hand;  color: #fff;  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 1px 0px;  background-image: linear-gradient(#f27809, #e14100);  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);" onclick="win_close_ch()">关闭</a></li>' +
                     '</ul>' +
                     '</div>'
                 }
@@ -222,7 +220,7 @@ Ext.define('app.view.enter.EnterInfoController', {
                     margin: '1 0 0 0'
                 }
             );
-        }else{
+        } else {
             _this.up().up().remove(Ext.getCmp('enterinfoqueryview_id'));
         }
     },
@@ -240,7 +238,7 @@ Ext.define('app.view.enter.EnterInfoController', {
                     height: 200
                 }
             );
-        }else{
+        } else {
             _this.up().up().remove(Ext.getCmp('entereditloggridview_id'));
         }
     },
@@ -312,7 +310,6 @@ Ext.define('app.view.enter.EnterInfoController', {
         }
     }
 });
-
 
 
 function win_close_ch() {
