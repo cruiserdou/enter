@@ -11,12 +11,12 @@ import java.util.List;
  * Created by xwq on 15/9/2.
  */
 @RestController
-@RequestMapping("/menulist")
+//@RequestMapping("/menulist")
 public class MenuController {
     @Autowired
     private MenuService menuService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/menulist",method = RequestMethod.GET)
     public
     @ResponseBody
     DataShop listMenu(
@@ -26,5 +26,13 @@ public class MenuController {
         List list = menuService.list(text);
         dataShop.setSuccess(true);
         return dataShop;
+    }
+
+    @RequestMapping(value = "/deletemenu", method = RequestMethod.POST)
+    public String deletedict(
+            @RequestParam("id") Integer id
+    )throws Exception{
+        menuService.delete(id);
+        return "success";
     }
 }

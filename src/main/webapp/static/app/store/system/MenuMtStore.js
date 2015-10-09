@@ -3,7 +3,7 @@
  */
 Ext.define('app.store.system.MenuMtStore', {
     extend: 'Ext.data.Store',
-    model: 'app.model.system.MenuMt',
+    model: 'app.model.system.MenuModel',
     alias: 'store.menustore',
     proxy: {
         type: 'ajax',

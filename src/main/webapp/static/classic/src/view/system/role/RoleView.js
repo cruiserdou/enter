@@ -31,7 +31,7 @@ Ext.define('app.view.system.role.RoleView', {
                 },
                 {
                     text: '删除',
-                    handler: 'btnDelete'
+                    handler: 'delete'
                 },
                 {
                     text: '刷新',

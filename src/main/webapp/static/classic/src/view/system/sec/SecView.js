@@ -27,7 +27,7 @@ Ext.define('app.view.system.sec.SecView', {
                 },
                 {
                     text: '删除',
-                    handler: 'btnDelete'
+                    handler: 'delete'
                 },
                 {
                     text: '刷新',

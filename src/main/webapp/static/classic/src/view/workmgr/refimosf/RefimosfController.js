@@ -57,11 +57,11 @@ Ext.define('app.view.workmgr.refimosf.RefimosfController', {
                 if (rows.length > 0) {
                     for (var i = 0; i < rows.length; i++) {
                         var row = rows[i];
-                        var id = row.get('id');
+                        var mos_id = row.get('mos_id');
                         Ext.Ajax.request({
-                            url: '/cloudl/dpos/delete',
+                            url: '/enter/deleterefimos',
                             params: {
-                                "id": id
+                                "mos_id": mos_id
                             },
                             waitMsg: '正在删除数据...',
                             success: function () {

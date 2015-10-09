@@ -26,7 +26,6 @@ public interface DictsDao {
             if (null != para.get("fieldnm").toString() && 0 != para.get("fieldnm").toString().length())
                 where += " and fieldnm like '%" + para.get("fieldnm").toString() + "%' ";
 
-
             where += " ;";
 
             return " SELECT id, field, fieldnm, fieldval, fieldvaldis, remark " +
@@ -35,6 +34,8 @@ public interface DictsDao {
         }
     }
 
-    @Insert("INSERT INTO work.dicts VALUES(#{id},#{qorder},#{qname},#{qcontent},#{updateTime})")
-    public void save(Dicts dicts);
+    @Delete(" Delete FROM work.dicts  where id = #{id}")
+    void delete(@Param(value = "id") Integer id);
+
+
 }

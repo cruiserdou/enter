@@ -1,6 +1,7 @@
 package com.sdragon.workmgr.innerinfo.dao;
 
 import com.sdragon.workmgr.innerinfo.pojo.InnerInfo;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.springframework.stereotype.Repository;
@@ -38,4 +39,7 @@ public interface InnerInfoDao {
                     " WHERE 1 = 1  " + where;
         }
     }
+
+    @Delete(" Delete FROM work.tb_msg  where id = #{id}")
+    void delete(@Param(value = "id") Integer id);
 }

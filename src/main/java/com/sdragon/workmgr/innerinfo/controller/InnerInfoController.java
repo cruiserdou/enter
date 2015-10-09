@@ -11,12 +11,12 @@ import java.util.List;
  * Created by dou on 15-9-3.
  */
 @RestController
-@RequestMapping("/innerinfolist")
+//@RequestMapping("/innerinfolist")
 public class InnerInfoController {
     @Autowired
     private InnerInfoService innerInfoService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/innerinfolist",method = RequestMethod.GET)
     public
     @ResponseBody
     DataShop listInnerInfo(
@@ -28,6 +28,14 @@ public class InnerInfoController {
         dataShop.setList(list);
         dataShop.setSuccess(true);
         return dataShop;
+    }
+
+    @RequestMapping(value = "/deletemsg", method = RequestMethod.POST)
+    public String deletedict(
+            @RequestParam("id") Integer id
+    )throws Exception{
+        innerInfoService.delete(id);
+        return "success";
     }
 
  }

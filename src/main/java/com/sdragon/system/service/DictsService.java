@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface DictsService {
     List<Dicts> list(String fieldnm);
+
+    public void delete(Integer id);
 }

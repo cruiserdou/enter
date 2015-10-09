@@ -60,7 +60,7 @@ Ext.define('app.view.workmgr.msg.MsgController', {
                         var row = rows[i];
                         var id = row.get('id');
                         Ext.Ajax.request({
-                            url: '/cloudl/dpos/delete',
+                            url: '/enter/deletemsg',
                             params: {
                                 "id": id
                             },

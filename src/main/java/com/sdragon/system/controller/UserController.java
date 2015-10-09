@@ -18,7 +18,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 
 @RestController
-@RequestMapping(value = "/userslist")
+//@RequestMapping(value = "/userslist")
 public class UserController {
     private static Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -29,7 +29,7 @@ public class UserController {
      *
      * @return 返回指定的页面
      */
-    @RequestMapping(method = GET)
+    @RequestMapping(value = "/userslist",method = GET)
     public
     @ResponseBody
     DataShop listUsers(HttpServletRequest request,
@@ -68,5 +68,13 @@ public class UserController {
     @RequestMapping("/valid")
     public String validUser(){
         return "{\"msg\":\"true\"}";
+    }
+
+    @RequestMapping(value = "/deleteuser", method = RequestMethod.POST)
+    public String delete(
+            @RequestParam("id") Integer id
+    )throws Exception{
+        userService.delete(id);
+        return "success";
     }
 }

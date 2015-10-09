@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface RoleService {
     List<Role> list(String rolename);
+
+    public void delete(Integer id);
 }

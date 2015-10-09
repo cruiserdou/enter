@@ -1,6 +1,7 @@
 package com.sdragon.system.dao;
 
 import com.sdragon.system.pojo.User;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.jdbc.SQL;
@@ -57,5 +58,8 @@ public interface UserDao {
                     " FROM work.users ";
         }
     }
+
+    @Delete(" Delete FROM work.users  where id = #{id}")
+    void delete(@Param(value = "id") Integer id);
 }
 

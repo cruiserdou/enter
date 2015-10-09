@@ -32,4 +32,9 @@ public class UserServiceImpl implements UserService {
         else
             return false;
     }
+
+    @Override
+    public void delete(Integer id){
+        userDao.delete(id);
+    }
 }

@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface RefimosfService {
     List<Refimosf> list(String corp_name);
+
+    public void delete(Integer mos_id);
 }

@@ -18,4 +18,9 @@ public class MaintaininfoServiceImpl implements MaintaininfoService {
     public List<Maintaininfo> list(String corp_name){
         return maintaininfoDao.list(corp_name);
     }
+
+    @Override
+    public void delete(Integer mi_id){
+        maintaininfoDao.delete(mi_id);
+    }
 }

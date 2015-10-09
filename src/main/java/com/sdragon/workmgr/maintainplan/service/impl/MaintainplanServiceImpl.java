@@ -18,4 +18,9 @@ public class MaintainplanServiceImpl implements MaintainplanService {
     public List<Maintainplan> list(String corp_name){
         return maintainplanDao.list(corp_name);
     }
+
+    @Override
+    public void delete(Integer mp_id){
+        maintainplanDao.delete(mp_id);
+    }
 }

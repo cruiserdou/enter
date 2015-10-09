@@ -1,6 +1,7 @@
 package com.sdragon.workmgr.refimosf.dao;
 
 import com.sdragon.workmgr.refimosf.pojo.Refimosf;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.springframework.stereotype.Repository;
@@ -33,4 +34,7 @@ public interface RefimosfDao {
                    "  where 1=1   "  + where;
         }
     }
+
+    @Delete(" Delete FROM work.tb_refi_mos  where mos_id = #{mos_id}")
+    void delete(@Param(value = "mos_id") Integer mos_id);
 }

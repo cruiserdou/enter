@@ -1,6 +1,7 @@
 package com.sdragon.workmgr.maintaininfo.dao;
 
 import com.sdragon.workmgr.maintaininfo.pojo.Maintaininfo;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.springframework.stereotype.Repository;
@@ -35,4 +36,7 @@ public interface MaintaininfoDao {
                     "             mi_id  in (select max(mi_id)  from work.tb_maintain_info   group by mi_corp_id)  "  + where;
         }
     }
+
+    @Delete(" Delete FROM work.tb_maintain_info  where mi_id = #{mi_id}")
+    void delete(@Param(value = "mi_id") Integer mi_id);
 }

@@ -29,5 +29,14 @@ public class ActController {
         dataShop.setSuccess(true);
        return dataShop;
     }
+
+    @RequestMapping(value = "/deleteroleperm", method = RequestMethod.POST)
+    public String delete(
+            @RequestParam("roleid") Integer roleid,
+            @RequestParam("treeid") Integer treeid
+    )throws Exception{
+        actService.delete(roleid,treeid);
+        return "success";
+    }
 }
 

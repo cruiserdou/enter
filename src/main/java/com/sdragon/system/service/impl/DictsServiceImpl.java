@@ -20,4 +20,9 @@ public class DictsServiceImpl implements DictsService {
     public List<Dicts> list(String fieldnm){
         return dictsDao.list(fieldnm);
     }
+
+    @Override
+    public void delete(Integer id){
+         dictsDao.delete(id);
+    }
 }

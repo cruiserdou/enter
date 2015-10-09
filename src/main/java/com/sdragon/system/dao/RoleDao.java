@@ -1,6 +1,7 @@
 package com.sdragon.system.dao;
 
 import com.sdragon.system.pojo.Role;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
@@ -35,4 +36,7 @@ public interface RoleDao {
                     " WHERE 1 = 1  " + where;
         }
     }
+
+    @Delete(" Delete FROM work.roles  where id = #{id}")
+    void delete(@Param(value = "id") Integer id);
 }

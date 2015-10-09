@@ -11,12 +11,12 @@ import java.util.List;
  * Created by xwq on 15/9/2.
  */
 @RestController
-@RequestMapping("/rolelist")
+//@RequestMapping("/rolelist")
 public class RoleController {
     @Autowired
     private RoleService roleService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/rolelist",method = RequestMethod.GET)
     public
     @ResponseBody
     DataShop listRoles(
@@ -27,5 +27,13 @@ public class RoleController {
         dataShop.setList(list);
         dataShop.setSuccess(true);
         return dataShop;
+    }
+
+    @RequestMapping(value = "/deleterole", method = RequestMethod.POST)
+    public String deletedict(
+            @RequestParam("id") Integer id
+    )throws Exception{
+        roleService.delete(id);
+        return "success";
     }
 }

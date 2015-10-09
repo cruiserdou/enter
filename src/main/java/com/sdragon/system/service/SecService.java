@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface SecService {
     List<Sec> list(String rolename, String username);
+
+    public void delete(Integer roleid, Integer userid);
 }

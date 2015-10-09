@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface MenuService {
     List<Menu> list(String text);
+
+    public void delete(Integer id);
 }

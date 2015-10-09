@@ -58,11 +58,13 @@ Ext.define('app.view.system.sec.SecController', {
                 if (rows.length > 0) {
                     for (var i = 0; i < rows.length; i++) {
                         var row = rows[i];
-                        var id = row.get('id');
+                        var roleid = row.get('roleid');
+                        var userid = row.get('userid');
                         Ext.Ajax.request({
-                            url: '/cloudl/dpos/delete',
+                            url: '/enter/deleteuserroles',
                             params: {
-                                "id": id
+                                "roleid": roleid,
+                                "userid": userid
                             },
                             waitMsg: '正在删除数据...',
                             success: function () {

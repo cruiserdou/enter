@@ -1,9 +1,7 @@
 package com.sdragon.system.dao;
 
 import com.sdragon.system.pojo.Act;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectProvider;
-import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.springframework.stereotype.Repository;
 
@@ -39,4 +37,7 @@ public interface ActDao {
                     " WHERE 1 = 1  " + where;
         }
     }
+
+    @Delete(" Delete FROM work.rolepermissions  where roleid = #{roleid} and userid = #{treeid}")
+    void delete(@Param(value = "roleid") Integer roleid,@Param(value = "treeid") Integer treeid);
 }

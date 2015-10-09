@@ -11,12 +11,12 @@ import java.util.List;
  * Created by dou on 15-9-2.
  */
 @RestController
-@RequestMapping("/seclist")
+//@RequestMapping("/seclist")
 public class SecController {
     @Autowired
     private SecService secService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/seclist",method = RequestMethod.GET)
     public
     @ResponseBody
     DataShop listSec(
@@ -28,5 +28,14 @@ public class SecController {
         dataShop.setList(list);
         dataShop.setSuccess(true);
         return dataShop;
+    }
+
+    @RequestMapping(value = "/deleteuserroles", method = RequestMethod.POST)
+    public String delete(
+            @RequestParam("roleid") Integer roleid,
+            @RequestParam("userid") Integer userid
+    )throws Exception{
+        secService.delete(roleid,userid);
+        return "success";
     }
 }

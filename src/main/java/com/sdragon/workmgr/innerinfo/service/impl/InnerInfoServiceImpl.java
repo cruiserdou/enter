@@ -18,4 +18,9 @@ public class InnerInfoServiceImpl implements InnerInfoService {
     public List<InnerInfo> list(String stat, String user_name){
         return innerInfoDao.list(stat,user_name);
     }
+
+    @Override
+    public void delete(Integer id){
+        innerInfoDao.delete(id);
+    }
 }

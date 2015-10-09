@@ -1,6 +1,7 @@
 package com.sdragon.system.dao;
 
 import com.sdragon.system.pojo.Sec;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
@@ -38,4 +39,7 @@ public interface SecDao {
                     " WHERE 1 = 1  " + where;
         }
     }
+
+    @Delete(" Delete FROM work.userroles  where roleid = #{roleid} and userid = #{userid}")
+    void delete(@Param(value = "roleid") Integer roleid,@Param(value = "userid") Integer userid);
 }

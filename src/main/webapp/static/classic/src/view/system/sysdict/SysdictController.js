@@ -59,7 +59,7 @@ Ext.define('app.view.system.sysdict.SysdictController', {
                         var row = rows[i];
                         var id = row.get('id');
                         Ext.Ajax.request({
-                            url: '/cloudl/dpos/delete',
+                            url: '/enter/deletedict',
                             params: {
                                 "id": id
                             },

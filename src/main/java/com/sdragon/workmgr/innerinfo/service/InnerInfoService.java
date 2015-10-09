@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface InnerInfoService {
     List<InnerInfo> list(String stat, String user_name);
+
+    public void delete(Integer id);
 }

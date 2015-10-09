@@ -10,4 +10,6 @@ public interface UserService {
 //    User getById(long userId);
 
     boolean validUser(String account, String password);
+
+    public void delete(Integer id);
 }

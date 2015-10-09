@@ -58,11 +58,13 @@ Ext.define('app.view.system.act.ActController', {
                 if (rows.length > 0) {
                     for (var i = 0; i < rows.length; i++) {
                         var row = rows[i];
-                        var id = row.get('id');
+                        var roleid = row.get('roleid');
+                        var treeid = row.get('treeid');
                         Ext.Ajax.request({
-                            url: '/cloudl/dpos/delete',
+                            url: '/enter/deleteroleperm',
                             params: {
-                                "id": id
+                                "roleid": roleid,
+                                "treeid": treeid
                             },
                             waitMsg: '正在删除数据...',
                             success: function () {

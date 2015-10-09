@@ -57,11 +57,11 @@ Ext.define('app.view.workmgr.maintainplan.MaintainplanController', {
                 if (rows.length > 0) {
                     for (var i = 0; i < rows.length; i++) {
                         var row = rows[i];
-                        var id = row.get('id');
+                        var mp_id = row.get('mp_id');
                         Ext.Ajax.request({
-                            url: '/cloudl/dpos/delete',
+                            url: '/enter/deletemaintainplan',
                             params: {
-                                "id": id
+                                "mp_id": mp_id
                             },
                             waitMsg: '正在删除数据...',
                             success: function () {

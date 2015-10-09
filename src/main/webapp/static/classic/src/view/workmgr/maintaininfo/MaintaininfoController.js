@@ -57,11 +57,11 @@ Ext.define('app.view.workmgr.maintaininfo.MaintaininfoController', {
                 if (rows.length > 0) {
                     for (var i = 0; i < rows.length; i++) {
                         var row = rows[i];
-                        var id = row.get('id');
+                        var mi_id = row.get('mi_id');
                         Ext.Ajax.request({
-                            url: '/cloudl/dpos/delete',
+                            url: '/enter/deletemaintaininfo',
                             params: {
-                                "id": id
+                                "mi_id": mi_id
                             },
                             waitMsg: '正在删除数据...',
                             success: function () {

@@ -19,4 +19,9 @@ public class MenuServiceImpl implements MenuService {
     public List<Menu> list(String text){
         return menuDao.list(text);
     }
+
+    @Override
+    public void delete(Integer id){
+        menuDao.delete(id);
+    }
 }

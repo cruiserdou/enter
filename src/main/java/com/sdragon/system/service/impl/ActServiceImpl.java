@@ -20,4 +20,9 @@ public class ActServiceImpl implements ActService {
     public List<Act> list(String rolename, String text){
         return actDao.list(rolename,text);
     }
+
+    @Override
+    public void delete(Integer roleid, Integer treeid){
+        actDao.delete(roleid,treeid);
+    }
 }

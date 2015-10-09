@@ -20,4 +20,9 @@ public class RoleServiceImpl implements RoleService {
     public List<Role> list(String rolename){
         return roleDao.list(rolename);
     }
+
+    @Override
+    public void delete(Integer id){
+        roleDao.delete(id);
+    }
 }

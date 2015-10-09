@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface ActService {
     List<Act> list(String rolename, String text);
+
+    public void delete(Integer roleid, Integer treeid);
 }

@@ -1,6 +1,7 @@
 package com.sdragon.workmgr.maintainplan.dao;
 
 import com.sdragon.workmgr.maintainplan.pojo.Maintainplan;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.springframework.stereotype.Repository;
@@ -43,4 +44,7 @@ public interface MaintainplanDao {
 
         }
     }
+
+    @Delete(" Delete FROM work.tb_maintain_plan  where mp_id = #{mp_id}")
+    void delete(@Param(value = "mp_id") Integer mp_id);
 }

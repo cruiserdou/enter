@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface MaintainplanService {
     List<Maintainplan> list(String corp_name);
+
+    public void delete(Integer mp_id);
 }

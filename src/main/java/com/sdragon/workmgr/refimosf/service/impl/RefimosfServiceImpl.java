@@ -18,4 +18,9 @@ public class RefimosfServiceImpl implements RefimosfService {
     public List<Refimosf> list(String corp_name){
         return refimosfDao.list(corp_name);
     }
+
+    @Override
+    public void delete(Integer mos_id){
+        refimosfDao.delete(mos_id);
+    }
 }
