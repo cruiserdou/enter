@@ -4,55 +4,107 @@
 Ext.define('app.view.workmgr.maintaininfo.MaintaininfoAddView', {
     extend: 'Ext.window.Window',
     xtype: 'maintaininfoaddview',
-    width: 400,
+    width: 600,
     title: '添加维护信息',
     constrain: true,
     closable: true,
     modal: true,
     layout: 'fit',
+    requires: [
+        'app.view.workmgr.corp_basic.corp_basic_grid',
+        'app.view.workmgr.corp_basic.corp_basic_query'
+    ],
     items: {  // Let's put an empty grid in just to illustrate fit layout
         xtype: 'form',
         bodyPadding: 10,
         layout: 'form',
 
-        items: [{
+        items: [
+            {
             xtype: 'textfield',
-            name: 'mp_corp_id',
-            id: 'corp_id',
-            hidden: true
-        },{
+            fieldLabel: '企业ID',
+            name: 'mi_corp_id',
+            hidden:true,
+            id: 'corp_id'
+        },
+            {
+                xtype: "fieldcontainer", layout: "hbox",
+                items: [
+                    {
+                        readOnly:true,
+                        allowBlank:false,
+                        fieldLabel: '企业名称',
+                        name: 'corp_name',
+                        xtype: 'textfield',
+                        //labelAlign: 'right',
+                        id: 'corp_name_id'
+                    },
+                    {
+                        xtype: "button", text: "...",
+                        handler: function () {
+
+                            Ext.create('widget.window', {
+                                title: '企业',
+                                id: 'corp_find_window',
+                                width: 800,
+                                height: 600,
+                                iconCls: 'icon_search',
+                                modal: true,
+                                border: false,
+                                layout: 'border',
+                                items: [
+
+                                    {
+                                        xtype: 'corp_basic_queryf',
+                                        region: 'north'
+                                    },
+                                    {
+                                        xtype: 'corp_basic_gridf',
+                                        region: 'center',
+                                        height: 120
+                                    }
+                                ]
+                            }).show(Ext.get('corp_name_id'));
+                        }
+                    }
+                ]
+            },
+            {
             xtype: 'textfield',
-            name: 'corp_name',
-            id: 'corp_name_id',
-            fieldLabel: '企业名称'
-        }, {
-            xtype: 'textfield',
-            name: 'mi_listcode',
+            readOnly:true,
             fieldLabel: '挂牌代码',
-            allowBlank: false
+            name: 'mi_listcode',
+            id: 'corp_listcode_id'
         }, {
             xtype: 'textfield',
-            name: 'mi_province',
+            readOnly:true,
             fieldLabel: '省',
-            allowBlank: false
-        }, {
+            name: 'mi_province',
+            id:'corp_province_id'
+        },
+            {
             xtype: 'textfield',
             name: 'mi_city',
             fieldLabel: '市',
-            allowBlank: false
-        },{
+            id:'corp_city_id'
+        },
+            {
             xtype: 'textfield',
             name: 'mi_county',
             fieldLabel: '县',
-            allowBlank: false
-        },{
+            readOnly:true,
+            id:'corp_county_id'
+
+        },
+        {
             xtype: 'datefield',
             name: 'mi_mt_date',
             fieldLabel: '维护时间',
             value: new Date(),
             format: 'Y-m-d H:i:s',
             allowBlank: false
-        },{
+        },
+        {
             xtype: 'combo',
             name: 'mi_cust_type',
             fieldLabel: '企业客户分级（A/B）',
@@ -64,23 +116,27 @@ Ext.define('app.view.workmgr.maintaininfo.MaintaininfoAddView', {
             }),
             displayField: 'type',
             valueField: 'type'
-        },{
+        },
+        {
             xtype: 'datefield',
             name: 'mi_next_date',
             fieldLabel: '下次维护时间',
             value: new Date(),
             format: 'Y-m-d',
             allowBlank: false
-        },{
+        },
+        {
             xtype: 'textareafield',
             name: 'mi_next_plan',
             fieldLabel: '下次维护计划',
             allowBlank: false
-        },{
+        },
+        {
             xtype: 'textareafield',
             name: 'mi_remark',
             fieldLabel: '维护结果'
-        }],
+        }
+        ],
         buttonAlign: "center",
         buttons: [
             {

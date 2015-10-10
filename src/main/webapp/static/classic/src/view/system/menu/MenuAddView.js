@@ -14,9 +14,6 @@ Ext.define('app.view.system.menu.MenuAddView', {
         xtype: 'form',
         bodyPadding: 10,
         layout: 'form',
-
-
-
         items: [
             {
             xtype: 'textfield',

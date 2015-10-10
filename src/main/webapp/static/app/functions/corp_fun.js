@@ -1,4 +1,5 @@
 //政府部门信息管理
+Ext.define('app.functions.corp_fun', {});
 function obt_corp_government_manage_update(corp_id,gov_id) {
     var form_obt_edit = document.getElementById("apply_government_edit");
     Ext.Ajax.request({
@@ -157,12 +158,13 @@ function obt_corp_refinancing_manage_update(corp_id,refi_id) {
 };
 
 //培训信息管理
-function obt_corp_retrain_manage_update(corp_id,retra_id) {
+function obt_corp_retrain_manage_update(corp_id) {
     var form_obt_edit = document.getElementById("apply_retrain_edit");
+
+alert(corp_id);
     Ext.Ajax.request({
-        method: "POST",
         params: {
-            retra_id : retra_id,
+            //retra_id : retra_id,
             retra_corp_id : corp_id,
             retra_mode : form_obt_edit['retra_mode'].value,
             retra_content : form_obt_edit['retra_content'].value,
@@ -170,10 +172,10 @@ function obt_corp_retrain_manage_update(corp_id,retra_id) {
             retra_dt : form_obt_edit['retra_dt'].value,
             retra_requests : form_obt_edit['retra_requests'].value
         },
-        url: 'update_corp_retrain_info',
+        url: '/enter/update_corp_retrain_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
-            Ext.getCmp('grid_retrain_manage').getStore().reload();
+            //Ext.getCmp('grid_retrain_manage').getStore().reload();
         },
         failure: function () {
             Ext.Msg.alert("提示", "保存失败！");

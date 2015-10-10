@@ -198,15 +198,30 @@ public interface CorpDao {
                 where += " and listcode like '%" + para.get("listcode").toString() + "%' ";
 
             where += " ;";
-            return " SELECT id, buslicno, name, unit, legrep, province, city, county, nos, " +
-                    " postal, nature, regcap, bustermfdt, bustremtdt, regdt, list_area, " +
-                    " listcode, listprice, listdt, channels, webchat, staffnum, regist_organ, " +
-                    " regaddr, offaddr, scope, mbus, eprofile, phoinf, remark, indclass1, " +
-                    " indclass2, indclass3, indclass4, csrc_type1, csrc_type2, csrc_type3, " +
-                    " csrc_type4, type_enterp, type_server, type_investors, type_govermt, " +
-                    " demand_rz, demand_px, demand_rl, inputdt, inputid" +
-                    " FROM work.tb_corp " +
-                    " WHERE demand_rl=TRUE " + where;
+//            return " SELECT id, buslicno, name, unit, legrep, province, city, county, nos, " +
+//                    " postal, nature, regcap, bustermfdt, bustremtdt, regdt, list_area, " +
+//                    " listcode, listprice, listdt, channels, webchat, staffnum, regist_organ, " +
+//                    " regaddr, offaddr, scope, mbus, eprofile, phoinf, remark, indclass1, " +
+//                    " indclass2, indclass3, indclass4, csrc_type1, csrc_type2, csrc_type3, " +
+//                    " csrc_type4, type_enterp, type_server, type_investors, type_govermt, " +
+//                    " demand_rz, demand_px, demand_rl, inputdt, inputid" +
+//                    " FROM work.tb_corp " +
+//                    " WHERE demand_rl=TRUE " + where;
+
+            return   "select corp.*,corp_contact.*,corp_finance.*,corp_maintain.*," +
+                    "     corp_government.*,corp_service.*,corp_investors.*," +
+                    "     corp_refinancing.*,corp_rehr.*,corp_retrain.*  from work.tb_corp corp " +
+                    "     inner join work.tb_corp_contact corp_contact on corp.id=corp_contact.cont_corp_id " +
+                    "     inner join work.tb_corp_finance corp_finance on corp.id=corp_finance.fin_corp_id " +
+                    "     left outer join work.tb_corp_maintain corp_maintain on corp.id=corp_maintain.mai_corp_id " +
+//                    "      left outer join work.tb_corp_shareholder corp_shareholder on corp.id=corp_shareholder.gd_corp_id " +
+                    "     left join work.tb_corp_government corp_government on corp.id=corp_government.gov_corp_id " +
+                    "     left join work.tb_corp_service corp_service on corp.id=corp_service.srv_corp_id " +
+                    "     left join work.tb_corp_investors corp_investors on corp.id=corp_investors.inv_corp_id " +
+                    "     left join work.tb_corp_refinancing corp_refinancing on corp.id=corp_refinancing.refi_corp_id " +
+                    "     left join work.tb_corp_rehr corp_rehr on corp.id=corp_rehr.rehr_corp_id " +
+                    "     left join work.tb_corp_retrain corp_retrain on corp.id=corp_retrain.retra_corp_id" +
+                    "     where corp.demand_rl=TRUE " + where;
         }
     }
 

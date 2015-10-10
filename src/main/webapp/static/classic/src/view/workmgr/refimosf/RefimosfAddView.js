@@ -4,12 +4,16 @@
 Ext.define('app.view.workmgr.refimosf.RefimosfAddView', {
     extend: 'Ext.window.Window',
     xtype: 'refimosfaddview',
-    width: 400,
+    width: 500,
     title: '添加融资服务信息',
     constrain: true,
     closable: true,
     modal: true,
     layout: 'fit',
+    requires: [
+        'app.view.workmgr.corp_basic.corp_basic_grid',
+        'app.view.workmgr.corp_basic.corp_basic_query'
+    ],
     items: {  // Let's put an empty grid in just to illustrate fit layout
         xtype: 'form',
         bodyPadding: 10,

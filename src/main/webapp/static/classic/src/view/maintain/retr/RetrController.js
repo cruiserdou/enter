@@ -6,7 +6,8 @@ Ext.define('app.view.maintain.retr.RetrController', {
 
     alias: 'controller.retrcontroller',
     requires: [
-        'app.xtemplate.corp_contact'
+        'app.xtemplate.corp_contact',
+        'app.functions.corp_fun'
     ],
     itemclick: function (this_, record_) {
         var vPanel = Ext.getCmp('retrdetailview_id');
@@ -115,7 +116,9 @@ Ext.define('app.view.maintain.retr.RetrController', {
                     border: false,
                     id: 'corp_retrain_panel',
                     html: '<div id="retrain_manage_corp_retrain">' +
-                    '</div>'
+                    '</div>'+
+                    '<a   style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_retrain_edit({id})">保存</a>'
+
                 },
                 {
                     xtype: 'panel',
@@ -228,8 +231,29 @@ function retrain_close_edit() {
     Ext.getCmp('retrain_edit_id').close();
 }
 
-function save_retrain_edit(corp_id,retra_id) {
+function save_retrain_edit(corp_id) {
+alert(corp_id)
     var form_obt_edit = document.getElementById("apply_retrain_edit");
-    obt_corp_retrain_manage_update(corp_id,retra_id);
-
+    obt_corp_retrain_manage_update(corp_id);
+    //    var form_obt_edit = document.getElementById("apply_retrain_edit");
+    //    Ext.Ajax.request({
+    //        method: "POST",
+    //        params: {
+    //            retra_id : retra_id,
+    //            retra_corp_id : corp_id,
+    //            retra_mode : form_obt_edit['retra_mode'].value,
+    //            retra_content : form_obt_edit['retra_content'].value,
+    //            retra_acc_cost : form_obt_edit['retra_acc_cost'].value,
+    //            retra_dt : form_obt_edit['retra_dt'].value,
+    //            retra_requests : form_obt_edit['retra_requests'].value
+    //        },
+    //        url: '/enter/update_corp_retrain_info',
+    //        success: function () {
+    //            Ext.Msg.alert("提示", "保存成功！");
+    //            Ext.getCmp('grid_retrain_manage').getStore().reload();
+    //        },
+    //        failure: function () {
+    //            Ext.Msg.alert("提示", "保存失败！");
+    //        }
+    //    });
 }

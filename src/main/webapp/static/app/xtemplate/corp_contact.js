@@ -267,10 +267,8 @@ var retrain_manage_con_tpl = new Ext.XTemplate(
     '</tr>',
     '</table>',
     '</form>',
-    '</div>',
-
-    '<a href="#"  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_retrain_edit({id},{retra_id})">保存</a>'
-);
+    '</div>'
+ );
 
 
 
