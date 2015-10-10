@@ -17,39 +17,71 @@ Ext.define('app.view.workmgr.refimosf.RefimosfAddView', {
 
         items: [{
             xtype: 'textfield',
-            name: 'mp_corp_id',
+            name: 'mos_corp_id',
             id: 'corp_id',
             hidden: true
+        }, {
+            xtype: "fieldcontainer", layout: "hbox",
+            items: [
+                {
+                    readOnly:true,
+                    allowBlank:false,
+                    fieldLabel: '企业名称',
+                    name: 'corp_name',
+                    xtype: 'textfield',
+                    labelAlign: 'right',
+                    id: 'corp_name_id'
+                },
+                {
+                    xtype: "button", text: "...",
+                    handler: function () {
+
+                        Ext.create('widget.window', {
+                            title: '企业',
+                            id: 'corp_find_window',
+                            width: 800,
+                            height: 600,
+                            iconCls: 'icon_search',
+                            modal: true,
+                            border: false,
+                            layout: 'border',
+                            items: [
+
+                                {
+                                    xtype: 'corp_basic_queryf',
+                                    region: 'north'
+                                },
+                                {
+                                    xtype: 'corp_basic_gridf',
+                                    region: 'center',
+                                    height: 120
+                                }
+                            ]
+                        }).show(Ext.get('corp_name_id'));
+                    }
+                }
+            ]
         },{
             xtype: 'textfield',
-            name: 'corp_name',
-            id: 'corp_name_id',
-            fieldLabel: '企业名称'
-        }, {
-            xtype: 'textfield',
-            name: 'mp_listcode',
-            fieldLabel: '挂牌代码',
-            allowBlank: false
-        }, {
-            xtype: 'textfield',
-            name: 'mp_province',
+            name: 'mos_cots',
             fieldLabel: '融资产品',
             allowBlank: false
         }, {
             xtype: 'textfield',
-            name: 'mp_city',
+            name: 'mos_amounts',
             fieldLabel: '融资金额',
             allowBlank: false
         },{
             xtype: 'textfield',
-            name: 'mp_county',
+            name: 'mos_mop',
             fieldLabel: '项目经理',
             allowBlank: false
         },{
             xtype: 'textareafield',
-            name: 'remark',
+            name: 'mos_rop',
             fieldLabel: '融资进度'
-        }],
+        }
+        ],
         buttonAlign: "center",
         buttons: [
             {
@@ -61,40 +93,21 @@ Ext.define('app.view.workmgr.refimosf.RefimosfAddView', {
             {
                 text: '保存',
                 handler: function () {
-                    if (Ext.getCmp('rem_id').getValue() == true) {
-                        if (window.localStorage) {
-                            localStorage.account = Ext.getCmp('account_id').getValue();
-                        }
+                    var form = this.up('form').getForm();
+                    if (form.isValid()){
+                        form.submit({
+                            url: '/enter/add_refi_mos_info',
+                            waitMsg: '正在保存数据...',
+                            success: function(form, action){
+                                Ext.Msg.alert("成功", "数据保存成功!");
+                                //重新载入渠道信息
+                                Ext.getCmp('refimosfgridview_id').getStore().reload();
+                            },
+                            failure: function(form, action){
+                                Ext.Msg.alert("失败", "数据保存失败!");
+                            }
+                        });
                     }
-
-                    if (Ext.getCmp('account_id').getValue() != 'admin') {
-                        Ext.Msg.alert('失败', '用户名或密码错误!');
-                        return;
-                    }
-                    if (Ext.getCmp('password_id').getValue() != '1') {
-                        Ext.Msg.alert('失败', '用户名或密码错误!')
-                        return;
-                    }
-
-                    Ext.getCmp('enter_grid_id').getStore().load();
-                    loginWindow.close();
-
-                    //var form = this.up('form').getForm();
-                    //if (form.isValid()) {
-                    //    form.submit({
-                    //        headers: {
-                    //            Authorization: 'Basic bWFyaXNzYTprb2FsYQ=='
-                    //        },
-                    //        success: function () {
-                    //            console.log("ok");
-                    //            Ext.getCmp('enter_grid_id').getStore().load();
-                    //            loginWindow.close();
-                    //        },
-                    //        failure: function () {
-                    //            console.log("no");
-                    //        }
-                    //    })
-                    //}
                 }
             }
         ]

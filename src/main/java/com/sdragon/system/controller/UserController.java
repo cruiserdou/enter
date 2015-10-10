@@ -37,6 +37,7 @@ public class UserController {
     ) throws Exception{
         DataShop dataShop = new DataShop();
         List list = userService.list(name);
+        System.out.println("end");
         dataShop.setList(list);
         dataShop.setSuccess(true);
         return dataShop;
@@ -44,7 +45,7 @@ public class UserController {
 
     /**
      * 解析并返回指定格式数据(如json)
-     * @param userId 传递的参数
+     * @param user 传递的参数
      * @return 返回解析后的数据
      */
 //    @RequestMapping(value = "/{userId}")

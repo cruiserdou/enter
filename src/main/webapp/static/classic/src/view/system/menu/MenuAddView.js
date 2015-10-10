@@ -17,7 +17,8 @@ Ext.define('app.view.system.menu.MenuAddView', {
 
 
 
-        items: [{
+        items: [
+            {
             xtype: 'textfield',
             name: 'id',
             fieldLabel: '菜单ID'
@@ -46,7 +47,13 @@ Ext.define('app.view.system.menu.MenuAddView', {
             name: 'root',
             fieldLabel: '根',
             allowBlank: false
-        },{
+        }, {
+                xtype: 'textfield',
+                fieldLabel: '图标',
+                name: 'iconcls',
+                allowBlank:false
+            },
+            {
             xtype: 'textareafield',
             name: 'remark',
             fieldLabel: '备注'
@@ -62,57 +69,36 @@ Ext.define('app.view.system.menu.MenuAddView', {
             {
                 text: '保存',
                 handler: function () {
-                    if (Ext.getCmp('rem_id').getValue() == true) {
-                        if (window.localStorage) {
-                            localStorage.account = Ext.getCmp('account_id').getValue();
-                        }
-                    }
-
-                    if (Ext.getCmp('account_id').getValue() != 'admin') {
-                        Ext.Msg.alert('失败', '用户名或密码错误!');
-                        return;
-                    }
-                    if (Ext.getCmp('password_id').getValue() != '1') {
-                        Ext.Msg.alert('失败', '用户名或密码错误!')
-                        return;
-                    }
-
-
+                    //if (Ext.getCmp('rem_id').getValue() == true) {
+                    //    if (window.localStorage) {
+                    //        localStorage.account = Ext.getCmp('account_id').getValue();
+                    //    }
+                    //}
+                    //
+                    //if (Ext.getCmp('account_id').getValue() != 'admin') {
+                    //    Ext.Msg.alert('失败', '用户名或密码错误!');
+                    //    return;
+                    //}
+                    //if (Ext.getCmp('password_id').getValue() != '1') {
+                    //    Ext.Msg.alert('失败', '用户名或密码错误!')
+                    //    return;
+                    //}
 
                     var form = this.up('form').getForm();
                     if (form.isValid()){
                         form.submit({
-                            url: 'add_menu_info',
+                            url: '/enter/add_menu_info',
                             waitMsg: '正在保存数据...',
                             success: function(form, action){
                                 Ext.Msg.alert("成功", "数据保存成功!");
                                 //重新载入渠道信息
                                 Ext.getCmp('menugridview_id').getStore().reload();
-                                //Ext.getCmp('enter_grid_id').getStore().load();
-                                loginWindow.close();
                             },
                             failure: function(form, action){
                                 Ext.Msg.alert("失败", "数据保存失败!");
                             }
                         });
                     }
-
-                    //var form = this.up('form').getForm();
-                    //if (form.isValid()) {
-                    //    form.submit({
-                    //        headers: {
-                    //            Authorization: 'Basic bWFyaXNzYTprb2FsYQ=='
-                    //        },
-                    //        success: function () {
-                    //            console.log("ok");
-                    //            Ext.getCmp('enter_grid_id').getStore().load();
-                    //            loginWindow.close();
-                    //        },
-                    //        failure: function () {
-                    //            console.log("no");
-                    //        }
-                    //    })
-                    //}
                 }
             }
         ]

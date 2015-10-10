@@ -16,6 +16,8 @@ public class MenuController {
     @Autowired
     private MenuService menuService;
 
+
+
     @RequestMapping(value = "/menulist",method = RequestMethod.GET)
     public
     @ResponseBody
@@ -24,6 +26,7 @@ public class MenuController {
     ) throws Exception{
         DataShop dataShop = new DataShop();
         List list = menuService.list(text);
+        dataShop.setList(list);
         dataShop.setSuccess(true);
         return dataShop;
     }

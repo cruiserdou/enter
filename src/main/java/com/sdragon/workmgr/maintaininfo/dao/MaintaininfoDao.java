@@ -37,6 +37,8 @@ public interface MaintaininfoDao {
         }
     }
 
+
+
     @Delete(" Delete FROM work.tb_maintain_info  where mi_id = #{mi_id}")
     void delete(@Param(value = "mi_id") Integer mi_id);
 }

@@ -15,12 +15,15 @@ Ext.define('app.view.system.user.UserAddView', {
         bodyPadding: 10,
         layout: 'form',
 
-        items: [{
-            xtype: 'textfield',
-            name: 'id',
-            fieldLabel: '用户ID',
-            hidden: 'true'
-        }, {
+        items: [
+        //    {
+        //    xtype: 'textfield',
+        //    name: 'id',
+        //    fieldLabel: '用户ID',
+        //    hidden: 'true'
+        //},
+
+            {
             xtype: 'textfield',
             name: 'account',
             fieldLabel: '帐号',
@@ -36,21 +39,39 @@ Ext.define('app.view.system.user.UserAddView', {
             name: 'name',
             fieldLabel: '姓名',
             allowBlank: false
-        }, {
-            xtype: 'radiofield',
-            name: 'sex',
-            value: '男',
-            fieldLabel: '性别',
-            boxLabel: '男'
-        }, {
-            xtype: 'radiofield',
-            name: 'sex',
-            value: '女',
-            fieldLabel: '',
-            labelSeparator: '',
-            hideEmptyLabel: false,
-            boxLabel: '女'
-        },{
+        },
+        //    {
+        //    xtype: 'radiofield',
+        //    name: 'sex',
+        //    value: '男',
+        //    fieldLabel: '性别',
+        //    boxLabel: '男'
+        //}, {
+        //    xtype: 'radiofield',
+        //    name: 'sex',
+        //    value: '女',
+        //    fieldLabel: '',
+        //    labelSeparator: '',
+        //    hideEmptyLabel: false,
+        //    boxLabel: '女'
+        //},
+            {
+                xtype: 'container',
+                anchor: '100%',
+                layout: 'column',
+                items: [
+                    {
+                        layout: "column",
+                        fieldLabel: '性&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp别',
+                        labelAlign: 'right',
+                        xtype: 'radiogroup', anchor: '220%', columns: 20, items: [
+                        {boxLabel: "男", name: 'sex', inputValue: '男',checked: true},
+                        {boxLabel: "女", name: 'sex', inputValue: '女'}
+                    ]
+                    }
+                ]
+            },
+            {
             xtype: 'textfield',
             name: 'phone',
             fieldLabel: '手机号',
@@ -64,12 +85,61 @@ Ext.define('app.view.system.user.UserAddView', {
             xtype: 'textareafield',
             name: 'remark',
             fieldLabel: '备注'
-        }, {
-            xtype: 'filefield',
-            name: 'img',
-            fieldLabel: '上传头像',
-            buttonText: '选择'
-        }],
+        } ,
+            {
+                xtype: 'container',
+                anchor: '100%',
+                layout: 'column',
+                items: [
+                    {
+                        xtype:'filefield',
+                        labelAlign: 'right',
+                        fieldLabel:'上传头像',
+                        name:'img',
+                        id:'img',
+                        anchor: '97%',
+                        buttonText:'',
+                        buttonConfig:{
+                            iconCls:'upload'
+                        },
+                        listeners:{
+                            change:function(btn,value){
+                                //是否是规定的图片类型
+                                var img_reg = /\.([jJ][pP][gG])$|\.([jJ][pP][eE][gG])$|\.([gG][iI][fF])小贝$|\.([pP][nN][gG])$|\.([bB][mM][pP])$/;
+                                if (img_reg.test(value)) {
+                                    var img = Ext.getCmp('staffavatar');
+                                    var file = btn.fileInputEl.dom.files[0];
+                                    var url = URL.createObjectURL(file);
+                                    img.setSrc(url);
+                                } else {
+                                    Ext.Msg.alert('提示', '请选择图片类型的文件！');
+                                    Ext.getCmp('url').reset();
+                                    return ;
+                                }
+                            }
+                        }
+                    },
+                    {
+                        xtype: 'fieldset',
+                        width:255,
+                        margin:'10 10 10 10',
+                        title: '图片预览',
+                        defaults: {margin:'10 0 10 20', width: 200,height:150},
+                        items: [
+                            {
+                                xtype: 'image',
+                                id: 'staffavatar',
+                                border:1,
+                                src: 'upload/per.png',
+                                style: {
+                                    borderColor: 'blue',
+                                    borderStyle: 'solid'
+                                }}
+                        ]
+                    }
+                ]
+            }
+        ],
         buttonAlign: "center",
         buttons: [
             {
@@ -81,40 +151,21 @@ Ext.define('app.view.system.user.UserAddView', {
             {
                 text: '保存',
                 handler: function () {
-                    if (Ext.getCmp('rem_id').getValue() == true) {
-                        if (window.localStorage) {
-                            localStorage.account = Ext.getCmp('account_id').getValue();
-                        }
+                    var form = this.up('form').getForm();
+                    if (form.isValid()){
+                        form.submit({
+                            url: '/enter/add_users_info',
+                            waitMsg: '正在保存数据...',
+                            success: function(form, action){
+                                Ext.Msg.alert("成功", "数据保存成功!");
+                                //重新载入渠道信息
+                                Ext.getCmp('usergridview_id').getStore().reload();
+                            },
+                            failure: function(form, action){
+                                Ext.Msg.alert("失败", "数据保存失败!");
+                            }
+                        });
                     }
-
-                    if (Ext.getCmp('account_id').getValue() != 'admin') {
-                        Ext.Msg.alert('失败', '用户名或密码错误!');
-                        return;
-                    }
-                    if (Ext.getCmp('password_id').getValue() != '1') {
-                        Ext.Msg.alert('失败', '用户名或密码错误!')
-                        return;
-                    }
-
-                    Ext.getCmp('enter_grid_id').getStore().load();
-                    loginWindow.close();
-
-                    //var form = this.up('form').getForm();
-                    //if (form.isValid()) {
-                    //    form.submit({
-                    //        headers: {
-                    //            Authorization: 'Basic bWFyaXNzYTprb2FsYQ=='
-                    //        },
-                    //        success: function () {
-                    //            console.log("ok");
-                    //            Ext.getCmp('enter_grid_id').getStore().load();
-                    //            loginWindow.close();
-                    //        },
-                    //        failure: function () {
-                    //            console.log("no");
-                    //        }
-                    //    })
-                    //}
                 }
             }
         ]
