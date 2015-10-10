@@ -48,4 +48,9 @@ public class CorpServiceImpl implements CorpService {
 
     public List<Corp> listServer(String name, String nos, String buslicno, String listcode){ return corpDao.listServer(name, nos, buslicno, listcode);
     }
+
+    @Override
+    public void delete(Integer id){
+        corpDao.delete(id);
+    }
 }

@@ -203,7 +203,7 @@ Ext.define('app.view.maintain.refi.RefiController', {
                         var row = rows[i];
                         var id = row.get('id');
                         Ext.Ajax.request({
-                            url: '/cloudl/dpos/delete',
+                            url: '/enter/deletecorp',
                             params: {
                                 "id": id
                             },

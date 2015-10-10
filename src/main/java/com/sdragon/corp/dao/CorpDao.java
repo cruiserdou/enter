@@ -1,6 +1,7 @@
 package com.sdragon.corp.dao;
 
 import com.sdragon.corp.pojo.Corp;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.springframework.stereotype.Repository;
@@ -275,4 +276,34 @@ public interface CorpDao {
                     " WHERE type_server=TRUE " + where;
         }
     }
+
+    @Delete(" BEGIN;" +
+
+            " delete from work.tb_corp where id  = #{id};" +
+
+            " delete from work.tb_corp_contact where cont_corp_id = #{id};" +
+
+            " delete from work.tb_corp_finance where fin_corp_id = #{id};" +
+
+            " delete from work.tb_corp_government where gov_corp_id = #{id};" +
+
+            " delete from work.tb_corp_investors where inv_corp_id = #{id};" +
+
+            " delete from work.tb_corp_maintain where mai_corp_id = #{id};" +
+
+            " delete from work.tb_corp_refinancing where refi_corp_id = #{id};" +
+
+            " delete from work.tb_corp_rehr where rehr_corp_id = #{id};" +
+
+            " delete from work.tb_corp_retrain where retra_corp_id = #{id};" +
+
+            " delete from work.tb_corp_service where srv_corp_id = #{id};" +
+
+            " delete from work.tb_corp_shareholder where gd_corp_id = #{id};" +
+
+            " COMMIT;")
+    void delete(@Param(value = "id") Integer id);
+
+
+
 }

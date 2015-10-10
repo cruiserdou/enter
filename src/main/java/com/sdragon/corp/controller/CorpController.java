@@ -11,12 +11,12 @@ import java.util.List;
  * Created by dou on 15-9-3.
  */
 @RestController
-@RequestMapping("/corplist")
+//@RequestMapping("/corplist")
 public class CorpController {
     @Autowired
     private CorpService corpService;
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/corplist",method = RequestMethod.POST)
     public
     @ResponseBody
     DataShop listCorp(
@@ -35,5 +35,16 @@ public class CorpController {
         dataShop.setList(list);
         dataShop.setTotal(count);
         return dataShop;
+    }
+
+    @RequestMapping(value = "/deletecorp", method = RequestMethod.POST)
+    public String delete(
+            @RequestParam("id") Integer id
+    )throws Exception{
+
+        System.out.println("start");
+        corpService.delete(id);
+        System.out.println("end");
+        return "success";
     }
 }

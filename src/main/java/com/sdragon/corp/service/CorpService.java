@@ -17,4 +17,6 @@ public interface CorpService {
     List<Corp> listRehr(String name, String nos, String buslicno, String listcode);
     List<Corp> listRetr(String name, String nos, String buslicno, String listcode);
     List<Corp> listServer(String name, String nos, String buslicno, String listcode);
+
+    public void delete(Integer id);
 }
