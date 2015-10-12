@@ -7,13 +7,13 @@ Ext.define('app.view.query.govq.GovQGridView', {
     columnLines: true,
     requires: [
         'app.view.query.govq.GovQController',
-        'app.store.gov.GovStore',
+        'app.store.corpall.CorpGovAllStore',
         'Ext.grid.filters.Filters'
     ],
 
     controller: 'govqcontroller',
     store: {
-        type: 'govstore'
+        type: 'corpgovallstore'
     },
     listeners: {
         itemclick: 'itemclick',
