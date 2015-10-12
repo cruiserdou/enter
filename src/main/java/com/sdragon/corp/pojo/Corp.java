@@ -54,6 +54,26 @@ public class Corp {
     private Date inputdt;
     private int inputid;
 
+    private int rehr_id;
+    private int rehr_corp_id;
+
+    public int getRehr_id() {
+        return rehr_id;
+    }
+
+    public void setRehr_id(int rehr_id) {
+        this.rehr_id = rehr_id;
+    }
+
+    public int getRehr_corp_id() {
+        return rehr_corp_id;
+    }
+
+    public void setRehr_corp_id(int rehr_corp_id) {
+        this.rehr_corp_id = rehr_corp_id;
+    }
+
+
     public int getId() {
         return id;
     }

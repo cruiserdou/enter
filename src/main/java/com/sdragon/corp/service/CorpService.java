@@ -15,7 +15,7 @@ public interface CorpService {
     List<Corp> listGov(String name, String nos, String buslicno, String listcode);
     List<Corp> listInv(String name, String nos, String buslicno, String listcode);
     List<Corp> listRefi(String name, String nos, String buslicno, String listcode);
-    List<CorpRehr> listRehr(String name, String nos, String buslicno, String listcode);
+    List<Corp> listRehr(String name, String nos, String buslicno, String listcode);
     List<Corp> listRetr(String name, String nos, String buslicno, String listcode);
     List<Corp> listServer(String name, String nos, String buslicno, String listcode);
 
