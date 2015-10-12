@@ -15,7 +15,7 @@ public class Maintainplan {
     private String mp_county;
     private Timestamp mp_last_date;
     private String mp_content;
-    private Date mp_result;
+    private String mp_result;
     private String mp_hisdesc;
     private String mp_remark;
     private Timestamp inputdt;
@@ -94,11 +94,11 @@ public class Maintainplan {
         this.mp_content = mp_content;
     }
 
-    public Date getMp_result() {
+    public String getMp_result() {
         return mp_result;
     }
 
-    public void setMp_result(Date mp_result) {
+    public void setMp_result(String mp_result) {
         this.mp_result = mp_result;
     }
 

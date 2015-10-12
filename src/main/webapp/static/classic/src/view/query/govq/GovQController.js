@@ -141,6 +141,7 @@ Ext.define('app.view.query.govq.GovQController', {
                     '<li><a href="#table_assets_finance"  style="font-size:18px;">企业财务信息</a></li>' +
                     '<li><a href="#table_govermt"  style="font-size:18px;">政府部门</a></li>' +
                     '<li><a href="#" style=" text-align: center; font-size:18px;display: block;  margin-top: 16px;  width: 100%;  font-size: 14px;  border: 1px solid #ffffff;  border-radius: 3px;  padding: 0.6em;  cursor: hand;  color: #fff;  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 1px 0px;  background-image: linear-gradient(#f27809, #e14100);  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);" onclick="government_query_close()">关闭</a></li>' +
+
                     '</ul>' +
                     '</div>'
                 }
