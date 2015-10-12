@@ -1,11 +1,6 @@
 package com.sdragon.system.pojo;
 
-import java.util.Date;
 
-/**
- * Created by zhm_zheng on 6/24/15.
- */
-//@Alias("user")
 public class User {
     private int id;
     private String account;
@@ -19,7 +14,7 @@ public class User {
     private String nos;
     private String img;
     private String lastip;
-    private Date lastvisit;
+
 
     public int getId() {
         return id;
@@ -117,11 +112,4 @@ public class User {
         this.lastip = lastip;
     }
 
-    public Date getLastvisit() {
-        return lastvisit;
-    }
-
-    public void setLastvisit(Date lastvisit) {
-        this.lastvisit = lastvisit;
-    }
 }

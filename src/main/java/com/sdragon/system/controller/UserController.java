@@ -29,7 +29,7 @@ public class UserController {
      *
      * @return 返回指定的页面
      */
-    @RequestMapping(value = "/userslist",method = GET)
+    @RequestMapping(value = "/userslist",method = RequestMethod.GET)
     public
     @ResponseBody
     DataShop listUsers(HttpServletRequest request,
@@ -37,11 +37,12 @@ public class UserController {
     ) throws Exception{
         DataShop dataShop = new DataShop();
         List list = userService.list(name);
-        System.out.println("end");
         dataShop.setList(list);
         dataShop.setSuccess(true);
         return dataShop;
     }
+
+
 
     /**
      * 解析并返回指定格式数据(如json)

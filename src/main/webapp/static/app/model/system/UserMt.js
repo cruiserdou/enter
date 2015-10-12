@@ -7,12 +7,16 @@ Ext.define('app.model.system.UserMt', {
         {name: 'id'},
         {name: 'account'},
         {name: 'password'},
-        {name: 'name'},
         {name: 'sex'},
+        {name: 'name'},
         {name: 'phone'},
         {name: 'address'},
-        {name: 'card'},
+        {name: 'deptid'},
         {name: 'img'},
+        {name: 'nos'},
+        {name: 'lastip'},
         {name: 'remark'}
     ]
 });
+
+

@@ -4,11 +4,11 @@
 
 <mapper namespace="com.sdragon.system.dao.UserDao">
     <select id="list" resultType="user">
-        select id,login_name loginName,user_name userName,password,telephone,email,is_enable enable,is_block block ,is_admin admin,birthday from work.t_user
+        select id, account, password, sex, phone, address, deptid, remark, name, nos, img, lastip  FROM work.users
         order by id desc
     </select>
     <select id="getById" parameterType="long" resultType="user">
-        select id,login_name loginName,user_name userName,password,telephone,email,is_enable enable,is_block block ,is_admin admin,birthday from work.t_user
+        select id, account, password, sex, phone, address, deptid, remark, name, nos, img, lastip  FROM work.users
         WHERE id = #{id}
     </select>
 </mapper>
