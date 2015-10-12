@@ -228,8 +228,7 @@ function rehr_close_edit() {
     Ext.getCmp('rehr_edit_id').close();
 }
 
-function save_rehr_edit(corp_id,rehr_id) {
+function save_rehr_edit(rehr_id) {
     var form_obt_edit = document.getElementById("apply_rehr_edit");
-    obt_corp_rehr_manage_update(corp_id,rehr_id);
-
+    obt_corp_rehr_manage_update(rehr_id);
 }

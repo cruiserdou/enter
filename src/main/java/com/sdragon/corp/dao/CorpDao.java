@@ -1,6 +1,7 @@
 package com.sdragon.corp.dao;
 
 import com.sdragon.corp.pojo.Corp;
+import com.sdragon.corp.pojo.CorpRehr;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;
@@ -178,7 +179,7 @@ public interface CorpDao {
 
 
     @SelectProvider(type = CorpRehrDaoEmberSql.class, method = "listRehrCorp")
-    List<Corp> listRehr(
+    List<CorpRehr> listRehr(
             @Param(value = "name") String name,
             @Param(value = "nos") String nos,
             @Param(value = "buslicno") String buslicno,

@@ -227,14 +227,11 @@ Ext.define('app.view.maintain.refi.RefiController', {
 
 function refinancing_close_edit() {
     Ext.getCmp('refinancing_edit_id').close();
-
 }
 
 
 
-function save_refinancing_edit(corp_id,refi_id) {
-
+function save_refinancing_edit(refi_id) {
     var form_obt_edit = document.getElementById("apply_refinancing_edit");
-    obt_corp_refinancing_manage_update(corp_id,refi_id);
-
+    obt_corp_refinancing_manage_update(refi_id);
 }

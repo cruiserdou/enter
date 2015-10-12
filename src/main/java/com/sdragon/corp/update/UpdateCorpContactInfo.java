@@ -26,7 +26,7 @@ public class UpdateCorpContactInfo {
     @ResponseBody
     DataShop getShopInJSON(
             @RequestParam(value = "cont_id", required = false) Integer  cont_id,
-            @RequestParam(value = "cont_corp_id", required = false) Integer  cont_corp_id,
+//            @RequestParam(value = "cont_corp_id", required = false) Integer  cont_corp_id,
             @RequestParam(value = "cont_name", required = false) String cont_name,
             @RequestParam(value = "cont_psotion", required = false) String cont_psotion,
             @RequestParam(value = "cont_edoctype", required = false) String cont_edoctype,
@@ -59,24 +59,23 @@ public class UpdateCorpContactInfo {
             conn = DriverManager.getConnection(url, user, password);
 
             String sql = "UPDATE work.tb_corp_contact\n" +
-                    "   SET cont_corp_id=?, cont_name=?, cont_psotion=?, cont_edoctype=?, \n" +
+                    "   SET  cont_name=?, cont_psotion=?, cont_edoctype=?, \n" +
                     "       cont_edocnum=?, cont_ephone=?, cont_efax=?, cont_eemail=?, cont_eqq=?, \n" +
                     "       cont_webchat=?, cont_tel=?, cont_bz=? " +
                     "  where cont_id=?";
             pst = conn.prepareStatement(sql);
-            pst.setInt(1, cont_corp_id);
-            pst.setString(2, cont_name);
-            pst.setString(3, cont_psotion);
-            pst.setString(4, cont_edoctype);
-            pst.setString(5, cont_edocnum);
-            pst.setString(6, cont_ephone);
-            pst.setString(7, cont_efax);
-            pst.setString(8, cont_eemail);
-            pst.setString(9, cont_eqq);
-            pst.setString(10, cont_webchat);
-            pst.setString(11, cont_tel);
-            pst.setString(12, cont_bz);;
-            pst.setInt(13, cont_id);
+            pst.setString(1, cont_name);
+            pst.setString(2, cont_psotion);
+            pst.setString(3, cont_edoctype);
+            pst.setString(4, cont_edocnum);
+            pst.setString(5, cont_ephone);
+            pst.setString(6, cont_efax);
+            pst.setString(7, cont_eemail);
+            pst.setString(8, cont_eqq);
+            pst.setString(9, cont_webchat);
+            pst.setString(10, cont_tel);
+            pst.setString(11, cont_bz);;
+            pst.setInt(11, cont_id);
             pst.executeUpdate();
 
 

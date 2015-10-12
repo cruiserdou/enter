@@ -26,8 +26,8 @@ public class UpdateCorpRetrainInfo {
     public
     @ResponseBody
     DataShop getShopInJSON(
-//            @RequestParam(value = "retra_id", required = false) Integer  retra_id,
-            @RequestParam(value = "retra_corp_id", required = false) Integer  retra_corp_id,
+            @RequestParam(value = "retra_id", required = false) Integer  retra_id,
+//            @RequestParam(value = "retra_corp_id", required = false) Integer  retra_corp_id,
             @RequestParam(value = "retra_mode", required = false) String  retra_mode,
             @RequestParam(value = "retra_content", required = false) String  retra_content,
             @RequestParam(value = "retra_acc_cost", required = false) BigDecimal retra_acc_cost,
@@ -56,7 +56,7 @@ public class UpdateCorpRetrainInfo {
             String sql = "UPDATE work.tb_corp_retrain\n" +
                     "   SET   retra_mode=?, retra_content=?, retra_acc_cost=?, \n" +
                     "       retra_dt=?, retra_requests=? " +
-                    "  where retra_corp_id = ?";
+                    "  where retra_id = ?";
             pst = conn.prepareStatement(sql);
 //            pst.setInt(1, retra_corp_id);
             pst.setString(1,  retra_mode);
@@ -67,7 +67,7 @@ public class UpdateCorpRetrainInfo {
                 d_retra_dt = java.sql.Date.valueOf( retra_dt);
             pst.setDate(4, d_retra_dt);
             pst.setString(5,  retra_requests);
-            pst.setInt(6, retra_corp_id);
+            pst.setInt(6, retra_id);
             pst.executeUpdate();
 
 

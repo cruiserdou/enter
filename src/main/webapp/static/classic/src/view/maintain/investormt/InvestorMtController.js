@@ -229,12 +229,11 @@ Ext.define('app.view.maintain.investormt.InvestorMtController', {
 
 function close_investors_edit_from() {
     Ext.getCmp('investors_edit_id').close();
-
 }
 
 
 
-function save_investors_edit(corp_id,inv_id) {
+function save_investors_edit(inv_id) {
     var form_obt_apply = document.getElementById("investors_form");
-    obt_corp_investors_manage_update(corp_id,inv_id);
+    obt_corp_investors_manage_update(inv_id);
 }

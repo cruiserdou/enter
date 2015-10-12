@@ -26,7 +26,7 @@ public class UpdateCorpInvestorsInfo {
     @ResponseBody
     DataShop getShopInJSON(
             @RequestParam(value = "inv_id", required = false) Integer  inv_id,
-            @RequestParam(value = "inv_corp_id", required = false) Integer  inv_corp_id,
+//            @RequestParam(value = "inv_corp_id", required = false) Integer  inv_corp_id,
             @RequestParam(value = "inv_domain", required = false) String inv_domain,
             @RequestParam(value = "inv_csrc_type1", required = false) String inv_csrc_type1,
             @RequestParam(value = "inv_csrc_type2", required = false) String inv_csrc_type2,
@@ -68,35 +68,34 @@ public class UpdateCorpInvestorsInfo {
             conn = DriverManager.getConnection(url, user, password);
 
             String sql = "UPDATE work.tb_corp_investors\n" +
-                    "   SET   inv_corp_id=?, inv_domain=?, inv_csrc_type1=?, inv_csrc_type2=?, \n" +
+                    "   SET   inv_domain=?, inv_csrc_type1=?, inv_csrc_type2=?, \n" +
                     "       inv_csrc_type3=?, inv_csrc_type4=?, inv_indclass1=?, inv_indclass2=?, \n" +
                     "       inv_indclass3=?, inv_indclass4=?, inv_contact=?, inv_psotion=?, \n" +
                     "       inv_doctype=?, inv_docnum=?, inv_phone=?, inv_fax=?, inv_email=?, \n" +
                     "       inv_qq=?, inv_webchat=?, inv_tel=?, inv_remark=?" +
                     "  where inv_id = ?";
             pst = conn.prepareStatement(sql);
-            pst.setInt(1, inv_corp_id);
-            pst.setString(2, inv_domain);
-            pst.setString(3, inv_csrc_type1);
-            pst.setString(4, inv_csrc_type2);
-            pst.setString(5, inv_csrc_type3);
-            pst.setString(6, inv_csrc_type4);
-            pst.setString(7, inv_indclass1);
-            pst.setString(8, inv_indclass2);
-            pst.setString(9, inv_indclass3);
-            pst.setString(10, inv_indclass4);
-            pst.setString(11, inv_contact);
-            pst.setString(12, inv_psotion);
-            pst.setString(13, inv_doctype);
-            pst.setString(14, inv_docnum);
-            pst.setString(15, inv_phone);
-            pst.setString(16, inv_fax);
-            pst.setString(17, inv_email);
-            pst.setString(18, inv_qq);
-            pst.setString(19, inv_webchat);
-            pst.setString(20, inv_tel);
-            pst.setString(21, inv_remark);
-            pst.setInt(22, inv_id);
+            pst.setString(1, inv_domain);
+            pst.setString(2, inv_csrc_type1);
+            pst.setString(3, inv_csrc_type2);
+            pst.setString(4, inv_csrc_type3);
+            pst.setString(5, inv_csrc_type4);
+            pst.setString(6, inv_indclass1);
+            pst.setString(7, inv_indclass2);
+            pst.setString(8, inv_indclass3);
+            pst.setString(9, inv_indclass4);
+            pst.setString(10, inv_contact);
+            pst.setString(11, inv_psotion);
+            pst.setString(12, inv_doctype);
+            pst.setString(13, inv_docnum);
+            pst.setString(14, inv_phone);
+            pst.setString(15, inv_fax);
+            pst.setString(16, inv_email);
+            pst.setString(17, inv_qq);
+            pst.setString(18, inv_webchat);
+            pst.setString(19, inv_tel);
+            pst.setString(20, inv_remark);
+            pst.setInt(21, inv_id);
             pst.executeUpdate();
 
 

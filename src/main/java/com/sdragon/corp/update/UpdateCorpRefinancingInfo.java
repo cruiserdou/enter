@@ -26,7 +26,7 @@ public class UpdateCorpRefinancingInfo {
     @ResponseBody
     DataShop getShopInJSON(
             @RequestParam(value = "refi_id", required = false) Integer  refi_id,
-            @RequestParam(value = "refi_corp_id", required = false) Integer  refi_corp_id,
+//            @RequestParam(value = "refi_corp_id", required = false) Integer  refi_corp_id,
             @RequestParam(value = "refi_amounts", required = false) String refi_amounts,
             @RequestParam(value = "refi_use", required = false) String refi_use,
             @RequestParam(value = "refi_financ", required = false) String refi_financ,
@@ -55,22 +55,21 @@ public class UpdateCorpRefinancingInfo {
             conn = DriverManager.getConnection(url, user, password);
 
             String sql = "UPDATE work.tb_corp_refinancing\n" +
-                    "   SET   refi_corp_id=?, refi_amounts=?, refi_use=?, refi_financ=?, \n" +
+                    "   SET  refi_amounts=?, refi_use=?, refi_financ=?, \n" +
                     "       refi_security=?, refi_acc_cost=?, refi_deadline=?, refi_desc=? " +
                     "  where refi_id = ?";
             pst = conn.prepareStatement(sql);
-            pst.setInt(1, refi_corp_id);
-            pst.setString(2, refi_amounts);
-            pst.setString(3, refi_use);
-            pst.setString(4, refi_financ);
-            pst.setString(5, refi_security);
-            pst.setString(6, refi_acc_cost);
+            pst.setString(1, refi_amounts);
+            pst.setString(2, refi_use);
+            pst.setString(3, refi_financ);
+            pst.setString(4, refi_security);
+            pst.setString(5, refi_acc_cost);
             java.sql.Date d_refi_deadline = null;
             if (refi_deadline != null && refi_deadline.length() > 2)
                 d_refi_deadline = java.sql.Date.valueOf(refi_deadline);
-            pst.setDate(7, d_refi_deadline);
-            pst.setString(8, refi_desc);
-            pst.setInt(9, refi_id);
+            pst.setDate(6, d_refi_deadline);
+            pst.setString(7, refi_desc);
+            pst.setInt(8, refi_id);
             pst.executeUpdate();
 
 

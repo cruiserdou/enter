@@ -227,10 +227,7 @@ function government_close_edit() {
     Ext.getCmp('government_edit_id').close();
 
 }
-function save_government_edit(corp_id,gov_id) {
-
+function save_government_edit(gov_id) {
     var form_obt_edit = document.getElementById("apply_government_edit");
-    obt_corp_government_manage_update(corp_id,gov_id);
-
-
+    obt_corp_government_manage_update(gov_id);
 }

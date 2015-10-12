@@ -44,7 +44,7 @@ var  corp_service_con_tpl = new Ext.XTemplate(
     '</table>',
     '</form>',
     '</div>',
-    '<a href="#"  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_service_edit({id},{srv_id})">保存</a>'
+    '<a  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_service_edit({srv_id})">保存</a>'
 
 );
 
@@ -139,7 +139,7 @@ var  corp_investors_con_tpl = new Ext.XTemplate(
     '</form>',
     '</div>',
 
-    '<a href="#"  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_investors_edit({id},{inv_id})">保存</a>'
+    '<a  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_investors_edit({inv_id})">保存</a>'
 
 );
 
@@ -198,7 +198,7 @@ var  corp_government_con_tpl = new Ext.XTemplate(
     '</table>',
     '</form>',
     '</div>',
-    '<a href="#"  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_government_edit({id},{gov_id})">保存</a>'
+    '<a  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_government_edit({gov_id})">保存</a>'
 
 );
 
@@ -235,7 +235,7 @@ var corp_refinancing_con_tpl = new Ext.XTemplate(
     '</form>',
     '</div>',
 
-    '<a href="#"  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_refinancing_edit({id},{refi_id})">保存</a>'
+    '<a  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_refinancing_edit({refi_id})">保存</a>'
 
 );
 
@@ -267,8 +267,10 @@ var retrain_manage_con_tpl = new Ext.XTemplate(
     '</tr>',
     '</table>',
     '</form>',
-    '</div>'
- );
+    '</div>',
+    '<a   style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_retrain_edit({retra_id})">保存</a>'
+
+);
 
 
 
@@ -301,5 +303,5 @@ var corp_rehr_con_tpl = new Ext.XTemplate(
     '</form>',
     '</div>',
 
-    '<a href="#"  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_rehr_edit({id},{rehr_id})">保存</a>'
+    '<a   style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_rehr_edit({rehr_id})">保存</a>'
 );

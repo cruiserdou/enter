@@ -1,12 +1,12 @@
 //政府部门信息管理
 Ext.define('app.functions.corp_fun', {});
-function obt_corp_government_manage_update(corp_id,gov_id) {
+function obt_corp_government_manage_update(gov_id) {
     var form_obt_edit = document.getElementById("apply_government_edit");
     Ext.Ajax.request({
         method: "POST",
         params: {
             gov_id : gov_id,
-            gov_corp_id : corp_id,
+            //gov_corp_id : corp_id,
             gov_domain : form_obt_edit['gov_domain'].value,
             gov_office : form_obt_edit['gov_office'].value,
             gov_desc : form_obt_edit['gov_desc'].value,
@@ -22,7 +22,7 @@ function obt_corp_government_manage_update(corp_id,gov_id) {
             gov_tel : form_obt_edit['gov_tel'].value,
             gov_remark : form_obt_edit['gov_remark'].value
         },
-        url: 'update_corp_government_info',
+        url: '/enter/update_corp_government_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
             Ext.getCmp('grid_government_manage').getStore().reload();
@@ -34,13 +34,13 @@ function obt_corp_government_manage_update(corp_id,gov_id) {
 };
 
 //投资人信息管理
-function obt_corp_investors_manage_update(corp_id,inv_id) {
+function obt_corp_investors_manage_update(inv_id) {
     var form_obt_edit = document.getElementById("investors_form");
     Ext.Ajax.request({
         method: "POST",
         params: {
             inv_id : inv_id,
-            inv_corp_id :corp_id,
+            //inv_corp_id :corp_id,
             inv_domain : form_obt_edit['inv_domain'].value,
             inv_csrc_type1 : form_obt_edit['inv_csrc_type1'].value,
             inv_csrc_type2 : form_obt_edit['inv_csrc_type2'].value,
@@ -62,7 +62,7 @@ function obt_corp_investors_manage_update(corp_id,inv_id) {
             inv_tel : form_obt_edit['inv_tel'].value,
             inv_remark : form_obt_edit['inv_remark'].value
         },
-        url: 'update_corp_investors_info',
+        url: '/enter/update_corp_investors_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
             Ext.getCmp('grid_investors_manage').getStore().reload();
@@ -74,13 +74,13 @@ function obt_corp_investors_manage_update(corp_id,inv_id) {
 };
 
 //服务机构信息管理
-function obt_corp_service_manage_update(corp_id,srv_id) {
+function obt_corp_service_manage_update(srv_id) {
     var form_obt_edit = document.getElementById("apply_service_edit");
     Ext.Ajax.request({
         method: "POST",
         params: {
             srv_id : srv_id,
-            srv_corp_id :corp_id,
+            //srv_corp_id :corp_id,
             srv_name : form_obt_edit['srv_name'].value,
             srv_type : form_obt_edit['srv_type'].value,
             srv_content : form_obt_edit['srv_content'].value,
@@ -92,7 +92,7 @@ function obt_corp_service_manage_update(corp_id,srv_id) {
             srv_descs : form_obt_edit['srv_descs'].value,
             srv_remark : form_obt_edit['srv_remark'].value
         },
-        url: 'update_corp_service_info',
+        url: '/enter/update_corp_service_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
             Ext.getCmp('grid_service_manage').getStore().reload();
@@ -104,13 +104,13 @@ function obt_corp_service_manage_update(corp_id,srv_id) {
 };
 
 //人力资源信息管理
-function obt_corp_rehr_manage_update(corp_id,rehr_id) {
+function obt_corp_rehr_manage_update(rehr_id) {
     var form_obt_edit = document.getElementById("apply_rehr_edit");
     Ext.Ajax.request({
         method: "POST",
         params: {
             rehr_id : rehr_id,
-            rehr_corp_id : corp_id,
+            //rehr_corp_id : corp_id,
             rehr_post : form_obt_edit['rehr_post'].value,
             rehr_num : form_obt_edit['rehr_num'].value,
             rehr_salary : form_obt_edit['rehr_salary'].value,
@@ -118,7 +118,7 @@ function obt_corp_rehr_manage_update(corp_id,rehr_id) {
             rehr_age_req : form_obt_edit['rehr_age_req'].value,
             rehr_requests : form_obt_edit['rehr_requests'].value
         },
-        url: 'update_corp_rehr_info',
+        url: '/enter/update_corp_rehr_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
             Ext.getCmp('grid_rehr_manage').getStore().reload();
@@ -131,13 +131,13 @@ function obt_corp_rehr_manage_update(corp_id,rehr_id) {
 
 
 //融资信息管理
-function obt_corp_refinancing_manage_update(corp_id,refi_id) {
+function obt_corp_refinancing_manage_update(refi_id) {
     var form_obt_edit = document.getElementById("apply_refinancing_edit");
     Ext.Ajax.request({
         method: "POST",
         params: {
             refi_id : refi_id,
-            refi_corp_id :corp_id,
+            //refi_corp_id :corp_id,
             refi_amounts : form_obt_edit['refi_amounts'].value,
             refi_use : form_obt_edit['refi_use'].value,
             refi_financ : form_obt_edit['refi_financ'].value,
@@ -146,7 +146,7 @@ function obt_corp_refinancing_manage_update(corp_id,refi_id) {
             refi_deadline : form_obt_edit['refi_deadline'].value,
             refi_desc : form_obt_edit['refi_desc'].value
         },
-        url: 'update_corp_refinancing_info',
+        url: '/enter/update_corp_refinancing_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
             Ext.getCmp('grid_refinancing_manage').getStore().reload();
@@ -158,14 +158,14 @@ function obt_corp_refinancing_manage_update(corp_id,refi_id) {
 };
 
 //培训信息管理
-function obt_corp_retrain_manage_update(corp_id) {
+function obt_corp_retrain_manage_update(retra_id) {
     var form_obt_edit = document.getElementById("apply_retrain_edit");
 
 alert(corp_id);
     Ext.Ajax.request({
         params: {
-            //retra_id : retra_id,
-            retra_corp_id : corp_id,
+            retra_id : retra_id,
+            //retra_corp_id : corp_id,
             retra_mode : form_obt_edit['retra_mode'].value,
             retra_content : form_obt_edit['retra_content'].value,
             retra_acc_cost : form_obt_edit['retra_acc_cost'].value,
@@ -236,7 +236,7 @@ function obt_corp_update(corp_id) {
             demand_rl : form_obt_edit['demand_rl'].checked
             //inputdt : form_obt_edit['inputdt'].value
         },
-        url: 'update_corp_info',
+        url: '/enter/update_corp_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -247,14 +247,14 @@ function obt_corp_update(corp_id) {
 };
 
 //联系人信息更新
-function obt_corp_contact_update(corp_id,cont_id) {
+function obt_corp_contact_update(cont_id) {
     var form_obt_edit = document.getElementById("apply_corp_form_edit");
 
     Ext.Ajax.request({
         method: "POST",
         params: {
             cont_id : cont_id,
-            cont_corp_id : corp_id,
+            //cont_corp_id : corp_id,
             cont_name : form_obt_edit['cont_name'].value,
             cont_psotion : form_obt_edit['cont_psotion'].value,
             cont_edoctype : form_obt_edit['cont_edoctype'].value,
@@ -267,7 +267,7 @@ function obt_corp_contact_update(corp_id,cont_id) {
             cont_tel : form_obt_edit['cont_tel'].value,
             cont_bz : form_obt_edit['cont_bz'].value
         },
-        url: 'update_corp_contact_info',
+        url: '/enter/update_corp_contact_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -278,7 +278,7 @@ function obt_corp_contact_update(corp_id,cont_id) {
 };
 
 //股东信息更新
-function obt_corp_shareholder_update(corp_id,gd_id) {
+function obt_corp_shareholder_update(gd_id) {
 
 
     var tab=document.getElementById("table_corp_sh");
@@ -291,7 +291,7 @@ function obt_corp_shareholder_update(corp_id,gd_id) {
                 method: "POST",
                 params: {
                     gd_id : gd_id,
-                    gd_corp_id : corp_id,
+                    //gd_corp_id : corp_id,
                     gd_shtype : rows[i].cells[0].innerHTML,
                     gd_shname : rows[i].cells[1].innerHTML,
                     gd_shdoctype : rows[i].cells[2].innerHTML,
@@ -310,7 +310,7 @@ function obt_corp_shareholder_update(corp_id,gd_id) {
                     gd_doctype : "",
                     gd_docnum : ""
                 },
-                url: 'update_corp_shareholder_info',
+                url: '/enter/update_corp_shareholder_info',
                 success: function () {
                     Ext.Msg.alert("提示", "保存成功！");
                 },
@@ -323,13 +323,13 @@ function obt_corp_shareholder_update(corp_id,gd_id) {
 };
 
 //财务信息更新
-function obt_corp_finance_update(corp_id,finid) {
+function obt_corp_finance_update(finid) {
     var form_obt_edit = document.getElementById("apply_corp_form_edit");
     Ext.Ajax.request({
         method: "POST",
         params: {
             finid : finid,
-            fin_corp_id : corp_id,
+            //fin_corp_id : corp_id,
             start_time : form_obt_edit['start_time'].value,
             end_time : form_obt_edit['end_time'].value,
             st_money_fund : form_obt_edit['st_money_fund'].value,
@@ -459,7 +459,7 @@ function obt_corp_finance_update(corp_id,finid) {
             st_hj_fz_owner_right : form_obt_edit['st_hj_fz_owner_right'].value,
             end_hj_fz_owner_right : form_obt_edit['end_hj_fz_owner_right'].value
         },
-        url: 'update_corp_finance_info',
+        url: '/enter/update_corp_finance_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -470,13 +470,13 @@ function obt_corp_finance_update(corp_id,finid) {
 };
 
 //最近一次维护信息更新
-function obt_corp_maintain_update(corp_id,mai_id) {
+function obt_corp_maintain_update(mai_id) {
     var form_obt_edit = document.getElementById("apply_corp_form_edit");
     Ext.Ajax.request({
         method: "POST",
         params: {
             mai_id : mai_id,
-            mai_corp_id : corp_id,
+            //mai_corp_id : corp_id,
             mai_changer_id : form_obt_edit['mai_changer_id'].value,
             mai_changer_dt : form_obt_edit['mai_changer_dt'].value,
             mai_changer_dept : form_obt_edit['mai_changer_dept'].value,
@@ -497,7 +497,7 @@ function obt_corp_maintain_update(corp_id,mai_id) {
             mai_webchat : form_obt_edit['mai_webchat'].value,
             mai_bz : form_obt_edit['mai_bz'].value
         },
-        url: 'update_corp_maintain_info',
+        url: '/enter/update_corp_maintain_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -508,13 +508,13 @@ function obt_corp_maintain_update(corp_id,mai_id) {
 };
 
 //政府部门信息更新
-function obt_corp_government_update(corp_id,gov_id) {
+function obt_corp_government_update(gov_id) {
     var form_obt_edit = document.getElementById("apply_corp_form_edit");
     Ext.Ajax.request({
         method: "POST",
         params: {
             gov_id : gov_id,
-            gov_corp_id : corp_id,
+            //gov_corp_id : corp_id,
             gov_domain : form_obt_edit['gov_domain'].value,
             gov_office : form_obt_edit['gov_office'].value,
             gov_desc : form_obt_edit['gov_desc'].value,
@@ -530,7 +530,7 @@ function obt_corp_government_update(corp_id,gov_id) {
             gov_tel : form_obt_edit['gov_tel'].value,
             gov_remark : form_obt_edit['gov_remark'].value
         },
-        url: 'update_corp_government_info',
+        url: '/enter/update_corp_government_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -541,13 +541,13 @@ function obt_corp_government_update(corp_id,gov_id) {
 };
 
 //投资人信息更新
-function obt_corp_investors_update(corp_id,inv_id) {
+function obt_corp_investors_update(inv_id) {
     var form_obt_edit = document.getElementById("apply_corp_form_edit");
     Ext.Ajax.request({
         method: "POST",
         params: {
             inv_id : inv_id,
-            inv_corp_id :corp_id,
+            //inv_corp_id :corp_id,
             inv_domain : form_obt_edit['inv_domain'].value,
             inv_csrc_type1 : form_obt_edit['inv_csrc_type1'].value,
             inv_csrc_type2 : form_obt_edit['inv_csrc_type2'].value,
@@ -569,7 +569,7 @@ function obt_corp_investors_update(corp_id,inv_id) {
             inv_tel : form_obt_edit['inv_tel'].value,
             inv_remark : form_obt_edit['inv_remark'].value
         },
-        url: 'update_corp_investors_info',
+        url: '/enter/update_corp_investors_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -580,13 +580,13 @@ function obt_corp_investors_update(corp_id,inv_id) {
 };
 
 //服务机构信息更新
-function obt_corp_service_update(corp_id,srv_id) {
+function obt_corp_service_update(srv_id) {
     var form_obt_edit = document.getElementById("apply_corp_form_edit");
     Ext.Ajax.request({
         method: "POST",
         params: {
             srv_id : srv_id,
-            srv_corp_id :corp_id,
+            //srv_corp_id :corp_id,
             srv_name : form_obt_edit['srv_name'].value,
             srv_type : form_obt_edit['srv_type'].value,
             srv_content : form_obt_edit['srv_content'].value,
@@ -598,7 +598,7 @@ function obt_corp_service_update(corp_id,srv_id) {
             srv_descs : form_obt_edit['srv_descs'].value,
             srv_remark : form_obt_edit['srv_remark'].value
         },
-        url: 'update_corp_service_info',
+        url: '/enter/update_corp_service_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -609,13 +609,13 @@ function obt_corp_service_update(corp_id,srv_id) {
 };
 
 //融资信息更新
-function obt_corp_refinancing_update(corp_id,refi_id) {
+function obt_corp_refinancing_update(refi_id) {
     var form_obt_edit = document.getElementById("apply_corp_form_edit");
     Ext.Ajax.request({
         method: "POST",
         params: {
             refi_id : refi_id,
-            refi_corp_id :corp_id,
+            //refi_corp_id :corp_id,
             refi_amounts : form_obt_edit['refi_amounts'].value,
             refi_use : form_obt_edit['refi_use'].value,
             refi_financ : form_obt_edit['refi_financ'].value,
@@ -624,7 +624,7 @@ function obt_corp_refinancing_update(corp_id,refi_id) {
             refi_deadline : form_obt_edit['refi_deadline'].value,
             refi_desc : form_obt_edit['refi_desc'].value
         },
-        url: 'update_corp_refinancing_info',
+        url: '/enter/update_corp_refinancing_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -635,13 +635,13 @@ function obt_corp_refinancing_update(corp_id,refi_id) {
 };
 
 //人力资源信息更新
-function obt_corp_rehr_update(corp_id,rehr_id) {
+function obt_corp_rehr_update(rehr_id) {
     var form_obt_edit = document.getElementById("apply_corp_form_edit");
     Ext.Ajax.request({
         method: "POST",
         params: {
             rehr_id : rehr_id,
-            rehr_corp_id : corp_id,
+            //rehr_corp_id : corp_id,
             rehr_post : form_obt_edit['rehr_post'].value,
             rehr_num : form_obt_edit['rehr_num'].value,
             rehr_salary : form_obt_edit['rehr_salary'].value,
@@ -649,7 +649,7 @@ function obt_corp_rehr_update(corp_id,rehr_id) {
             rehr_age_req : form_obt_edit['rehr_age_req'].value,
             rehr_requests : form_obt_edit['rehr_requests'].value
         },
-        url: 'update_corp_rehr_info',
+        url: '/enter/update_corp_rehr_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -660,20 +660,20 @@ function obt_corp_rehr_update(corp_id,rehr_id) {
 };
 
 //培训信息更新
-function obt_corp_retrain_update(corp_id,retra_id) {
+function obt_corp_retrain_update(retra_id) {
     var form_obt_edit = document.getElementById("apply_corp_form_edit");
     Ext.Ajax.request({
         method: "POST",
         params: {
             retra_id : retra_id,
-            retra_corp_id : corp_id,
+            //retra_corp_id : corp_id,
             retra_mode : form_obt_edit['retra_mode'].value,
             retra_content : form_obt_edit['retra_content'].value,
             retra_acc_cost : form_obt_edit['retra_acc_cost'].value,
             retra_dt : form_obt_edit['retra_dt'].value,
             retra_requests : form_obt_edit['retra_requests'].value
         },
-        url: 'update_corp_retrain_info',
+        url: '/enter/update_corp_retrain_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -733,7 +733,7 @@ function obt_corp_add(corp_id) {
             demand_px : document.getElementById('demand_px').checked,
             demand_rl : document.getElementById('demand_rl').checked
         },
-        url: 'add_corp_info',
+        url: '/enter/add_corp_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -760,7 +760,7 @@ function obt_corp_contact_add(corp_id) {
             cont_tel : document.getElementById('cont_tel').value,
             cont_bz : document.getElementById('cont_bz').value
         },
-        url: 'add_corp_contact_info',
+        url: '/enter/add_corp_contact_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -796,7 +796,7 @@ function obt_corp_shareholder_add(corp_id) {
                     gd_doctype : "",
                     gd_docnum : ""
                 },
-                url: 'add_corp_shareholder_info',
+                url: '/enter/add_corp_shareholder_info',
                 success: function () {
                     Ext.Msg.alert("提示", "保存成功！");
                 },
@@ -941,7 +941,7 @@ function obt_corp_finance_add(corp_id) {
             st_hj_fz_owner_right : document.getElementById('st_hj_fz_owner_right').value,
             end_hj_fz_owner_right : document.getElementById('end_hj_fz_owner_right').value
         },
-        url: 'add_corp_finance_info',
+        url: '/enter/add_corp_finance_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -975,7 +975,7 @@ function obt_corp_maintain_add(corp_id) {
             mai_webchat : document.getElementById('mai_webchat').value,
             mai_bz : document.getElementById('mai_bz').value
         },
-        url: 'add_corp_maintain_info',
+        url: '/enter/add_corp_maintain_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -1004,7 +1004,7 @@ function obt_corp_government_add(corp_id) {
             gov_tel : document.getElementById('gov_tel').value,
             gov_remark : document.getElementById('gov_remark').value
         },
-        url: 'add_corp_government_info',
+        url: '/enter/add_corp_government_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -1039,7 +1039,7 @@ function obt_corp_investors_add(corp_id) {
             inv_tel : document.getElementById('inv_tel').value,
             inv_remark : document.getElementById('inv_remark').value
         },
-        url: 'add_corp_investors_info',
+        url: '/enter/add_corp_investors_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -1064,7 +1064,7 @@ function obt_corp_service_add(corp_id) {
             srv_descs : document.getElementById('srv_descs').value,
             srv_remark : document.getElementById('srv_remark').value
         },
-        url: 'add_corp_service_info',
+        url: '/enter/add_corp_service_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -1086,7 +1086,7 @@ function obt_corp_refinancing_add(corp_id) {
             refi_deadline : document.getElementById('refi_deadline').value,
             refi_desc : document.getElementById('refi_desc').value
         },
-        url: 'add_corp_refinancing_info',
+        url: '/enter/add_corp_refinancing_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -1107,7 +1107,7 @@ function obt_corp_rehr_add(corp_id) {
             rehr_age_req : document.getElementById('rehr_age_req').value,
             rehr_requests : document.getElementById('rehr_requests').value
         },
-        url: 'add_corp_rehr_info',
+        url: '/enter/add_corp_rehr_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },
@@ -1127,7 +1127,7 @@ function obt_corp_retrain_add(corp_id) {
             retra_dt : document.getElementById('retra_dt').value,
             retra_requests : document.getElementById('retra_requests').value
         },
-        url: 'add_corp_retrain_info',
+        url: '/enter/add_corp_retrain_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
         },

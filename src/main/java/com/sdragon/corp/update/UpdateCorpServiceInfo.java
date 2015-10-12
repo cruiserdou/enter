@@ -26,7 +26,7 @@ public class UpdateCorpServiceInfo {
     @ResponseBody
     DataShop getShopInJSON(
             @RequestParam(value = "srv_id", required = false) Integer srv_id,
-            @RequestParam(value = "srv_corp_id", required = false) Integer srv_corp_id,
+//            @RequestParam(value = "srv_corp_id", required = false) Integer srv_corp_id,
             @RequestParam(value = "srv_name", required = false) String srv_name,
             @RequestParam(value = "srv_type", required = false) String srv_type,
             @RequestParam(value = "srv_content", required = false) String srv_content,
@@ -58,23 +58,22 @@ public class UpdateCorpServiceInfo {
             conn = DriverManager.getConnection(url, user, password);
 
             String sql = "UPDATE work.tb_corp_service\n" +
-                    "   SET  srv_corp_id=?, srv_name=?, srv_type=?, srv_content=?, \n" +
+                    "   SET  srv_name=?, srv_type=?, srv_content=?, \n" +
                     "       srv_levels=?, srv_domain=?, srv_penalty=?, srv_examiner=?, srv_post=?, \n" +
                     "       srv_descs=?, srv_remark=?" +
-                    "where srv_id = ?";
+                    "where srv_id=?";
             pst = conn.prepareStatement(sql);
-            pst.setInt(1, srv_corp_id);
-            pst.setString(2, srv_name);
-            pst.setString(3, srv_type);
-            pst.setString(4, srv_content);
-            pst.setString(5, srv_levels);
-            pst.setString(6, srv_domain);
-            pst.setString(7, srv_penalty);
-            pst.setString(8, srv_examiner);
-            pst.setString(9, srv_post);
-            pst.setString(10, srv_descs);
-            pst.setString(11, srv_remark);
-            pst.setInt(12, srv_id);
+            pst.setString(1, srv_name);
+            pst.setString(2, srv_type);
+            pst.setString(3, srv_content);
+            pst.setString(4, srv_levels);
+            pst.setString(5, srv_domain);
+            pst.setString(6, srv_penalty);
+            pst.setString(7, srv_examiner);
+            pst.setString(8, srv_post);
+            pst.setString(9, srv_descs);
+            pst.setString(10, srv_remark);
+            pst.setInt(11, srv_id);
             pst.executeUpdate();
 
 

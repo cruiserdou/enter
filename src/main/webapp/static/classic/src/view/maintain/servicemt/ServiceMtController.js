@@ -14,6 +14,7 @@ Ext.define('app.view.maintain.servicemt.ServiceMtController', {
     },
 
     itemdblclick: function (view, record, item, index, e) {
+
         var mypanel = new Ext.form.FormPanel({
             id: "mypanel",
             width: 820,
@@ -23,6 +24,7 @@ Ext.define('app.view.maintain.servicemt.ServiceMtController', {
             bodyStyle: 'overflow-x:hidden; overflow-y:scroll',
             listeners: {
                 afterrender: function (_this){
+                    var srv_corp_id=record["id"];
                     corp_tpl.append('service_manage_corp',record.data);
                     corp_contact_tpl.append('service_manage_corp_contact',record.data);
                     //corp_shareholder_tpl.append('service_manage_corp_shareholder',record.data);
@@ -116,6 +118,7 @@ Ext.define('app.view.maintain.servicemt.ServiceMtController', {
                     id: 'corp_service_panel',
                     html: '<div id="service_manage_corp_service">' +
                     '</div>'
+
                 },
                 {
                     xtype: 'panel',
@@ -226,15 +229,11 @@ Ext.define('app.view.maintain.servicemt.ServiceMtController', {
 
 function service_close_edit() {
     Ext.getCmp('service_edit_id').close();
-
 }
 
 
 
-function save_service_edit(corp_id,srv_id) {
-
+function save_service_edit(srv_id) {
     var form_obt_edit = document.getElementById("apply_service_edit");
-    obt_corp_service_manage_update(corp_id,srv_id);
-
-
+    obt_corp_service_manage_update(srv_id);
 }

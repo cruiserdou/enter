@@ -27,7 +27,7 @@ public class UpdateCorpRehrInfo {
     @ResponseBody
     DataShop getShopInJSON(
             @RequestParam(value = "rehr_id", required = false) Integer  rehr_id,
-            @RequestParam(value = "rehr_corp_id", required = false) Integer  rehr_corp_id,
+//            @RequestParam(value = "rehr_corp_id", required = false) Integer  rehr_corp_id,
             @RequestParam(value = "rehr_post", required = false) String rehr_post,
             @RequestParam(value = "rehr_num", required = false) String rehr_num,
             @RequestParam(value = "rehr_salary", required = false) BigDecimal rehr_salary,
@@ -55,18 +55,17 @@ public class UpdateCorpRehrInfo {
             conn = DriverManager.getConnection(url, user, password);
 
             String sql = "UPDATE work.tb_corp_rehr\n" +
-                    "   SET   rehr_corp_id=?, rehr_post=?, rehr_num=?, rehr_salary=?, \n" +
+                    "   SET    rehr_post=?, rehr_num=?, rehr_salary=?, \n" +
                     "       rehr_sex_req=?, rehr_age_req=?, rehr_requests=? " +
                     "  where rehr_id = ?";
             pst = conn.prepareStatement(sql);
-            pst.setInt(1, rehr_corp_id);
-            pst.setString(2, rehr_post);
-            pst.setString(3, rehr_num);
-            pst.setBigDecimal(4, rehr_salary);
-            pst.setString(5, rehr_sex_req);
-            pst.setString(6, rehr_age_req);
-            pst.setString(7, rehr_requests);
-            pst.setInt(8, rehr_id);
+            pst.setString(1, rehr_post);
+            pst.setString(2, rehr_num);
+            pst.setBigDecimal(3, rehr_salary);
+            pst.setString(4, rehr_sex_req);
+            pst.setString(5, rehr_age_req);
+            pst.setString(6, rehr_requests);
+            pst.setInt(7, rehr_id);
             pst.executeUpdate();
 
 

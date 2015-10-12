@@ -26,7 +26,7 @@ public class UpdateCorpGovernmentInfo {
     @ResponseBody
     DataShop getShopInJSON(
             @RequestParam(value = "gov_id", required = false) Integer  gov_id,
-            @RequestParam(value = "gov_corp_id", required = false) Integer  gov_corp_id,
+//            @RequestParam(value = "gov_corp_id", required = false) Integer  gov_corp_id,
             @RequestParam(value = "gov_domain", required = false) String gov_domain,
             @RequestParam(value = "gov_office", required = false) String gov_office,
             @RequestParam(value = "gov_desc", required = false) String gov_desc,
@@ -62,27 +62,26 @@ public class UpdateCorpGovernmentInfo {
             conn = DriverManager.getConnection(url, user, password);
 
             String sql = "UPDATE work.tb_corp_government\n" +
-                    "   SET  gov_corp_id=?, gov_domain=?, gov_office=?, gov_desc=?, \n" +
+                    "   SET  gov_domain=?, gov_office=?, gov_desc=?, \n" +
                     "       gov_contact=?, gov_psotion=?, gov_doctype=?, gov_docnum=?, gov_phone=?, \n" +
                     "       gov_fax=?, gov_email=?, gov_qq=?, gov_webchat=?, gov_tel=?, gov_remark=? " +
                     "  where gov_id = ?";
             pst = conn.prepareStatement(sql);
-            pst.setInt(1, gov_corp_id);
-            pst.setString(2, gov_domain);
-            pst.setString(3, gov_office);
-            pst.setString(4, gov_desc);
-            pst.setString(5, gov_contact);
-            pst.setString(6, gov_psotion);
-            pst.setString(7, gov_doctype);
-            pst.setString(8, gov_docnum);
-            pst.setString(9, gov_phone);
-            pst.setString(10, gov_fax);
-            pst.setString(11, gov_email);
-            pst.setString(12, gov_qq);
-            pst.setString(13, gov_webchat);
-            pst.setString(14, gov_tel);
-            pst.setString(15, gov_remark);
-            pst.setInt(16, gov_id);
+            pst.setString(1, gov_domain);
+            pst.setString(2, gov_office);
+            pst.setString(3, gov_desc);
+            pst.setString(4, gov_contact);
+            pst.setString(5, gov_psotion);
+            pst.setString(6, gov_doctype);
+            pst.setString(7, gov_docnum);
+            pst.setString(8, gov_phone);
+            pst.setString(9, gov_fax);
+            pst.setString(10, gov_email);
+            pst.setString(11, gov_qq);
+            pst.setString(12, gov_webchat);
+            pst.setString(13, gov_tel);
+            pst.setString(14, gov_remark);
+            pst.setInt(15, gov_id);
             pst.executeUpdate();
 
 

@@ -2,6 +2,7 @@ package com.sdragon.corp.service.impl;
 
 import com.sdragon.corp.dao.CorpDao;
 import com.sdragon.corp.pojo.Corp;
+import com.sdragon.corp.pojo.CorpRehr;
 import com.sdragon.corp.service.CorpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,7 @@ public class CorpServiceImpl implements CorpService {
         return corpDao.listRefi(name, nos, buslicno, listcode);
     }
 
-    public List<Corp> listRehr(String name, String nos, String buslicno, String listcode){
+    public List<CorpRehr> listRehr(String name, String nos, String buslicno, String listcode){
         return corpDao.listRehr(name, nos, buslicno, listcode);
     }
 

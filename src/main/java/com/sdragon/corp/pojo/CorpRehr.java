@@ -5,7 +5,7 @@ import java.sql.Date;
 /**
  * Created by dou on 15-9-3.
  */
-public class CorpRetr {
+public class CorpRehr {
     private int id;
     private String buslicno;
     private String name;
@@ -54,13 +54,80 @@ public class CorpRetr {
     private Date inputdt;
     private int inputid;
 
-    private int retra_id;
-    private int retra_corp_id;
-    private String retra_mode;
-    private String retra_content;
-    private Number retra_acc_cost;
-    private Date retra_dt;
-    private String retra_requests;
+    private int rehr_id;
+    private int rehr_corp_id;
+    private String rehr_post;
+    private String rehr_num;
+    private Number rehr_salary;
+    private String rehr_sex_req;
+    private String rehr_age_req;
+    private String rehr_requests;
+
+    public int getRehr_id() {
+        return rehr_id;
+    }
+
+    public void setRehr_id(int rehr_id) {
+        this.rehr_id = rehr_id;
+    }
+
+    public int getRehr_corp_id() {
+        return rehr_corp_id;
+    }
+
+    public void setRehr_corp_id(int rehr_corp_id) {
+        this.rehr_corp_id = rehr_corp_id;
+    }
+
+    public String getRehr_post() {
+        return rehr_post;
+    }
+
+    public void setRehr_post(String rehr_post) {
+        this.rehr_post = rehr_post;
+    }
+
+    public String getRehr_num() {
+        return rehr_num;
+    }
+
+    public void setRehr_num(String rehr_num) {
+        this.rehr_num = rehr_num;
+    }
+
+    public Number getRehr_salary() {
+        return rehr_salary;
+    }
+
+    public void setRehr_salary(Number rehr_salary) {
+        this.rehr_salary = rehr_salary;
+    }
+
+    public String getRehr_sex_req() {
+        return rehr_sex_req;
+    }
+
+    public void setRehr_sex_req(String rehr_sex_req) {
+        this.rehr_sex_req = rehr_sex_req;
+    }
+
+    public String getRehr_age_req() {
+        return rehr_age_req;
+    }
+
+    public void setRehr_age_req(String rehr_age_req) {
+        this.rehr_age_req = rehr_age_req;
+    }
+
+    public String getRehr_requests() {
+        return rehr_requests;
+    }
+
+    public void setRehr_requests(String rehr_requests) {
+        this.rehr_requests = rehr_requests;
+    }
+
+
 
 
 
@@ -440,59 +507,4 @@ public class CorpRetr {
         this.inputid = inputid;
     }
 
-    public int getRetra_id() {
-        return retra_id;
-    }
-
-    public void setRetra_id(int retra_id) {
-        this.retra_id = retra_id;
-    }
-
-    public int getRetra_corp_id() {
-        return retra_corp_id;
-    }
-
-    public void setRetra_corp_id(int retra_corp_id) {
-        this.retra_corp_id = retra_corp_id;
-    }
-
-    public String getRetra_mode() {
-        return retra_mode;
-    }
-
-    public void setRetra_mode(String retra_mode) {
-        this.retra_mode = retra_mode;
-    }
-
-    public String getRetra_content() {
-        return retra_content;
-    }
-
-    public void setRetra_content(String retra_content) {
-        this.retra_content = retra_content;
-    }
-
-    public Number getRetra_acc_cost() {
-        return retra_acc_cost;
-    }
-
-    public void setRetra_acc_cost(Number retra_acc_cost) {
-        this.retra_acc_cost = retra_acc_cost;
-    }
-
-    public Date getRetra_dt() {
-        return retra_dt;
-    }
-
-    public void setRetra_dt(Date retra_dt) {
-        this.retra_dt = retra_dt;
-    }
-
-    public String getRetra_requests() {
-        return retra_requests;
-    }
-
-    public void setRetra_requests(String retra_requests) {
-        this.retra_requests = retra_requests;
-    }
 }
