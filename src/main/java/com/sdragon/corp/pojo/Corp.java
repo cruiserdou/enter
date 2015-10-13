@@ -54,8 +54,46 @@ public class Corp {
     private Date inputdt;
     private int inputid;
 
+    private int retra_id;
+    private int retra_corp_id;
     private int rehr_id;
     private int rehr_corp_id;
+    private int refi_id;
+    private int refi_corp_id;
+    private int mai_id;
+    private int mai_corp_id;
+    private int inv_id;
+    private int inv_corp_id;
+    private int gov_id;
+    private int gov_corp_id;
+    private int finid;
+    private int fin_corp_id;
+    private int cont_id;
+    private int cont_corp_id;
+
+    public int getCont_corp_id() {
+        return cont_corp_id;
+    }
+
+    public void setCont_corp_id(int cont_corp_id) {
+        this.cont_corp_id = cont_corp_id;
+    }
+
+    public int getRetra_id() {
+        return retra_id;
+    }
+
+    public void setRetra_id(int retra_id) {
+        this.retra_id = retra_id;
+    }
+
+    public int getRetra_corp_id() {
+        return retra_corp_id;
+    }
+
+    public void setRetra_corp_id(int retra_corp_id) {
+        this.retra_corp_id = retra_corp_id;
+    }
 
     public int getRehr_id() {
         return rehr_id;
@@ -72,6 +110,95 @@ public class Corp {
     public void setRehr_corp_id(int rehr_corp_id) {
         this.rehr_corp_id = rehr_corp_id;
     }
+
+    public int getRefi_id() {
+        return refi_id;
+    }
+
+    public void setRefi_id(int refi_id) {
+        this.refi_id = refi_id;
+    }
+
+    public int getRefi_corp_id() {
+        return refi_corp_id;
+    }
+
+    public void setRefi_corp_id(int refi_corp_id) {
+        this.refi_corp_id = refi_corp_id;
+    }
+
+    public int getMai_id() {
+        return mai_id;
+    }
+
+    public void setMai_id(int mai_id) {
+        this.mai_id = mai_id;
+    }
+
+    public int getMai_corp_id() {
+        return mai_corp_id;
+    }
+
+    public void setMai_corp_id(int mai_corp_id) {
+        this.mai_corp_id = mai_corp_id;
+    }
+
+    public int getInv_id() {
+        return inv_id;
+    }
+
+    public void setInv_id(int inv_id) {
+        this.inv_id = inv_id;
+    }
+
+    public int getInv_corp_id() {
+        return inv_corp_id;
+    }
+
+    public void setInv_corp_id(int inv_corp_id) {
+        this.inv_corp_id = inv_corp_id;
+    }
+
+    public int getGov_id() {
+        return gov_id;
+    }
+
+    public void setGov_id(int gov_id) {
+        this.gov_id = gov_id;
+    }
+
+    public int getGov_corp_id() {
+        return gov_corp_id;
+    }
+
+    public void setGov_corp_id(int gov_corp_id) {
+        this.gov_corp_id = gov_corp_id;
+    }
+
+    public int getFinid() {
+        return finid;
+    }
+
+    public void setFinid(int finid) {
+        this.finid = finid;
+    }
+
+    public int getFin_corp_id() {
+        return fin_corp_id;
+    }
+
+    public void setFin_corp_id(int fin_corp_id) {
+        this.fin_corp_id = fin_corp_id;
+    }
+
+    public int getCont_id() {
+        return cont_id;
+    }
+
+    public void setCont_id(int cont_id) {
+        this.cont_id = cont_id;
+    }
+
 
 
     public int getId() {
