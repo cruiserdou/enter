@@ -50,7 +50,7 @@ Ext.define('app.view.workmgr.refimosf.RefimosfGridView', {
 });
 
 function add_refi_rop(id) {
- 
+
     Ext.create('widget.window', {
         title: '添加进度',
         modal: true,

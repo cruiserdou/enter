@@ -185,7 +185,7 @@ Ext.define('app.view.main.TreeListModel', {
                             leaf: true
                         }, {
                             text: '导入导出',
-                            itype: 'exportview',
+                            itype: 'exportimportview',
                             leaf: true
                         }, {
                             text: '站内信息',

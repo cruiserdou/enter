@@ -41,7 +41,6 @@ Ext.define('app.view.main.Main', {
         'app.view.statis.demand.TrainDmStatis',
         'app.view.statis.demand.HrDmStatis',
 
-        //'app.view.workmgr.Export',
         'app.view.workmgr.FinService',
 
         'app.view.workmgr.InnerInfo',
@@ -49,6 +48,7 @@ Ext.define('app.view.main.Main', {
         'app.view.workmgr.maintaininfo.MaintaininfoView',
         'app.view.workmgr.maintainplan.MaintainplanView',
         'app.view.workmgr.refimosf.RefimosfView',
+        'app.view.workmgr.exportimport.ExportImportView',
         //'app.view.workmgr.export.ExportView',
 
         //'app.view.system.MenuMt',
