@@ -44,14 +44,13 @@ Ext.define('app.view.workmgr.refimosf.RefimosfGridView', {
                 return "<span style='color: #FF4444;' onclick='add_refi_rop(\"" + v + "\")' >添加</span>"
 
             }
-        },
-        {text: '融资进度', width: 150 , dataIndex: 'mos_rop'}
+        }
+        //{text: '融资进度', width: 150 , dataIndex: 'mos_rop'}
     ]
 });
 
 function add_refi_rop(id) {
-
-
+ 
     Ext.create('widget.window', {
         title: '添加进度',
         modal: true,
@@ -138,7 +137,7 @@ function add_refi_rop(id) {
                             var form = this.up('form').getForm();
                             if (form.isValid()) {
                                 form.submit({
-                                    url: 'add_refi_rop_info',
+                                    url: '/enter/add_refi_rop_info',
                                     method: 'POST',
                                     params: {
                                         rop_mos_id: id

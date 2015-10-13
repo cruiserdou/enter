@@ -6,9 +6,14 @@ Ext.define('app.view.workmgr.refimosf.RefimosfController', {
 
     alias: 'controller.refimosfcontroller',
 
-    itemclick: function (this_, record_) {
-        var vPanel = Ext.getCmp('refimosfdetailview_id');
-        vPanel.tpl.overwrite(vPanel.body, record_.data);
+    itemclick: function (this_, record) {
+        //var vPanel = Ext.getCmp('refimosfdetailview_id');
+        //vPanel.tpl.overwrite(vPanel.body, record_.data);
+        Ext.getCmp('refiropfgridview_id').getStore().load({
+            params: {
+                rop_mos_id: record.get('mos_id')
+            }
+        });
     },
 
     btnAdd: function(){

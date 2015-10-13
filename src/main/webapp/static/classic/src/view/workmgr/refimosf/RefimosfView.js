@@ -8,6 +8,7 @@ Ext.define('app.view.workmgr.refimosf.RefimosfView', {
     requires: [
         'app.view.workmgr.refimosf.RefimosfController',
         'app.view.workmgr.refimosf.RefimosfGridView',
+        'app.view.workmgr.refimosf.RefiropfGridView',
         'app.view.workmgr.refimosf.RefimosfDetailView',
         'app.view.workmgr.refimosf.RefimosfAddView',
         'app.view.workmgr.refimosf.RefimosfQueryView'
@@ -51,11 +52,20 @@ Ext.define('app.view.workmgr.refimosf.RefimosfView', {
                 store.load();
             }
         }
-    },{
-        xtype: 'refimosfdetailview',
-        region: 'east',
-        id: 'refimosfdetailview_id',
-        margin: '0 0 0 1',
-        width:  360
-    }]
+    },
+    //    {
+    //    xtype: 'refimosfdetailview',
+    //    region: 'east',
+    //    id: 'refimosfdetailview_id',
+    //    margin: '0 0 0 1',
+    //    width:  360
+    //}
+        {
+            xtype: 'refiropfgridview',
+            region: 'east',
+            id: 'refiropfgridview_id',
+            margin: '0 0 0 1',
+            width:  700
+        }
+    ]
 });
