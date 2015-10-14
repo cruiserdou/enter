@@ -25,7 +25,7 @@ function obt_corp_government_manage_update(gov_id) {
         url: '/enter/update_corp_government_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
-            Ext.getCmp('grid_government_manage').getStore().reload();
+            Ext.getCmp('govmtgridview_id').getStore().reload();
         },
         failure: function () {
             Ext.Msg.alert("提示", "保存失败！");
@@ -65,7 +65,7 @@ function obt_corp_investors_manage_update(inv_id) {
         url: '/enter/update_corp_investors_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
-            Ext.getCmp('grid_investors_manage').getStore().reload();
+            Ext.getCmp('investormtgridview_id').getStore().reload();
         },
         failure: function () {
             Ext.Msg.alert("提示", "保存失败！");
@@ -95,7 +95,7 @@ function obt_corp_service_manage_update(srv_id) {
         url: '/enter/update_corp_service_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
-            Ext.getCmp('grid_service_manage').getStore().reload();
+            Ext.getCmp('servicemtgridview_id').getStore().reload();
         },
         failure: function () {
             Ext.Msg.alert("提示", "保存失败！");
@@ -121,7 +121,7 @@ function obt_corp_rehr_manage_update(rehr_id) {
         url: '/enter/update_corp_rehr_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
-            Ext.getCmp('grid_rehr_manage').getStore().reload();
+            Ext.getCmp('rehrgridview_id').getStore().reload();
         },
         failure: function () {
             Ext.Msg.alert("提示", "保存失败！");
@@ -149,7 +149,7 @@ function obt_corp_refinancing_manage_update(refi_id) {
         url: '/enter/update_corp_refinancing_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
-            Ext.getCmp('grid_refinancing_manage').getStore().reload();
+            Ext.getCmp('refigridview_id').getStore().reload();
         },
         failure: function () {
             Ext.Msg.alert("提示", "保存失败！");
@@ -161,7 +161,6 @@ function obt_corp_refinancing_manage_update(refi_id) {
 function obt_corp_retrain_manage_update(retra_id) {
     var form_obt_edit = document.getElementById("apply_retrain_edit");
 
-alert(corp_id);
     Ext.Ajax.request({
         params: {
             retra_id : retra_id,
@@ -175,7 +174,7 @@ alert(corp_id);
         url: '/enter/update_corp_retrain_info',
         success: function () {
             Ext.Msg.alert("提示", "保存成功！");
-            //Ext.getCmp('grid_retrain_manage').getStore().reload();
+            Ext.getCmp('retrgridview_id').getStore().reload();
         },
         failure: function () {
             Ext.Msg.alert("提示", "保存失败！");

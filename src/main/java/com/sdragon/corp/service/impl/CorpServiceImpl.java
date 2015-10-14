@@ -2,7 +2,6 @@ package com.sdragon.corp.service.impl;
 
 import com.sdragon.corp.dao.CorpDao;
 import com.sdragon.corp.pojo.Corp;
-import com.sdragon.corp.pojo.CorpRehr;
 import com.sdragon.corp.service.CorpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

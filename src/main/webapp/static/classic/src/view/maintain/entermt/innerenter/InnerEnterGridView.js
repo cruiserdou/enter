@@ -8,7 +8,8 @@ Ext.define('app.view.maintain.entermt.innerenter.InnerEnterGridView', {
     columnLines: true,
     requires: [
         'app.store.corpall.CorpAllStore',
-        'app.view.enter.EnterInfoController',
+        //'app.view.enter.EnterInfoController',
+        'app.view.maintain.entermt.innerenter.InnerEnterController',
         'Ext.grid.filters.Filters',
 
         'Ext.data.*',
@@ -16,9 +17,9 @@ Ext.define('app.view.maintain.entermt.innerenter.InnerEnterGridView', {
         'Ext.util.*',
         'Ext.toolbar.Paging'
     ],
-    controller: 'enterinfocontroller',
+    controller: 'innerentercontroller',
     listeners: {
-        itemclick: 'itemclick',
+        //itemclick: 'itemclick',
         itemdblclick:'itemdblclick'
     },
 
@@ -368,3 +369,5 @@ Ext.define('app.view.maintain.entermt.innerenter.InnerEnterGridView', {
         this.callParent();
     }
 });
+
+

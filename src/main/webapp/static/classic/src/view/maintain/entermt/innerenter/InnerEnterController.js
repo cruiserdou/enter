@@ -8,18 +8,17 @@ Ext.define('app.view.maintain.entermt.innerenter.InnerEnterController', {
     requires: [
         'app.xtemplate.corp_edit'
     ],
-    itemclick: function (this_, record_) {
-        var vPanel = Ext.getCmp('enterdetailview_id');
-        vPanel.tpl.overwrite(vPanel.body, record_.data);
-
-        Ext.getCmp('entereditloggridview_id').getStore().load({
-            params: {
-                corp_id: record_.get('id')
-            }
-        });
-    },
+    //itemclick: function (this_, record_) {
+    //    var vPanel = Ext.getCmp('enterdetailview_id');
+    //    vPanel.tpl.overwrite(vPanel.body, record_.data);
+    //
+    //    Ext.getCmp('entereditloggridview_id').getStore().load({
+    //        params: {
+    //            corp_id: record_.get('id')
+    //        }
+    //    });
+    //},
     itemdblclick: function (view, record, item, index, e) {
-
 
         //呈现组件
         var mypanel = new Ext.form.FormPanel({
@@ -59,9 +58,6 @@ Ext.define('app.view.maintain.entermt.innerenter.InnerEnterController', {
                     html:
                     '<div id="enter_menu_list" style="position: fixed; top: 7em; right: 6em;">'+
 
-                    '<a href="#"   style="font-size:18px;display: block;  margin-top: 26px;  width: 120px;  font-size: 14px;  border: 1px solid #ffffff;  border-radius: 8px;  padding: 4px 25px;  cursor: hand;  color: #fff;  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 1px 0px;  background-image: linear-gradient(#f27809, #e14100);  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);" onclick="win_close_edit()">关闭</a>'+
-
-
                     '<ul>'+
                     '<li><a href="#table_corp_base" style="font-size:18px;">基本信息</a></li>' +
                     '<li><a href="#table_corp_sh"  style="font-size:18px;">股东名册</a></li>' +
@@ -76,6 +72,8 @@ Ext.define('app.view.maintain.entermt.innerenter.InnerEnterController', {
                     '<li><a href="#table_corp_demand_rz"  style="font-size:18px;">融资需求</a></li>' +
                     '<li><a href="#table_corp_demand_px"  style="font-size:18px;">培训需求</a></li>' +
                     '<li><a href="#table_corp_demand_rl"  style="font-size:18px;">人力资源需求</a></li>' +
+                    '<li><a href="#" style=" text-align: center; font-size:18px;display: block;  margin-top: 16px;  width: 100%;  font-size: 14px;  border: 1px solid #ffffff;  border-radius: 3px;  padding: 0.6em;  cursor: hand;  color: #fff;  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 1px 0px;  background-image: linear-gradient(#f27809, #e14100);  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);" onclick="win_close_edit()">关闭</a></li>' +
+
                     '</ul>' +
                     '</div>'
                 }
@@ -98,41 +96,25 @@ Ext.define('app.view.maintain.entermt.innerenter.InnerEnterController', {
 
 
     btnClick: function () {
-        Ext.getCmp('enter_grid_id').getStore().load();
+        Ext.getCmp('innerenterqueryview_id').getStore().load();
     },
 
     btnSearch: function (_this) {
         if (!Ext.getCmp('innerenterqueryview_id')) {
             _this.up().up().add(
                 {
-                    xtype: 'enterinfoqueryview',
-                    id: 'enterinfoqueryview_id',
+                    xtype: 'innerenterqueryview',
+                    id: 'innerenterqueryview_id',
                     region: 'north',
                     margin: '1 0 0 0'
                 }
             );
         }else{
-            _this.up().up().remove(Ext.getCmp('enterinfoqueryview_id'));
+            _this.up().up().remove(Ext.getCmp('innerenterqueryview_id'));
         }
     },
 
-    btnLog: function (_this) {
-        if (!Ext.getCmp('entereditloggridview_id')) {
-            _this.up().up().add(
-                {
-                    xtype: 'entereditloggridview',
-                    id: 'entereditloggridview_id',
-                    title: '变更记录',
-                    collapsible: true,
-                    region: 'south',
-                    margin: '1 0 0 0',
-                    height: 200
-                }
-            );
-        }else{
-            _this.up().up().remove(Ext.getCmp('entereditloggridview_id'));
-        }
-    },
+
 
     btnFind: function () {
         Ext.getCmp('innerentergridview_id').getStore().load({
@@ -148,7 +130,7 @@ Ext.define('app.view.maintain.entermt.innerenter.InnerEnterController', {
 
     btnReset: function (_this) {
         _this.up('form').getForm().reset();
-        Ext.getCmp('enter_grid_id').getStore().load();
+        Ext.getCmp('innerentergridview_id').getStore().load();
     },
 
     onToggleConfig: function (menuitem) {
@@ -201,3 +183,58 @@ Ext.define('app.view.maintain.entermt.innerenter.InnerEnterController', {
         }
     }
 });
+
+
+function win_close_edit() {
+    Ext.getCmp('enterprise_edit_id').close();
+}
+
+
+
+function save_corp_edit(corp_id,cont_id,finid,mai_id,gov_id,inv_id,srv_id,refi_id,rehr_id,retra_id){
+    var form_obt_edit = document.getElementById("apply_corp_form_edit");
+
+    if (form_obt_edit['buslicno'].value == "") {
+        Ext.Msg.alert("提示", "<span style='color: red;'>营业执照号码不能为空！</span>")
+        return;
+    }
+    if (form_obt_edit['name'].value  == "") {
+        Ext.Msg.alert("提示", "<span style='color: red;'>企业名称不能为空！</span>")
+        return;
+    }
+    if (form_obt_edit['unit'].value   == "") {
+        Ext.Msg.alert("提示", "<span style='color: red;'>单位类别不能为空！</span>")
+        return;
+    }
+    if (form_obt_edit['legrep'].value  == "") {
+        Ext.Msg.alert("提示", "<span style='color: red;'>法定代表人不能为空！</span>")
+        return;
+    }
+    if (form_obt_edit['nature'].value  == "") {
+        Ext.Msg.alert("提示", "<span style='color: red;'>企业性质不能为空！</span>")
+        return;
+    }
+    if (form_obt_edit['regcap'].value   == "") {
+        Ext.Msg.alert("提示", "<span style='color: red;'>注册资本不能为空！</span>")
+        return;
+    }
+    if (form_obt_edit['regdt'].value  == "") {
+        Ext.Msg.alert("提示", "<span style='color: red;'>注册日期不能为空！</span>")
+        return;
+    }
+
+
+    obt_corp_update(corp_id);
+    obt_corp_contact_update(cont_id);
+    //obt_corp_shareholder_update(gd_id);
+    obt_corp_finance_update(finid);
+    obt_corp_maintain_update(mai_id);
+    obt_corp_government_update(gov_id);
+    obt_corp_investors_update(inv_id);
+    obt_corp_service_update(srv_id);
+    obt_corp_refinancing_update(refi_id);
+    obt_corp_retrain_update(retra_id);
+    obt_corp_rehr_update(rehr_id);
+
+    Ext.getCmp('innerentergridview_id').getStore().reload();
+}

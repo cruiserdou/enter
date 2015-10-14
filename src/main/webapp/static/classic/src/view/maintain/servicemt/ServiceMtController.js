@@ -24,7 +24,6 @@ Ext.define('app.view.maintain.servicemt.ServiceMtController', {
             bodyStyle: 'overflow-x:hidden; overflow-y:scroll',
             listeners: {
                 afterrender: function (_this){
-                    var srv_corp_id=record["id"];
                     corp_tpl.append('service_manage_corp',record.data);
                     corp_contact_tpl.append('service_manage_corp_contact',record.data);
                     //corp_shareholder_tpl.append('service_manage_corp_shareholder',record.data);

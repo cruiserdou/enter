@@ -8,6 +8,7 @@ Ext.define('app.view.maintain.entermt.EnterMtView', {
     closable: true,
     requires: [
         'app.view.main.MainModel',
+        'app.view.maintain.entermt.innerenter.InnerEnterView',
         'app.view.enter.EnterApplyView'
     ],
     viewModel: 'main',

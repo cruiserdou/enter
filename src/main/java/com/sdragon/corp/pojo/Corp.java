@@ -60,8 +60,6 @@ public class Corp {
     private int rehr_corp_id;
     private int refi_id;
     private int refi_corp_id;
-    private int mai_id;
-    private int mai_corp_id;
     private int inv_id;
     private int inv_corp_id;
     private int gov_id;
@@ -70,6 +68,25 @@ public class Corp {
     private int fin_corp_id;
     private int cont_id;
     private int cont_corp_id;
+    private int srv_id;
+    private int srv_corp_id;
+
+    public int getSrv_corp_id() {
+        return srv_corp_id;
+    }
+
+    public void setSrv_corp_id(int srv_corp_id) {
+        this.srv_corp_id = srv_corp_id;
+    }
+
+    public int getSrv_id() {
+        return srv_id;
+    }
+
+    public void setSrv_id(int srv_id) {
+        this.srv_id = srv_id;
+    }
+
 
     public int getCont_corp_id() {
         return cont_corp_id;
@@ -125,22 +142,6 @@ public class Corp {
 
     public void setRefi_corp_id(int refi_corp_id) {
         this.refi_corp_id = refi_corp_id;
-    }
-
-    public int getMai_id() {
-        return mai_id;
-    }
-
-    public void setMai_id(int mai_id) {
-        this.mai_id = mai_id;
-    }
-
-    public int getMai_corp_id() {
-        return mai_corp_id;
-    }
-
-    public void setMai_corp_id(int mai_corp_id) {
-        this.mai_corp_id = mai_corp_id;
     }
 
     public int getInv_id() {
