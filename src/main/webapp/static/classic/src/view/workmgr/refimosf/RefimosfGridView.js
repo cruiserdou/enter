@@ -35,14 +35,22 @@ Ext.define('app.view.workmgr.refimosf.RefimosfGridView', {
         {text: '融资产品',  width: 200, dataIndex: 'mos_cots'},
         {text: '融资金额', width: 150, dataIndex: 'mos_amounts'},
         {text: '项目经理', width: 150, dataIndex: 'mos_mop'},
+        //{
+        //    text: '进度',width: 150, dataIndex: 'mos_id',
+        //    renderer: function (v, m, record) {
+        //
+        //        return "<span style='color: #FF4444;' onclick='add_refi_rop(\"" + v + "\")' >添加</span>"
+        //
+        //    }
+        //},
         {
-            text: '进度',width: 150, dataIndex: 'mos_id',
-            renderer: function (v, m, record) {
-
-
-
-                return "<span style='color: #FF4444;' onclick='add_refi_rop(\"" + v + "\")' >添加</span>"
-
+            text: "进度",
+            width: 130,
+            dataIndex: 'mos_id',
+            align: "center",
+            renderer: function (v, cellmeta) {
+                var returnStr = "<INPUT type='button' value='添加'  onclick='add_refi_rop(\""+v+"\")'>";
+                return returnStr;
             }
         }
         //{text: '融资进度', width: 150 , dataIndex: 'mos_rop'}
@@ -56,7 +64,7 @@ function add_refi_rop(id) {
         modal: true,
         id:'add_refi_rop_windows',
         width: 370,
-        height: 500,
+        height: 520,
         border: false,
         layout: 'fit',
         defaults: {
@@ -145,7 +153,7 @@ function add_refi_rop(id) {
                                     waitMsg: '正在保存...',
                                     success: function (form, action) {
                                         Ext.Msg.alert("成功", "保存成功!");
-                                        Ext.getCmp('add_refi_rop_windows').close();
+                                        //Ext.getCmp('add_refi_rop_windows').close();
                                     },
                                     failure: function (form, action) {
                                         Ext.Msg.alert("失败", "保存失败!");
@@ -164,5 +172,5 @@ function add_refi_rop(id) {
                 ]
             }
         ]
-    }).show(Ext.get(id));
+    }).show(Ext.get('add_refi_rop_windows'));
 };
