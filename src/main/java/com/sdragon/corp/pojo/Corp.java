@@ -71,6 +71,28 @@ public class Corp {
     private int srv_id;
     private int srv_corp_id;
 
+
+    private int mai_id;
+    private int mai_corp_id;
+
+    public int getMai_corp_id() {
+        return mai_corp_id;
+    }
+
+    public void setMai_corp_id(int mai_corp_id) {
+        this.mai_corp_id = mai_corp_id;
+    }
+
+    public int getMai_id() {
+        return mai_id;
+    }
+
+    public void setMai_id(int mai_id) {
+        this.mai_id = mai_id;
+    }
+
+
+
     public int getSrv_corp_id() {
         return srv_corp_id;
     }

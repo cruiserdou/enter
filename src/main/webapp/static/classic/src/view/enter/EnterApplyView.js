@@ -44,7 +44,7 @@ var win_enterapplyview = new Ext.Window({
     ]
 });
 
-function win_close() {
+function win_close_apply() {
     Ext.getCmp('cust_add_id').close();
 };
 
@@ -84,7 +84,7 @@ function save_cust_add() {
     } else {
         Ext.Ajax.request({
             method: "POST",
-            url: 'checked_corp_id_info',
+            url: '/enter/checked_corp_id_info',
             success: function (response, opts) {
                 var obj = Ext.decode(response.responseText);
 
@@ -93,7 +93,7 @@ function save_cust_add() {
                 }
                 obt_corp_add(corp_id);
                 obt_corp_contact_add(corp_id);
-                obt_corp_shareholder_add(corp_id);
+                //obt_corp_shareholder_add(corp_id);
                 obt_corp_finance_add(corp_id);
                 obt_corp_maintain_add(corp_id);
                 obt_corp_government_add(corp_id);
@@ -139,7 +139,7 @@ function card_check_apply() {
             buslicno: form_obt_apply['buslicno'].value,
             id: 0
         },
-        url: 'check_buslicno_info',
+        url: '/enter/check_buslicno_info',
         success: function (response, opts) {
             var obj = Ext.decode(response.responseText);
 
@@ -231,7 +231,7 @@ function corp_img_upload(id) {
                                                         var form = this.up('form').getForm();
                                                         if (form.isValid()) {
                                                             form.submit({
-                                                                url: 'add_corp_img_info',
+                                                                url: '/enter/add_corp_img_info',
                                                                 params: {
                                                                     img_corp_id: id
                                                                 },

@@ -885,7 +885,7 @@ var corp_apply_con_tpl = new Ext.XTemplate(
     '</tr>' +
     '</table>',
 
-    '<a href="#"  style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_cust_add()">保存</a>' +
+    '<a   style="font-size:18px;text-decoration: none;text-align: center;color: #ffffff;  margin: 1em auto;width: 8em;border-radius: 5px;  padding: 0.5em 0;background-color: #38AD5A; border: 1px solid #38AD5A;display: block;  "  onclick="save_cust_add()">保存</a>' +
     '</div>',
     '<div id="enter_menu_list" style="position: fixed; top: 7em; right: 6em;">',
     '<ul>',
@@ -904,6 +904,8 @@ var corp_apply_con_tpl = new Ext.XTemplate(
     '<li><a href="#table_apply_demand_rz"  style="font-size:18px;">融资需求</a></li>',
     '<li><a href="#table_apply_demand_px"  style="font-size:18px;">培训需求</a></li>',
     '<li><a href="#table_apply_demand_rl"  style="font-size:18px;">人力资源需求</a></li>',
+    '<li><a href="#" style=" text-align: center; font-size:18px;display: block;  margin-top: 16px;  width: 100%;  font-size: 14px;  border: 1px solid #ffffff;  border-radius: 3px;  padding: 0.6em;  cursor: hand;  color: #fff;  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 1px 0px;  background-image: linear-gradient(#f27809, #e14100);  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);" onclick="win_close_apply()">关闭</a></li>',
+
     '</ul>',
     '</div>',
     '</form>',

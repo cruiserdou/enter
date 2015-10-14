@@ -191,7 +191,7 @@ function win_close_edit() {
 
 
 
-function save_corp_edit(corp_id,cont_id,finid,mai_id,gov_id,inv_id,srv_id,refi_id,rehr_id,retra_id){
+function save_corp_edit(id,finid,mai_id,gov_id,inv_id,srv_id,refi_id,rehr_id,retra_id){
     var form_obt_edit = document.getElementById("apply_corp_form_edit");
 
     if (form_obt_edit['buslicno'].value == "") {
@@ -224,11 +224,11 @@ function save_corp_edit(corp_id,cont_id,finid,mai_id,gov_id,inv_id,srv_id,refi_i
     }
 
 
-    obt_corp_update(corp_id);
-    obt_corp_contact_update(cont_id);
-    //obt_corp_shareholder_update(gd_id);
+    obt_corp_update(id);
+    //obt_corp_contact_update(cont_id);
+    ////obt_corp_shareholder_update(gd_id);
     obt_corp_finance_update(finid);
-    obt_corp_maintain_update(mai_id);
+    //obt_corp_maintain_update(mai_id);
     obt_corp_government_update(gov_id);
     obt_corp_investors_update(inv_id);
     obt_corp_service_update(srv_id);
@@ -238,3 +238,53 @@ function save_corp_edit(corp_id,cont_id,finid,mai_id,gov_id,inv_id,srv_id,refi_i
 
     Ext.getCmp('innerentergridview_id').getStore().reload();
 }
+
+
+function buslicnoCheck(num)
+{
+    var no_regexp = /\d{6}[123]\d{7}[1-9]/;
+    return no_regexp.exec(num) != null;
+}
+
+function buslicno_check_edit(id) {
+    var form_obt_edit = document.getElementById("apply_corp_form_edit");
+    if (form_obt_edit['buslicno'].value == "") {
+        Ext.Msg.alert("提示", "<span style='color: red;'>营业执照号码不能为空！</span>");
+        return;
+    }
+    if(document.getElementById('apply_corp_form_edit')['buslicno'].value.length!=15)
+    {
+        Ext.Msg.alert("提示", "<span style='color: red;'>营业执照号码格式不对！请重新输入！</span>");
+        document.getElementById('apply_corp_form_edit')['buslicno'].value="";
+        return;
+    }
+    if (!buslicnoCheck(document.getElementById('apply_corp_form_edit')['buslicno'].value))
+    {
+        Ext.Msg.alert("提示", "<span style='color: red;'>营业执照号码格式不对！请重新输入！</span>");
+        document.getElementById('apply_corp_form_edit')['buslicno'].value="";
+        return;
+    }
+
+
+    Ext.Ajax.request({
+        method: "POST",
+        params: {
+            buslicno: form_obt_edit['buslicno'].value,
+            id : id
+        },
+        url: '/enter/check_buslicno_info',
+        success: function (response,opts) {
+            var obj=Ext.decode(response.responseText);
+
+            if(!obj.success)
+            {
+                Ext.Msg.alert("提示", "该营业执照号码已用！");
+                document.getElementById('apply_corp_form_edit')['buslicno'].value="";
+            }
+        },
+        failure: function (response,opts) {
+            Ext.Msg.alert("提示", "错");
+        }
+    });
+}
+
