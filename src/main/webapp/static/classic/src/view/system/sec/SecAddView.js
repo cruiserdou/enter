@@ -20,15 +20,6 @@ Ext.define('app.view.system.sec.SecAddView', {
         layout: 'form',
 
         items: [
-        //    {
-        //    xtype: 'combobox',
-        //    name: 'roleid',
-        //    fieldLabel: '角色'
-        //}, {
-        //    xtype: 'combobox',
-        //    name: 'userid',
-        //    fieldLabel: '用户'
-        //}
             {
                 anchor: '100%',
                 name: 'roleid',
@@ -58,10 +49,10 @@ Ext.define('app.view.system.sec.SecAddView', {
                 valueField: 'id',
                 listConfig: {
                     getInnerTpl: function () {
-                        return '<div><span style="color: green;">' + '({name})</span></div>'
+                        return '<div><span style="color: green;">' + '({name})</span></div>';
                     }
                 }
-            },
+            }
         ],
         buttonAlign: "center",
         buttons: [

@@ -49,13 +49,7 @@ Ext.define('app.view.main.Main', {
         'app.view.workmgr.maintainplan.MaintainplanView',
         'app.view.workmgr.refimosf.RefimosfView',
         'app.view.workmgr.exportimport.ExportImportView',
-        //'app.view.workmgr.export.ExportView',
 
-        //'app.view.system.MenuMt',
-        //'app.view.system.RoleMt',
-        //'app.view.system.ActMt',
-        //'app.view.system.SecMt',
-        //'app.view.system.SysDict',
         'app.view.system.log.LoginLog',
         'app.view.system.role.RoleView',
         'app.view.system.menu.MenuView',
@@ -76,64 +70,109 @@ Ext.define('app.view.main.Main', {
         type: 'tree-list'
     },
 
-    //header: {
-    //    items: [{
-    //        xtype: 'button',
-    //        text: '设置',
-    //        menu: [{
-    //            text: 'Expander Only',
-    //            checked: true,
-    //            handler: 'onToggleConfig',
-    //            config: 'expanderOnly'
-    //        }, {
-    //            text: 'Single Expand',
-    //            checked: false,
-    //            handler: 'onToggleConfig',
-    //            config: 'singleExpand'
-    //        }]
-    //    }, {
-    //        xtype: 'button',
-    //        text: 'Nav',
-    //        enableToggle: true,
-    //        reference: 'navBtn',
-    //        toggleHandler: 'onToggleNav'
-    //    }, {
-    //        xtype: 'button',
-    //        text: 'Micro',
-    //        enableToggle: true,
-    //        toggleHandler: 'onToggleMicro'
-    //    }]
-    //},
-
     items: [
         {
-        region: 'west',
-        width: 250,
-        reference: 'treelistContainer',
-        layout: {
-            type: 'vbox',
-            align: 'stretch'
-        },
-        border: false,
-        scrollable: 'y',
-        items: [{
-            xtype: 'treelist',
-            reference: 'treelist',
-            bind: '{navItems}'
-        }]
-    }, {
-        region: 'center',
-        bodyStyle: 'background-image: url(resources/panel_back.png)',
-        bodyPadding: 8,
-        layout: 'fit',
-        items: [{
-            xtype: 'tabpanel',
-            id: 'mTabpanel',
+            region: 'west',
+            width: 250,
+            reference: 'treelistContainer',
+            layout: {
+                type: 'vbox',
+                align: 'stretch'
+            },
+            border: false,
+            scrollable: 'y',
             items: [{
-                xtype: 'enterinfoview',
-                id: 'enterinfoview_id',
-                title: '企业信息查询'
+                xtype: 'treelist',
+                reference: 'treelist',
+                bind: '{navItems}'
+            }]
+        }, {
+            region: 'center',
+            bodyStyle: 'background-image: url(resources/panel_back.png)',
+            bodyPadding: 8,
+            layout: 'fit',
+            items: [{
+                xtype: 'tabpanel',
+                id: 'mTabpanel',
+                items: [{
+                    xtype: 'enterinfoview',
+                    id: 'enterinfoview_id',
+                    title: '企业信息查询',
+                    listeners: {
+                        afterrender: function () {
+                            var loginWindow = Ext.create('Ext.window.Window', {
+                                height: 230,
+                                width: 320,
+                                id: 'loginwindow',
+                                title: '登录窗口',
+                                constrain: true,
+                                closable: false,
+                                modal: true,
+                                layout: 'fit',
+                                items: {  // Let's put an empty grid in just to illustrate fit layout
+                                    xtype: 'form',
+                                    defaultType: 'textfield',
+                                    bodyPadding: 20,
+                                    defaults: {
+                                        labelWidth: 80,
+                                        anchor: '100%'
+                                    },
+                                    items: [{
+                                        allowBlank: false,
+                                        fieldLabel: '用户名',
+                                        id: 'account_id',
+                                        name: 'account',
+                                        value: localStorage.getItem('account'),
+                                        emptyText: '用户名'
+                                    }, {
+                                        allowBlank: false,
+                                        fieldLabel: '密码',
+                                        id: 'password_id',
+                                        name: 'password',
+                                        emptyText: 'password',
+                                        inputType: 'password'
+                                    }, {
+                                        xtype: 'checkbox',
+                                        id: 'rem_id',
+                                        checked: true,
+                                        name: 'rem',
+                                        fieldLabel: '记住我'
+                                    }],
+                                    buttons: [
+                                        {
+                                            text: '重置',
+                                            handler: function () {
+                                                this.up('form').getForm().reset();
+                                            }
+                                        },
+                                        {
+                                            text: '登 录',
+                                            handler: function () {
+                                                if (Ext.getCmp('rem_id').getValue() == true) {
+                                                    if (window.localStorage) {
+                                                        localStorage.account = Ext.getCmp('account_id').getValue();
+                                                    }
+                                                }
+
+                                                if (Ext.getCmp('account_id').getValue() != 'admin') {
+                                                    Ext.Msg.alert('失败', '用户名或密码错误!');
+                                                    return;
+                                                }
+                                                if (Ext.getCmp('password_id').getValue() != '1') {
+                                                    Ext.Msg.alert('失败', '用户名或密码错误!')
+                                                    return;
+                                                }
+
+                                                Ext.getCmp('enter_grid_id').getStore().load();
+                                                loginWindow.close();
+                                            }
+                                        }
+                                    ]
+                                }
+                            }).show();
+                        }
+                    }
+                }]
             }]
         }]
-    }]
 });

@@ -537,6 +537,7 @@ $include-ext-viewport-viewport: dynamic(true);;
 $include-ext-viewport-wp: dynamic(true);;
 $include-ext-viewport-windowsphone: dynamic(true);;
 $include-app-application: dynamic(true);;
+$include-app-functions-corp_fun: dynamic(false);;
 $include-app-model-changelist-corpchangemodel: dynamic(false);;
 $include-app-model-changelist-corpcontchangemodel: dynamic(false);;
 $include-app-model-changelist-corpgovchangemodel: dynamic(false);;
